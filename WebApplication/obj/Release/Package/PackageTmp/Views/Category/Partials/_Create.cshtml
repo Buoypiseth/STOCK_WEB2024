@@ -1,0 +1,60 @@
+﻿@model WebApplication.Models.Category
+<div class="card card-default">
+    <div class="card-header">
+        <h5 class="card-title text-secondary">
+            <i class="fa fa-plus-circle"></i>
+            @Resources.Buttons.Create / @Resources.Buttons.Update
+        </h5>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.HiddenFor(model => model.PrdCategID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.Label(@Resources.Category.Name, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.PrdCategory, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Category.Name } })
+                    @Html.ValidationMessageFor(model => model.PrdCategory, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.Label(@Resources.Category.GroupMain, htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownList("PrdCategIDMain", null, "--Main--", htmlAttributes: new { @class = "form-control select2bs4" })
+                    @Html.ValidationMessageFor(model => model.PrdCategIDMain, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.Label(@Resources.Category.NumOrder, htmlAttributes: new { @class = "control -label" })
+                    @Html.EditorFor(model => model.CategoryOrder, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Category.NumOrder } })
+                    @Html.ValidationMessageFor(model => model.CategoryOrder, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        }
+    </div>
+    <div class="modal-footer justify-content-between">
+        <div class="float-left">
+            <button type="button" id="btnCancel" class="btn btn-danger btn-min" data-dismiss="modal">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                @Resources.Buttons.Cancel
+            </button>
+            <button type="button" id="btnUpdate" class="btn btn-info btn-min">
+                <i class="far fa-check-circle"></i>
+                @Resources.Buttons.Update
+            </button>
+        </div>
+        <div class="float-right">
+            <a href="@Url.Action("Index", "Category")" class="btn btn-warning btn-min">
+                <i class="fa fa-sync-alt"></i>
+                @Resources.Buttons.Sync
+            </a>
+            <button type="button" id="btnSave" class="btn btn-success btn-min">
+                <i class="far fa-check-circle"></i>
+                @Resources.Buttons.Save
+            </button>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>

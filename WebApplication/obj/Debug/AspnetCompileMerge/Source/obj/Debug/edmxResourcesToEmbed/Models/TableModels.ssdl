@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="role_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="PrdCategID" />
+    </Key>
+    <Property Name="PrdCategID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrdCmpntID" Type="bigint" />
+    <Property Name="PrdCategory" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrdCategoryKh" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrdCategIDMain" Type="bigint" />
+    <Property Name="CategoryOrder" Type="int" />
+    <Property Name="MiniMumInstock" Type="float" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DeptId" />
+    </Key>
+    <Property Name="DeptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="char" MaxLength="10" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" />
+    <Property Name="Office" Type="nvarchar" MaxLength="50" />
+    <Property Name="HireDate" Type="datetime" />
+    <Property Name="Salary" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_prdcategory">
+    <Key>
+      <PropertyRef Name="PrdCategID" />
+    </Key>
+    <Property Name="PrdCategID" Type="bigint" Nullable="false" />
+    <Property Name="PrdCmpntID" Type="varchar" MaxLength="30" />
+    <Property Name="PrdCategory" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrdCategoryKh" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrdCategIDMain" Type="varchar" MaxLength="30" />
+    <Property Name="CategoryOrder" Type="int" />
+    <Property Name="MiniMumInstock" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="PrdCategID" Type="bigint" />
+    <Property Name="SupplierID" Type="bigint" />
+    <Property Name="PrdNameEng" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrdNameKh" Type="nvarchar" MaxLength="200" />
+    <Property Name="UnitType" Type="nvarchar" MaxLength="50" />
+    <Property Name="totalInStock" Type="float" />
+    <Property Name="minimalStock" Type="float" />
+    <Property Name="SellingPriceUSD" Type="float" />
+    <Property Name="SellingPriceKHR" Type="float" />
+    <Property Name="SellingPriceTHB" Type="float" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="OrderComment" Type="nvarchar" MaxLength="300" />
+    <Property Name="PrdDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="barCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Delstatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="isCutStock" Type="bit" />
+    <Property Name="ProductIDRealStock" Type="varchar" MaxLength="30" />
+    <Property Name="NumInOne" Type="float" />
+    <Property Name="IsUnique" Type="bit" />
+    <Property Name="TaxNote" Type="nvarchar" MaxLength="200" />
+    <Property Name="Money_Sale_Type" Type="nvarchar" MaxLength="20" />
+    <Property Name="Width" Type="float" />
+    <Property Name="Height" Type="float" />
+    <Property Name="Area_Size" Type="float" />
+    <Property Name="LOC_Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="DMCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="RPCode_Repaire" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumHours" Type="float" />
+    <Property Name="Larbor_Cost" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_suppliers">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="bigint" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContFirstName" Type="nvarchar" MaxLength="70" />
+    <Property Name="ContLastName" Type="nvarchar" MaxLength="70" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="70" />
+    <Property Name="BusPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="FaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="ZipPostalCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="Region" Type="nvarchar" MaxLength="70" />
+    <Property Name="supCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="supCountry" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompEmail" Type="nvarchar" MaxLength="70" />
+    <Property Name="WebPage" Type="nvarchar" MaxLength="70" />
+    <Property Name="Notes" Type="ntext" />
+    <Property Name="LastUpdate" Type="datetime" />
+    <Property Name="autoNo" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_test">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+    <Property Name="Test1" Type="nchar" MaxLength="10" />
+    <Property Name="Test2" Type="nchar" MaxLength="10" />
+    <Property Name="Test3" Type="nchar" MaxLength="10" />
+    <Property Name="Test4" Type="nchar" MaxLength="10" />
+    <Property Name="Test5" Type="nchar" MaxLength="10" />
+    <Property Name="Test6" Type="nchar" MaxLength="10" />
+    <Property Name="Test7" Type="nchar" MaxLength="10" />
+    <Property Name="Test8" Type="nchar" MaxLength="10" />
+    <Property Name="Test9" Type="nchar" MaxLength="10" />
+    <Property Name="Test10" Type="nchar" MaxLength="10" />
+    <Property Name="Test11" Type="nchar" MaxLength="10" />
+    <Property Name="Test12" Type="nchar" MaxLength="10" />
+    <Property Name="Test13" Type="nchar" MaxLength="10" />
+    <Property Name="Test14" Type="nchar" MaxLength="10" />
+    <Property Name="Test15" Type="nchar" MaxLength="10" />
+    <Property Name="Test16" Type="nchar" MaxLength="10" />
+    <Property Name="Test17" Type="nchar" MaxLength="10" />
+    <Property Name="Test18" Type="nchar" MaxLength="10" />
+    <Property Name="Test19" Type="nchar" MaxLength="10" />
+    <Property Name="Test20" Type="nchar" MaxLength="10" />
+    <Property Name="Test21" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="UserRoleMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="RoleId" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="VCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Employee__Depart__182C9B23">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DeptId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_produ__PrdCa__31EC6D26">
+    <End Role="tbl_prdcategory" Type="Self.tbl_prdcategory" Multiplicity="0..1" />
+    <End Role="tbl_products" Type="Self.tbl_products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_prdcategory">
+        <PropertyRef Name="PrdCategID" />
+      </Principal>
+      <Dependent Role="tbl_products">
+        <PropertyRef Name="PrdCategID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_produ__Suppl__32E0915F">
+    <End Role="tbl_suppliers" Type="Self.tbl_suppliers" Multiplicity="0..1" />
+    <End Role="tbl_products" Type="Self.tbl_products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="tbl_products">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRoleM__RoleI__1A14E395">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoleMapping">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRoleM__UserI__1920BF5C">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoleMapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="role_dbModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_prdcategory" EntityType="Self.tbl_prdcategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_products" EntityType="Self.tbl_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_suppliers" EntityType="Self.tbl_suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_test" EntityType="Self.tbl_test" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoleMapping" EntityType="Self.UserRoleMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Employee__Depart__182C9B23" Association="Self.FK__Employee__Depart__182C9B23">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_produ__PrdCa__31EC6D26" Association="Self.FK__tbl_produ__PrdCa__31EC6D26">
+      <End Role="tbl_prdcategory" EntitySet="tbl_prdcategory" />
+      <End Role="tbl_products" EntitySet="tbl_products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_produ__Suppl__32E0915F" Association="Self.FK__tbl_produ__Suppl__32E0915F">
+      <End Role="tbl_suppliers" EntitySet="tbl_suppliers" />
+      <End Role="tbl_products" EntitySet="tbl_products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRoleM__RoleI__1A14E395" Association="Self.FK__UserRoleM__RoleI__1A14E395">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoleMapping" EntitySet="UserRoleMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRoleM__UserI__1920BF5C" Association="Self.FK__UserRoleM__UserI__1920BF5C">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRoleMapping" EntitySet="UserRoleMapping" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

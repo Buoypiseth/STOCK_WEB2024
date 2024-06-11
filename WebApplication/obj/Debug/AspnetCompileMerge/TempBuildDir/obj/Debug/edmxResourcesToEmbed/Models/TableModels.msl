@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="role_dbModelStoreContainer" CdmEntityContainer="DataContext">
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="role_dbModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="role_dbModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Office" ColumnName="Office" />
+          <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="role_dbModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoleMappings">
+      <EntityTypeMapping TypeName="role_dbModel.UserRoleMapping">
+        <MappingFragment StoreEntitySet="UserRoleMapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="role_dbModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="VCode" ColumnName="VCode" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_prdcategory">
+      <EntityTypeMapping TypeName="role_dbModel.tbl_prdcategory">
+        <MappingFragment StoreEntitySet="tbl_prdcategory">
+          <ScalarProperty Name="PrdCategID" ColumnName="PrdCategID" />
+          <ScalarProperty Name="MiniMumInstock" ColumnName="MiniMumInstock" />
+          <ScalarProperty Name="CategoryOrder" ColumnName="CategoryOrder" />
+          <ScalarProperty Name="PrdCategIDMain" ColumnName="PrdCategIDMain" />
+          <ScalarProperty Name="PrdCategoryKh" ColumnName="PrdCategoryKh" />
+          <ScalarProperty Name="PrdCategory" ColumnName="PrdCategory" />
+          <ScalarProperty Name="PrdCmpntID" ColumnName="PrdCmpntID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_products">
+      <EntityTypeMapping TypeName="role_dbModel.tbl_products">
+        <MappingFragment StoreEntitySet="tbl_products">
+          <ScalarProperty Name="Larbor_Cost" ColumnName="Larbor_Cost" />
+          <ScalarProperty Name="NumHours" ColumnName="NumHours" />
+          <ScalarProperty Name="RPCode_Repaire" ColumnName="RPCode_Repaire" />
+          <ScalarProperty Name="DMCode" ColumnName="DMCode" />
+          <ScalarProperty Name="LOC_Location" ColumnName="LOC_Location" />
+          <ScalarProperty Name="Area_Size" ColumnName="Area_Size" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Money_Sale_Type" ColumnName="Money_Sale_Type" />
+          <ScalarProperty Name="TaxNote" ColumnName="TaxNote" />
+          <ScalarProperty Name="IsUnique" ColumnName="IsUnique" />
+          <ScalarProperty Name="NumInOne" ColumnName="NumInOne" />
+          <ScalarProperty Name="ProductIDRealStock" ColumnName="ProductIDRealStock" />
+          <ScalarProperty Name="isCutStock" ColumnName="isCutStock" />
+          <ScalarProperty Name="Delstatus" ColumnName="Delstatus" />
+          <ScalarProperty Name="barCode" ColumnName="barCode" />
+          <ScalarProperty Name="PrdDesc" ColumnName="PrdDesc" />
+          <ScalarProperty Name="OrderComment" ColumnName="OrderComment" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="SellingPriceTHB" ColumnName="SellingPriceTHB" />
+          <ScalarProperty Name="SellingPriceKHR" ColumnName="SellingPriceKHR" />
+          <ScalarProperty Name="SellingPriceUSD" ColumnName="SellingPriceUSD" />
+          <ScalarProperty Name="minimalStock" ColumnName="minimalStock" />
+          <ScalarProperty Name="totalInStock" ColumnName="totalInStock" />
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+          <ScalarProperty Name="PrdNameKh" ColumnName="PrdNameKh" />
+          <ScalarProperty Name="PrdNameEng" ColumnName="PrdNameEng" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="PrdCategID" ColumnName="PrdCategID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_suppliers">
+      <EntityTypeMapping TypeName="role_dbModel.tbl_suppliers">
+        <MappingFragment StoreEntitySet="tbl_suppliers">
+          <ScalarProperty Name="autoNo" ColumnName="autoNo" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="WebPage" ColumnName="WebPage" />
+          <ScalarProperty Name="CompEmail" ColumnName="CompEmail" />
+          <ScalarProperty Name="supCountry" ColumnName="supCountry" />
+          <ScalarProperty Name="supCity" ColumnName="supCity" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="ZipPostalCode" ColumnName="ZipPostalCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="BusPhone" ColumnName="BusPhone" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="ContLastName" ColumnName="ContLastName" />
+          <ScalarProperty Name="ContFirstName" ColumnName="ContFirstName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_test">
+      <EntityTypeMapping TypeName="role_dbModel.tbl_test">
+        <MappingFragment StoreEntitySet="tbl_test">
+          <ScalarProperty Name="Test21" ColumnName="Test21" />
+          <ScalarProperty Name="Test20" ColumnName="Test20" />
+          <ScalarProperty Name="Test19" ColumnName="Test19" />
+          <ScalarProperty Name="Test18" ColumnName="Test18" />
+          <ScalarProperty Name="Test17" ColumnName="Test17" />
+          <ScalarProperty Name="Test16" ColumnName="Test16" />
+          <ScalarProperty Name="Test15" ColumnName="Test15" />
+          <ScalarProperty Name="Test14" ColumnName="Test14" />
+          <ScalarProperty Name="Test13" ColumnName="Test13" />
+          <ScalarProperty Name="Test12" ColumnName="Test12" />
+          <ScalarProperty Name="Test11" ColumnName="Test11" />
+          <ScalarProperty Name="Test10" ColumnName="Test10" />
+          <ScalarProperty Name="Test9" ColumnName="Test9" />
+          <ScalarProperty Name="Test8" ColumnName="Test8" />
+          <ScalarProperty Name="Test7" ColumnName="Test7" />
+          <ScalarProperty Name="Test6" ColumnName="Test6" />
+          <ScalarProperty Name="Test5" ColumnName="Test5" />
+          <ScalarProperty Name="Test4" ColumnName="Test4" />
+          <ScalarProperty Name="Test3" ColumnName="Test3" />
+          <ScalarProperty Name="Test2" ColumnName="Test2" />
+          <ScalarProperty Name="Test1" ColumnName="Test1" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="role_dbModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="MiniMumInstock" ColumnName="MiniMumInstock" />
+          <ScalarProperty Name="CategoryOrder" ColumnName="CategoryOrder" />
+          <ScalarProperty Name="PrdCategIDMain" ColumnName="PrdCategIDMain" />
+          <ScalarProperty Name="PrdCategoryKh" ColumnName="PrdCategoryKh" />
+          <ScalarProperty Name="PrdCategory" ColumnName="PrdCategory" />
+          <ScalarProperty Name="PrdCmpntID" ColumnName="PrdCmpntID" />
+          <ScalarProperty Name="PrdCategID" ColumnName="PrdCategID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

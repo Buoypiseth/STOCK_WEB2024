@@ -1,0 +1,179 @@
+﻿@model WebApplication.Models.SalesModel
+<div class="modal fade" id="modal-form">
+@*<div class="modal fade show" id="modal-form" style="display: block; padding-right: 16px;" aria-modal="true">*@
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 id="modal-title" class="modal-title text-secondary">
+                    <i class="fa fa-edit"></i>
+                    @Resources.Buttons.Payment
+                </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("PayReturnToCustomer", "Sales", FormMethod.Post, new { @id = "formPaymentReturn" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-md-3 col-lg-2 col-form-label"></label>
+                        <div class="col-sm-4 col-md-4 col-lg-5">
+                            <label>លុយដុល្លា</label>
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5">
+                            <label>លុយរៀល</label>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="totalAmount" class="col-sm-3 col-md-3 col-lg-2 col-form-label">សរុបចាស់</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @Html.TextBox("totalAmountTemp", "", new { @class = "form-control-plaintext", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.TextBox("totalAmountRielTemp", "", new { @class = "form-control-plaintext", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="totalAmount" class="col-sm-3 col-md-3 col-lg-2 col-form-label">លុយត្រឡប់</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @Html.TextBox("netAmountReturn", "", new { @class = "form-control-plaintext", @step = "0.01", @type = "Number", @readonly = "True", })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.TextBox("netAmountReturnRiel", "", new { @class = "form-control-plaintext", @step = "0.01", @type = "Number", @readonly = "True", })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="totalAmount" class="col-sm-3 col-md-3 col-lg-2 col-form-label">លុយសរុប</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @Html.HiddenFor(model => model.InvoiceID, new { @class = "form-control", @Value = @ViewBag.InvoiceID })
+                            @Html.HiddenFor(model => model.usdTokhr, new { @class = "form-control", @step = "0.01" })
+                            @Html.HiddenFor(model => model.usdToKhrChange, new { @class = "form-control", @step = "0.01" })
+                            @Html.HiddenFor(model => model.usdToTHB, new { @class = "form-control", @step = "0.01" })
+
+                            @Html.TextBoxFor(model => model.totalAmount, new { @class = "form-control-plaintext", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" })
+                            @Html.Hidden("sumAmount", "", new { @class = "form-control", @step = "0.01" })
+                            @Html.ValidationMessageFor(model => model.totalAmount, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.TextBoxFor(model => model.totalAmountRiel, new { @class = "form-control-plaintext", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" })
+                            @Html.ValidationMessageFor(model => model.totalAmountRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="form-group row">
+                        <label for="percentDiscount" class="col-sm-3 col-md-3 col-lg-2 col-form-label">បញ្ចុះតម្លៃ ($)</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.AmtDisc, new { htmlAttributes = new { @class = "form-control is-warning", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                            @Html.ValidationMessageFor(model => model.AmtDisc, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.AmtDiscRiel, new { htmlAttributes = new { @class = "form-control is-warning", @step = "0.01", @type = "Number", @placeholder = "0" } })
+                            @Html.ValidationMessageFor(model => model.AmtDiscRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="netAmount" class="col-sm-3 col-md-3 col-lg-2 col-form-label">លុយត្រូវបង់</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.netAmount, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                            @Html.ValidationMessageFor(model => model.netAmount, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.netAmountRiel, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" } })
+                            @Html.ValidationMessageFor(model => model.netAmountRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="amtReceived" class="col-sm-3 col-md-3 col-lg-2 col-form-label">លុយទទួល</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.amtReceived, new { htmlAttributes = new { @class = "form-control is-valid", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                            @Html.ValidationMessageFor(model => model.amtReceived, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.amtReceivedRiel, new { htmlAttributes = new { @class = "form-control is-valid", @step = "0.01", @type = "Number", @placeholder = "0" } })
+                            @Html.ValidationMessageFor(model => model.amtReceivedRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="amtReturn" class="col-sm-3 col-md-3 col-lg-2 col-form-label">លុយអាប់</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.amtReturn, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                            @Html.ValidationMessageFor(model => model.amtReturn, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.amtReturnRiel, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" } })
+                            @Html.ValidationMessageFor(model => model.amtReturnRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="amtOwed" class="col-sm-3 col-md-3 col-lg-2 col-form-label">លុយជំពាក់</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @Html.TextBoxFor(model => model.amtOwed, new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" })
+                            @Html.ValidationMessageFor(model => model.amtOwed, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.TextBoxFor(model => model.amtOwedRiel, new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" })
+                            @Html.ValidationMessageFor(model => model.amtOwedRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="ReturnDate" class="col-sm-3 col-md-3 col-lg-2 col-form-label">ថ្ងៃសងលុយ</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.ReturnDate, new { htmlAttributes = new { @class = "form-control singledatetimepicker" } })
+                            @Html.ValidationMessageFor(model => model.ReturnDate, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.TextAreaFor(model => model.DescripitonTerm, new { @class = "form-control", @rows = 1, @placeholder = "Note..." })
+                            @Html.ValidationMessageFor(model => model.DescripitonTerm, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <button type="button" class="btn btn-outline-danger btn-min" data-dismiss="modal">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                @Resources.Buttons.Cancel
+                            </button>
+                        </div>
+                        <div class="col text-right">
+                            @if (ViewBag.InvoiceID > 0)
+                            {
+                                <button type="button" id="btnSave" class="btn btn-outline-success btn-min">
+                                    <i class="far fa-check-circle"></i>
+                                    @Resources.Buttons.Save
+                                </button>
+                            }
+                            else
+                            {
+                                <button type="submit" class="btn btn-outline-success btn-min">
+                                    <i class="far fa-check-circle"></i>
+                                    Save & Order
+                                </button>
+                                <button type="button" id="btnSaveReturn" class="btn btn-outline-success btn-min">
+                                    <i class="far fa-check-circle"></i>
+                                    @Resources.Buttons.Save
+                                </button>
+                            }
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="role_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DeptId" />
+    </Key>
+    <Property Name="DeptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__Depart__182C9B23" FromRole="Department" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Office" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HireDate" Type="DateTime" Precision="3" />
+    <Property Name="Salary" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="Self.FK__Employee__Depart__182C9B23" FromRole="Employee" ToRole="Department" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserRoleMappings" Relationship="Self.FK__UserRoleM__RoleI__1A14E395" FromRole="Roles" ToRole="UserRoleMapping" />
+  </EntityType>
+  <EntityType Name="UserRoleMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__UserRoleM__RoleI__1A14E395" FromRole="UserRoleMapping" ToRole="Roles" />
+    <NavigationProperty Name="User" Relationship="Self.FK__UserRoleM__UserI__1920BF5C" FromRole="UserRoleMapping" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserRoleMappings" Relationship="Self.FK__UserRoleM__UserI__1920BF5C" FromRole="Users" ToRole="UserRoleMapping" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="VCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Employee__Depart__182C9B23">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DeptId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRoleM__RoleI__1A14E395">
+    <End Role="Roles" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoleMapping">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRoleM__UserI__1920BF5C">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoleMapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DataContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="UserRoleMappings" EntityType="Self.UserRoleMapping" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Employee__Depart__182C9B23" Association="Self.FK__Employee__Depart__182C9B23">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRoleM__RoleI__1A14E395" Association="Self.FK__UserRoleM__RoleI__1A14E395">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoleMapping" EntitySet="UserRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRoleM__UserI__1920BF5C" Association="Self.FK__UserRoleM__UserI__1920BF5C">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRoleMapping" EntitySet="UserRoleMappings" />
+    </AssociationSet>
+    <EntitySet Name="tbl_prdcategory" EntityType="role_dbModel.tbl_prdcategory" />
+    <EntitySet Name="tbl_products" EntityType="role_dbModel.tbl_products" />
+    <EntitySet Name="tbl_suppliers" EntityType="role_dbModel.tbl_suppliers" />
+    <AssociationSet Name="FK__tbl_produ__PrdCa__31EC6D26" Association="role_dbModel.FK__tbl_produ__PrdCa__31EC6D26">
+      <End Role="tbl_prdcategory" EntitySet="tbl_prdcategory" />
+      <End Role="tbl_products" EntitySet="tbl_products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_produ__Suppl__32E0915F" Association="role_dbModel.FK__tbl_produ__Suppl__32E0915F">
+      <End Role="tbl_suppliers" EntitySet="tbl_suppliers" />
+      <End Role="tbl_products" EntitySet="tbl_products" />
+    </AssociationSet>
+    <EntitySet Name="tbl_test" EntityType="role_dbModel.tbl_test" />
+    <EntitySet Name="Categories" EntityType="role_dbModel.Category" />
+  </EntityContainer>
+  <EntityType Name="tbl_prdcategory">
+    <Key>
+      <PropertyRef Name="PrdCategID" />
+    </Key>
+    <Property Name="PrdCategID" Type="Int64" Nullable="false" />
+    <Property Name="PrdCmpntID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PrdCategory" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PrdCategoryKh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PrdCategIDMain" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryOrder" Type="Int32" />
+    <Property Name="MiniMumInstock" Type="Double" />
+    <NavigationProperty Name="tbl_products" Relationship="role_dbModel.FK__tbl_produ__PrdCa__31EC6D26" FromRole="tbl_prdcategory" ToRole="tbl_products" />
+  </EntityType>
+  <EntityType Name="tbl_products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int64" Nullable="false" />
+    <Property Name="PrdCategID" Type="Int64" />
+    <Property Name="SupplierID" Type="Int64" />
+    <Property Name="PrdNameEng" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PrdNameKh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UnitType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="totalInStock" Type="Double" />
+    <Property Name="minimalStock" Type="Double" />
+    <Property Name="SellingPriceUSD" Type="Double" />
+    <Property Name="SellingPriceKHR" Type="Double" />
+    <Property Name="SellingPriceTHB" Type="Double" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OrderComment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="PrdDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="barCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Delstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isCutStock" Type="Boolean" />
+    <Property Name="ProductIDRealStock" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NumInOne" Type="Double" />
+    <Property Name="IsUnique" Type="Boolean" />
+    <Property Name="TaxNote" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Money_Sale_Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Width" Type="Double" />
+    <Property Name="Height" Type="Double" />
+    <Property Name="Area_Size" Type="Double" />
+    <Property Name="LOC_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DMCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RPCode_Repaire" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumHours" Type="Double" />
+    <Property Name="Larbor_Cost" Type="Double" />
+    <NavigationProperty Name="tbl_prdcategory" Relationship="role_dbModel.FK__tbl_produ__PrdCa__31EC6D26" FromRole="tbl_products" ToRole="tbl_prdcategory" />
+    <NavigationProperty Name="tbl_suppliers" Relationship="role_dbModel.FK__tbl_produ__Suppl__32E0915F" FromRole="tbl_products" ToRole="tbl_suppliers" />
+  </EntityType>
+  <EntityType Name="tbl_suppliers">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int64" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ContFirstName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="ContLastName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="BusPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobilePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FaxNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ZipPostalCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Region" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="supCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="supCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompEmail" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="WebPage" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="3" />
+    <Property Name="autoNo" Type="Int32" />
+    <NavigationProperty Name="tbl_products" Relationship="role_dbModel.FK__tbl_produ__Suppl__32E0915F" FromRole="tbl_suppliers" ToRole="tbl_products" />
+  </EntityType>
+  <Association Name="FK__tbl_produ__PrdCa__31EC6D26">
+    <End Type="role_dbModel.tbl_prdcategory" Role="tbl_prdcategory" Multiplicity="0..1" />
+    <End Type="role_dbModel.tbl_products" Role="tbl_products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_prdcategory">
+        <PropertyRef Name="PrdCategID" />
+      </Principal>
+      <Dependent Role="tbl_products">
+        <PropertyRef Name="PrdCategID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_produ__Suppl__32E0915F">
+    <End Type="role_dbModel.tbl_suppliers" Role="tbl_suppliers" Multiplicity="0..1" />
+    <End Type="role_dbModel.tbl_products" Role="tbl_products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="tbl_products">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_test">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test3" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test4" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test5" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test6" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test7" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test8" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test9" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test10" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test11" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test12" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test13" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test14" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test15" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test16" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test17" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test18" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test19" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test20" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Test21" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="PrdCategID" />
+    </Key>
+    <Property Name="PrdCategID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrdCmpntID" Type="Int64" />
+    <Property Name="PrdCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrdCategoryKh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrdCategIDMain" Type="Int64" />
+    <Property Name="CategoryOrder" Type="Int32" />
+    <Property Name="MiniMumInstock" Type="Double" />
+  </EntityType>
+</Schema>

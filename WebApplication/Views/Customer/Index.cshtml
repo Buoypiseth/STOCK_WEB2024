@@ -1,0 +1,305 @@
+﻿@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+}
+<div class="card">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title align-self-center">
+                @Resources.Customer.Title
+            </h5>
+            <div>
+                <button type="button" class="btn btn-min btn-primary" data-toggle="modal" data-target="#modal-form">
+                    <i class="fa fa-plus-circle"></i>
+                    @Resources.Buttons.Create
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        @Html.Partial("Partials/_CreateOrUpdate")
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover table-sm data-table nowrap" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>@Resources.Globle.No</th>
+                            <th>@Resources.Customer.fullName</th>
+                            <th>@Resources.Customer.Gender</th>
+                            <th>@Resources.Customer.Mobile</th>
+                            <th>@Resources.Customer.idType</th>
+                            <th>@Resources.Customer.icpassportNo</th>
+                            <th>@Resources.Customer.Passport_Issue</th>
+                            <th>@Resources.Customer.Passport_Expire</th>
+                            <th>@Resources.Customer.Description</th>
+                            <th>@Resources.Globle.Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    <script src="~/assets/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script type="text/javascript">
+        var memberID = $('#memberID');
+        var fullName = $('#fullName');
+        var Gender = $('#Gender');
+        var idType = $('#idType');
+        var icpassportNo = $('#icpassportNo');
+        var Nationality = $('#Nationality');
+        var Mobile = $('#Mobile');
+        var eMail = $('#eMail');
+        var Address = $('#Address');
+        var PassportIssue = $('#Passport_Issue');
+        var PassportExpire = $('#Passport_Expire');
+        ////-----block variable modal-----/
+        var modalForm = $('#modal-form');
+        var btnSaveOrUpdate = $('#btnSaveOrUpdate');
+        var modalTitle = $('#modal-title');
+
+        $(function () {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            $('.select2').select2();
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+            $('.singledatepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    firstDay: 1,
+                }
+            });
+
+            $('.singledatetimepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                timePicker: true,
+                timePicker24Hour: true,
+                locale: {
+                    format: 'YYYY-MM-DD hh:mm',
+                    firstDay: 1
+                }
+            });
+            modalForm.on('hidden.bs.modal', function (e) {
+                modalTitle.text('').append('Create');
+                btnSaveOrUpdate.text('').append('<i class="far fa-check-circle"></i> Save');
+
+                //$('form')[0].reset();
+                memberID.val('');
+                $('form').trigger("reset");
+            });
+            $('form').submit(function (e) {
+                e.preventDefault();
+                var id = memberID.val();
+                var status = 'created.';
+                if (id != "") {
+                    status = 'updated.'
+                }
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: new FormData(this),
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (message) {
+                        if (message == 'True') {
+                            //_dataTable.draw();
+                            modalForm.modal('hide');
+                            Toast.fire({
+                                icon: 'success',
+                                type: 'success',
+                                title: 'The customer was successful ' + status
+                            });
+
+                            location.reload();
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: message
+                            })
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+            });
+
+            $(document).on('click', '.btnEdit', function () {
+                modalForm.modal('show');
+                modalTitle.text('').append('Edit');
+                btnSaveOrUpdate.text('').append('<i class="far fa-check-circle"></i> Update');
+
+                var data = {};
+                data.memberID = $(this).data('id');
+                $.ajax({
+                    url: '@Url.Action("Edit", "Customer")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    success: function (res) {
+                        memberID.val(res.memberID);
+                        fullName.val(res.fullName);
+                        icpassportNo.val(res.icpassportNo);
+                        //Nationality.val(res.Nationality);
+                        Mobile.val(res.Mobile);
+                        eMail.val(res.eMail);
+                        Address.val(res.Address);
+                        PassportIssue.val(moment(res.Passport_Issue).format('YYYY-MM-DD'));
+                        PassportExpire.val(moment(res.Passport_Expire).format('YYYY-MM-DD'));
+
+                        if (Gender.find("option[value='" + res.Gender + "']").length) {
+                            Gender.val(res.Gender).trigger('change');
+                        }
+                        if (idType.find("option[value='" + res.idType + "']").length) {
+                            idType.val(res.idType).trigger('change');
+                        }
+                        if (Nationality.find("option[value='" + res.Nationality + "']").length) {
+                            Nationality.val(res.Nationality).trigger('change');
+                        }
+                        moment(res.DateExpire).format('YYYY-MM-DD')
+                    }
+                });
+            });
+
+            $(document).on('click', '.btnDelete', function () {
+                var data = {};
+                data.memberID = $(this).data('id');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        $.ajax({
+                            url: '@Url.Action("Delete", "Customer")',
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            data: JSON.stringify(data),
+                            dataType: "json",
+                            success: function (message) {
+                                if (message == 'True') {
+                                    _dataTable.draw();
+                                    Toast.fire({
+                                        icon: 'success',
+                                        type: 'success',
+                                        title: 'The customer was successfully deleted.'
+                                    })
+                                }
+                                else {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: message
+                                    })
+                                }
+                            },
+                            error: function (message) {
+                                if (message == 405) {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: 'You do not have access to do that.'
+                                    })
+                                }
+                            }
+                        });
+                    }
+                }).catch(Swal.noop);
+            });
+///-----block do fuction-----3
+///-----end do fuction-----/3
+///-----block datatable-----4
+            var _dataTable = $('.data-table')
+                .DataTable({
+                    "sAjaxSource": '@Url.Action("GetData", "Customer")',
+                    "bServerSide": true,
+                    "pageLength": 25,
+                    "bProcessing": true,
+                    "bSearchable": true,
+                    "columns": [
+                        {
+                            "data": null, "sortable": false,
+                            "render": function (data, type, row, meta) {
+                                return meta.row + meta.settings._iDisplayStart + 1;
+                            }
+                        },
+                        { "data": "fullName" },
+                        { "data": "Gender", "sortable": false, },
+                        { "data": "Mobile", "sortable": false, },
+                        { "data": "idType", "sortable": false, },
+                        { "data": "icpassportNo", "sortable": false },
+                        { "data": "Passport_Issue", "sortable": false, },
+                        { "data": "Passport_Expire", "sortable": false,  },
+                        //{ "data": "eMail", "sortable": false, },
+                        { "data": "Address", "sortable": false,},
+                        {
+                            "data": "memberID",
+                            "sortable": false,
+                            "render": function (data, type, full, meta) {
+                                var actions = '<button type="button" data-id="' + data + '" class="btn btnEdit btn-sm btn-primary mx-1">Edit</button>';
+                                actions += '<a href="@Url.Action("Transaction", "Customer")?slug=' + data + '" class="btn btn-sm btn-secondary mx-1">Transaction</a>';
+                                actions += '<a href="@Url.Action("Account", "Customer")?slug=' + data + '" class="btn btn-sm btn-success mx-1">Account</a>';
+                                return actions;
+                            }
+                        }
+                    ],
+                    columnDefs: [
+                        {
+                            targets: [6,7],
+                            render: function (data, type, row, meta) {
+                                return moment(data).format('YYYY-MM-DD');
+                            }
+                        }
+                    ],
+                });
+            });
+    </script>
+}
+

@@ -1,0 +1,66 @@
+﻿@model WebApplication.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_prdcategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PrdCmpntID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrdCmpntID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrdCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrdCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrdCategoryKh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrdCategoryKh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrdCategIDMain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrdCategIDMain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiniMumInstock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiniMumInstock)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PrdCategID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

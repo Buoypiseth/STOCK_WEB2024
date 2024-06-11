@@ -1,0 +1,81 @@
+﻿@model WebApplication.Models.PurchaseModel
+<div class="modal fade" id="modal-form">
+    <div class="modal-dialog modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 id="modal-title" class="modal-title text-secondary">
+                    <i class="fa fa-plus-circle"></i>
+                    @Resources.Buttons.Create
+                </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("AddOrders", "Purchase", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.HiddenFor(model => model.ProductID, new { htmlAttributes = new { @class = "form-control", @placeholder = "id" } })
+                                @Html.Label("ផលិតផល", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.PrdNameEng, new { htmlAttributes = new { @class = "form-control", @required = "required", @readonly = "True", @placeholder = "ផលិតផល" } })
+                                @Html.ValidationMessageFor(model => model.PrdNameEng, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group mb-2">
+                                @Html.Label("ថ្ងៃផុតកំណត់", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.ExpireDate, new { htmlAttributes = new { @class = "form-control singledatepicker", @placeholder = "ថ្ងៃផុតកំណត់" } })
+                                @Html.ValidationMessageFor(model => model.ExpireDate, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group mb-2">
+                                @*@Html.Label("ចំនួន", htmlAttributes: new { @class = "control-label" })*@
+                                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control", @type = "Number", @required = "required", @placeholder = "ចំនួន" } })
+                                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group mb-2">
+                                @*@Html.Label("តម្លៃទិញ", htmlAttributes: new { @class = "control-label" })*@
+                                @Html.EditorFor(model => model.BuyingCost, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "តម្លៃទិញ" } })
+                                @Html.ValidationMessageFor(model => model.BuyingCost, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group mb-2">
+                                @*@Html.Label("តម្លៃលក់", htmlAttributes: new { @class = "control-label" })*@
+                                @Html.EditorFor(model => model.SellingPriceUSD, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "តម្លៃលក់" } })
+                                @Html.ValidationMessageFor(model => model.SellingPriceUSD, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group mb-2">
+                                @*@Html.Label("តម្លៃដឹកជញ្ជួន", htmlAttributes: new { @class = "control-label" })*@
+                                @Html.EditorFor(model => model.transCost, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "តម្លៃដឹកជញ្ជួន" } })
+                                @Html.ValidationMessageFor(model => model.transCost, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    @*<hr />*@
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn btn-danger btn-min" data-dismiss="modal">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                @Resources.Buttons.Cancel
+                            </button>
+                        </div>
+                        <div class="col text-right">
+                            <button type="submit" id="btnSaveOrUpdate" class="btn btn-success btn-min">
+                                <i class="far fa-check-circle"></i>
+                                @Resources.Buttons.Save
+                            </button>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

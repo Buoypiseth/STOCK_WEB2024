@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="role_pawn_dbDataSet" targetNamespace="http://tempuri.org/role_pawn_dbDataSet.xsd" xmlns:mstns="http://tempuri.org/role_pawn_dbDataSet.xsd" xmlns="http://tempuri.org/role_pawn_dbDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="role_pawn_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="role_pawn_dbConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.role_pawn_dbConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Receipt_Take_MoneyTableAdapter" Name="View_Receipt_Take_Money">
+            <MainSource>
+              <DbSource ConnectionRef="role_pawn_dbConnectionString (Web.config)" DbObjectName="role_pawn_db.dbo.View_Receipt_Take_Money" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PawnTakeMoneyID, PawnID, PrdCategID, CodeProduct, ProductName, Description, DatePut, DateEnd, ProductCost, PawnMoney, Interest, InterestRate, amtFined, Total_to_Pay, Paid, amtReceived, amtReturn, isCustomerNotTake, CustomerNotTakeDate, CustomerNotTakeUser, ColorInt, Code, InvoiceNo, OderNo, InvoiceTime, usdTokhr, usdToTHB, memberID, Name, IDCard, DOB, Phone, Address, PawnIDHasImg, AMT, DateTake, DescriptionTake, TakeBy, isTakeBy, Created_At, UserID, Username, Email, UserLevel FROM dbo.View_Receipt_Take_Money</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PawnTakeMoneyID" DataSetColumn="PawnTakeMoneyID" />
+              <Mapping SourceColumn="PawnID" DataSetColumn="PawnID" />
+              <Mapping SourceColumn="PrdCategID" DataSetColumn="PrdCategID" />
+              <Mapping SourceColumn="CodeProduct" DataSetColumn="CodeProduct" />
+              <Mapping SourceColumn="ProductName" DataSetColumn="ProductName" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DatePut" DataSetColumn="DatePut" />
+              <Mapping SourceColumn="DateEnd" DataSetColumn="DateEnd" />
+              <Mapping SourceColumn="ProductCost" DataSetColumn="ProductCost" />
+              <Mapping SourceColumn="PawnMoney" DataSetColumn="PawnMoney" />
+              <Mapping SourceColumn="Interest" DataSetColumn="Interest" />
+              <Mapping SourceColumn="InterestRate" DataSetColumn="InterestRate" />
+              <Mapping SourceColumn="amtFined" DataSetColumn="amtFined" />
+              <Mapping SourceColumn="Total_to_Pay" DataSetColumn="Total_to_Pay" />
+              <Mapping SourceColumn="Paid" DataSetColumn="Paid" />
+              <Mapping SourceColumn="amtReceived" DataSetColumn="amtReceived" />
+              <Mapping SourceColumn="amtReturn" DataSetColumn="amtReturn" />
+              <Mapping SourceColumn="isCustomerNotTake" DataSetColumn="isCustomerNotTake" />
+              <Mapping SourceColumn="CustomerNotTakeDate" DataSetColumn="CustomerNotTakeDate" />
+              <Mapping SourceColumn="CustomerNotTakeUser" DataSetColumn="CustomerNotTakeUser" />
+              <Mapping SourceColumn="ColorInt" DataSetColumn="ColorInt" />
+              <Mapping SourceColumn="Code" DataSetColumn="Code" />
+              <Mapping SourceColumn="InvoiceNo" DataSetColumn="InvoiceNo" />
+              <Mapping SourceColumn="OderNo" DataSetColumn="OderNo" />
+              <Mapping SourceColumn="InvoiceTime" DataSetColumn="InvoiceTime" />
+              <Mapping SourceColumn="usdTokhr" DataSetColumn="usdTokhr" />
+              <Mapping SourceColumn="usdToTHB" DataSetColumn="usdToTHB" />
+              <Mapping SourceColumn="memberID" DataSetColumn="memberID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="IDCard" DataSetColumn="IDCard" />
+              <Mapping SourceColumn="DOB" DataSetColumn="DOB" />
+              <Mapping SourceColumn="Phone" DataSetColumn="Phone" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="PawnIDHasImg" DataSetColumn="PawnIDHasImg" />
+              <Mapping SourceColumn="AMT" DataSetColumn="AMT" />
+              <Mapping SourceColumn="DateTake" DataSetColumn="DateTake" />
+              <Mapping SourceColumn="DescriptionTake" DataSetColumn="DescriptionTake" />
+              <Mapping SourceColumn="TakeBy" DataSetColumn="TakeBy" />
+              <Mapping SourceColumn="isTakeBy" DataSetColumn="isTakeBy" />
+              <Mapping SourceColumn="Created_At" DataSetColumn="Created_At" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="Username" DataSetColumn="Username" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="UserLevel" DataSetColumn="UserLevel" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="role_pawn_dbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="False">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_Receipt_Take_Money">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PawnTakeMoneyID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PawnID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrdCategID" type="xs:int" minOccurs="0" />
+              <xs:element name="CodeProduct" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="900" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="199" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DatePut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateEnd" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProductCost" type="xs:double" minOccurs="0" />
+              <xs:element name="PawnMoney" type="xs:double" minOccurs="0" />
+              <xs:element name="Interest" type="xs:double" minOccurs="0" />
+              <xs:element name="InterestRate" type="xs:double" minOccurs="0" />
+              <xs:element name="amtFined" type="xs:double" minOccurs="0" />
+              <xs:element name="Total_to_Pay" type="xs:double" minOccurs="0" />
+              <xs:element name="Paid" type="xs:double" minOccurs="0" />
+              <xs:element name="amtReceived" type="xs:double" minOccurs="0" />
+              <xs:element name="amtReturn" type="xs:double" minOccurs="0" />
+              <xs:element name="isCustomerNotTake" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CustomerNotTakeDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CustomerNotTakeUser" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ColorInt" type="xs:int" minOccurs="0" />
+              <xs:element name="Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OderNo" type="xs:long" minOccurs="0" />
+              <xs:element name="InvoiceTime" type="xs:int" minOccurs="0" />
+              <xs:element name="usdTokhr" type="xs:double" minOccurs="0" />
+              <xs:element name="usdToTHB" type="xs:double" minOccurs="0" />
+              <xs:element name="memberID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDCard" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DOB" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Phone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PawnIDHasImg" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AMT" type="xs:double" minOccurs="0" />
+              <xs:element name="DateTake" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DescriptionTake" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TakeBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isTakeBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Created_At" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UserID" type="xs:int" minOccurs="0" />
+              <xs:element name="Username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserLevel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

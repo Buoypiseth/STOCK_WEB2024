@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutReport.cshtml";
+}
+@using ReportViewerForMvc;
+<div class="d-flex justify-content-center">
+    <div class="row">
+        <div class="col bg-white p-0">
+            @Html.ReportViewer(ViewBag.ReportViewer as Microsoft.Reporting.WebForms.ReportViewer)
+        </div>
+    </div>
+</div>
+
+

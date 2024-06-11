@@ -1,0 +1,56 @@
+﻿@model WebApplication.Models.tbl_products_Package_Detail
+@using (Html.BeginForm("SalePackage", "Sale", FormMethod.Post))
+{
+    <div class="modal fade" id="modal-package">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 id="modal-title" class="modal-title text-secondary">
+                        <i class="fa fa-shopping-bag"></i>
+                        @Resources.Globle.SalePackage
+                    </h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body px-5 py-4">
+                    <div class="form-group row">
+                        <label for="PrdNameEng" class="col-md-4 col-lg-4 col-form-label">@Resources.ProductPackage.PrdNameEng</label>
+                        <div class="col-md-8 col-lg-8 mb-1">
+                            @Html.DropDownListFor(model => model.Product_PackageID, ViewBag.Packages as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4", @style = "width:100%" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Quantity" class="col-md-4 col-lg-4 col-form-label">@Resources.ProductPackage.Quantity</label>
+                        <div class="col-md-8 col-lg-8 mb-1">
+                            @Html.EditorFor(model => model.Qty, new { htmlAttributes = new { @class = "form-control is-warning", @step = "0", @min = 1, @Value = 1, @type = "Number", @placeholder = "0" } })
+                            @Html.ValidationMessageFor(model => model.Qty, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Descripiton" class="col-md-4 col-lg-4 col-form-label">@Resources.ProductPackage.Description</label>
+                        <div class="col-md-8 col-lg-8 mb-1">
+                            @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @rows = 3, @placeholder = Resources.ProductPackage.Description })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row pt-2">
+                        <label for="" class="col-md-4 col-lg-4 col-form-label"></label>
+                        <div class="col-md-4 col-lg-4">
+                            <button type="button" class="btn btn-danger btn-min" data-dismiss="modal">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                @Resources.Buttons.Cancel
+                            </button>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <button type="button" id="btnSalePackage" class="btn btn-success btn-min float-right">
+                                <i class="far fa-check-circle"></i>
+                                @Resources.Buttons.Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

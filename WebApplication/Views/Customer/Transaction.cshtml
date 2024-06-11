@@ -1,0 +1,211 @@
+﻿@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">
+            @Resources.Customer.AccountTransaction
+        </h5>
+    </div>
+    <div class="card-body">
+        <h4>@Resources.Customer.Account: <u> @ViewBag.CustName </u> </h4>
+        <ul class="nav nav-tabs" id="custom-content-below-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="content-cashouts-tab" data-toggle="pill" href="#content-cashouts" role="tab" aria-controls="content-cashouts" aria-selected="false">@Resources.Customer.Cashouts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="content-deposited-tab" data-toggle="pill" href="#content-deposited" role="tab" aria-controls="content-deposited" aria-selected="true">@Resources.Customer.Deposited</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade" id="content-cashouts" role="tabpanel" aria-labelledby="content-cashouts-tab">
+                <br />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="dataCashouts" class="table table-hover dt-responsive nowrap" style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th>@Resources.Globle.No</th>
+                                    <th>@Resources.Customer.AccountType</th>
+                                    <th>@Resources.Customer.Amount</th>
+                                    <th>@Resources.Customer.RealMoney</th>
+                                    <th>@Resources.Customer.Date</th>
+                                    <th>@Resources.Customer.Type</th>
+                                    <th>@Resources.Customer.BeginAmount</th>
+                                    <th>@Resources.Customer.Username</th>
+                                    <th>@Resources.Customer.Description</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade active show" id="content-deposited" role="tabpanel" aria-labelledby="content-deposited-tab">
+                <br />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="dataDeposited" class="table table-hover dt-responsive nowrap" style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th>@Resources.Globle.No</th>
+                                    <th>@Resources.Customer.AccountType</th>
+                                    <th>@Resources.Customer.Amount</th>
+                                    <th>@Resources.Customer.RealMoney</th>
+                                    <th>@Resources.Customer.Date</th>
+                                    <th>@Resources.Customer.BeginAmount</th>
+                                    <th>@Resources.Customer.Username</th>
+                                    <th>@Resources.Customer.Description</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    <script src="~/assets/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+            $('.singledatepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    firstDay: 1,
+                }
+            });
+            $('.singledatetimepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                timePicker: true,
+                timePicker24Hour: true,
+                locale: {
+                    format: 'YYYY-MM-DD hh:mm',
+                    firstDay: 1
+                }
+            });
+
+            let dataDeposited = $('#dataDeposited')
+                .DataTable({
+                    "sAjaxSource": '@Url.Action("GetDataTransaction", "Customer")',
+                    "fnServerParams": function (aoData) {
+                        aoData.push({ "name": "custId", "value": @ViewBag.CustId });
+                        aoData.push({ "name": "tranType", "value": "Customer Refill" });
+                    },
+                    "bServerSide": true,
+                    "pageLength": 25,
+                    "bProcessing": true,
+                    "bSearchable": true,
+                    "columns": [
+                        {
+                            "data": null, "sortable": false,
+                            "render": function (data, type, row, meta) {
+                                return meta.row + meta.settings._iDisplayStart + 1;
+                            }
+                        },
+                        { "data": "AccountType", "sortable": true },
+                        { "data": "Amount", "sortable": false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                        { "data": "RealMoney", "sortable": false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                        { "data": "Date", "sortable": false },
+                        //{ "data": "Type", "sortable": false, },
+                        { "data": "BeginAmount", "sortable": false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                        { "data": "Username", "sortable": false, },
+                        { "data": "Description", "sortable": false, },
+                        //{
+                        //    "data": "CustAccInOutHistoryID",
+                        //    "sortable": false,
+                        //    "render": function (data, type, full, meta) {
+                        //        var actions = '<button type="button" data-id="' + data + '" class="btn btnCashouts btn-sm btn-secondary mx-1">Cashouts</button>';
+                        //        actions += '<button type="button" data-id="' + data + '" class="btn btnDeposited btn-sm btn-primary mx-1">Deposited</button>';
+                        //        return actions;
+                        //    }
+                        //}
+                    ],
+                    columnDefs: [
+                        {
+                            targets: [4],
+                            render: function (data, type, row, meta) {
+                                return moment(data).format('YYYY-MM-DD hh:mm a');
+                            }
+                        }
+                    ],
+                });
+
+            let dataCashouts = $('#dataCashouts')
+                .DataTable({
+                    "sAjaxSource": '@Url.Action("GetDataTransaction", "Customer")',
+                    "fnServerParams": function (aoData) {
+                        aoData.push({ "name": "custId", "value": @ViewBag.CustId });
+                        aoData.push({ "name": "tranType", "value": "Deduction" });
+                    },
+                    "bServerSide": true,
+                    "pageLength": 25,
+                    "bProcessing": true,
+                    "bSearchable": true,
+                    "columns": [
+                        {
+                            "data": null, "sortable": false,
+                            "render": function (data, type, row, meta) {
+                                return meta.row + meta.settings._iDisplayStart + 1;
+                            }
+                        },
+                        { "data": "AccountType", "sortable": true },
+                        { "data": "Amount", "sortable": false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                        { "data": "RealMoney", "sortable": false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                        { "data": "Date", "sortable": false },
+                        { "data": "Type", "sortable": false, },
+                        { "data": "BeginAmount", "sortable": false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                        { "data": "Username", "sortable": false, },
+                        { "data": "Description", "sortable": false, },
+                        //{
+                        //    "data": "CustAccInOutHistoryID",
+                        //    "sortable": false,
+                        //    "render": function (data, type, full, meta) {
+                        //        var actions = '<button type="button" data-id="' + data + '" class="btn btnCashouts btn-sm btn-secondary mx-1">Cashouts</button>';
+                        //        actions += '<button type="button" data-id="' + data + '" class="btn btnDeposited btn-sm btn-primary mx-1">Deposited</button>';
+                        //        return actions;
+                        //    }
+                        //}
+                    ],
+                    columnDefs: [
+                        {
+                            targets: [4],
+                            render: function (data, type, row, meta) {
+                                return moment(data).format('YYYY-MM-DD hh:mm a');
+                            }
+                        }
+                    ],
+                });
+            });
+    </script>
+}

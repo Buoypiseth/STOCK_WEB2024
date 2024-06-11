@@ -1,0 +1,54 @@
+﻿<div class="form-group">
+    @Html.Hidden("PathReportName", "", new { @class = "form-control", @Value = @ViewBag.PathReportName })
+    @Html.Hidden("ParaReportName", "", new { @class = "form-control", @Value = @ViewBag.ParaReportName })
+    @Html.Hidden("txtDateOnly", "", new { @class = "form-control", @Value = ViewBag.SearchDateOnly })
+</div>
+@if (ViewBag.Col1 == true)
+{
+    <div class="col-md-3">
+        <div class="form-group">
+            @if (ViewBag.SearchCategory == true)
+            {
+                @Html.Label("Category", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("PrdCategID", ViewBag.Categories as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4 txtSearch", @multiple = "multiple", @style = "width:100%" })
+            }
+            @if (ViewBag.SearchCustomer == true)
+            {
+                @Html.Label("Customer", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("memberID", ViewBag.Customers as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4 txtSearch", @multiple = "multiple", @style = "width:100%" })
+            }
+            @if (ViewBag.SearchSupplier == true)
+            {
+                @Html.Label("Supplier", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("SupplierID", ViewBag.Supplies as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4 txtSearch", @multiple = "multiple", @style = "width:100%" })
+            }
+        </div>
+    </div>
+}
+@if (ViewBag.Col2 == true)
+{
+    <div class="col-md-3">
+        <div class="form-group">
+            @if (ViewBag.SearchProduct == true)
+            {
+                @Html.Label("Product", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("ProductID", ViewBag.Products as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4 txtSearch", @multiple = "multiple", @style = "width:100%" })
+            }
+            @if (ViewBag.SearchInvoice == true)
+            {
+                @Html.Label("InvoiceNo", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("InvoiceNo", ViewBag.Invoices as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4 txtSearch", @multiple = "multiple", @style = "width:100%" })
+            }
+            @if (ViewBag.SearchStock == true)
+            {
+                @Html.Label("Stock", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("StockID", ViewBag.Stocks as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4 txtSearch", @multiple = "multiple", @style = "width:100%" })
+            }
+            @if (ViewBag.SearchUser == true)
+            {
+                @Html.Label("User", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("UserID", ViewBag.Users as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4 txtSearch", @multiple = "multiple", @style = "width:100%" })
+            }
+        </div>
+    </div>
+}

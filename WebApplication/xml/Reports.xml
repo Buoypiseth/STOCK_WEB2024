@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Reports>
+  <Report>
+    <IsPrint>false</IsPrint>
+    <NumPrint>1</NumPrint>
+    <PaperSize>Small</PaperSize>
+    <IsType>1.Tax</IsType>
+  </Report>
+</Reports>

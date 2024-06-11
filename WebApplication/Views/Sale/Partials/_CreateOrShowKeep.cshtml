@@ -1,0 +1,60 @@
+﻿@model WebApplication.Models.Customer_Order_Details_Temp
+<div class="modal fade" id="modal-keep">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 id="modal-title" class="modal-title text-secondary">
+                    <i class="fa fa-edit"></i>
+                    @Resources.Buttons.option
+                </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("KeepIn", "Sales", FormMethod.Post, new { @id = "formKeep" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group row">
+                        <label for="totalAmount" class="col-sm-3 col-md-3 col-lg-2 col-form-label">រក្សារទុកការលក់</label>
+                        <div class="col-sm-10 col-md-10 col-lg-10 mb-1">
+                            @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "Enter Note..." } })
+                            @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col text-right">
+                            <button type="submit" class="btn btn-outline-success btn-min">
+                                <i class="far fa-check-circle"></i>
+                                @Resources.Buttons.Save
+                            </button>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group row">
+                        <label for="totalAmount" class="col-sm-3 col-md-3 col-lg-2 col-form-label">បង្ហាញការលក់</label>
+                        <div class="col-sm-10 col-md-10 col-lg-10 mb-1">
+                            @Html.DropDownListFor(model => model.roomtableID, ViewBag.OrderTempList as SelectList,"--Select--", new { @class = "form-control select2bs4", @style = "width:100%" })
+                            @Html.ValidationMessageFor(model => model.roomtableID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col text-right">
+                            <button type="button" id="btnShow" class="btn btn-outline-primary btn-min" data-dismiss="modal">
+                                <i class="far fa-eye"></i>
+                                @Resources.Buttons.Show
+                            </button>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

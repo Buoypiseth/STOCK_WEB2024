@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutFrontend.cshtml";
+}
+<div class="p-3">
+    @foreach (var product in ViewBag.Products)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="d-flex justify-content-between">
+                    <div class="card-title align-self-center">
+                        <a href="@Url.Action("Index", "Sale")" class="btn btn-min btn-outline-primary">
+                            <i class="fa fa-arrow-left mr-1"></i> Go Back
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="@product.Image" alt="product">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><h5 class="card-title">@product.PrdNameEng</h5></li>
+                            @if (!string.IsNullOrEmpty(product.UnitType))
+                            {
+                                <li class="list-group-item">@product.UnitType</li>
+                            }
+                            @if (!string.IsNullOrEmpty(product.OrderComment))
+                            {
+                                <li class="list-group-item">Code: @product.OrderComment</li>
+                            }
+                            @if (!string.IsNullOrEmpty(product.barCode))
+                            {
+                                <li class="list-group-item">Barcode: @product.barCode</li>
+                            }
+                            <li class="list-group-item bg-gray-light">Unit Price: $ @product.SellingPriceUSD</li>
+                            @if (!string.IsNullOrEmpty(product.PrdDesc))
+                            {
+                                <li class="list-group-item">
+                                    Description
+                                    <pre>@product.PrdDesc</pre>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

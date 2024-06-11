@@ -1,0 +1,149 @@
+﻿@model WebApplication.Models.ProductModel
+<div class="modal fade" id="modal-form">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 id="modal-title" class="modal-title text-secondary">
+                    <i class="fa fa-plus-circle"></i>
+                    @Resources.Buttons.Create
+                </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.HiddenFor(model => model.ProductID, new { htmlAttributes = new { @class = "form-control", @placeholder = "id" } })
+                                @Html.Label("ផលិតផល", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.PrdNameEng, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "ផលិតផល" } })
+                                @Html.ValidationMessageFor(model => model.PrdNameEng, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("ប្រភេទ", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.PrdCategID, ViewBag.CagetoriesList as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                                @Html.ValidationMessageFor(model => model.PrdCategID, "", new { @class = "text-danger" })
+                            </div>
+
+                            @*<div class="form-group">
+                                @Html.Label("អ្នកផ្គត់ផ្គង់", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.SupplierID, ViewBag.SuppliersList as SelectList, new { @class = "form-control select2", @style = "width:100%" })
+                                @Html.ValidationMessageFor(model => model.SupplierID, "", new { @class = "text-danger" })
+                            </div>*@
+
+                            <div class="form-group">
+                                @Html.Label("លេខកូដ", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.OrderComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "លេខកូដ" } })
+                                @Html.ValidationMessageFor(model => model.OrderComment, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("លេខបាកូដ", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.barCode, new { htmlAttributes = new { @class = "form-control", @placeholder = "លេខកូដ" } })
+                                @Html.ValidationMessageFor(model => model.barCode, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("ប្រភេទឯកតា", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.UnitType, new { htmlAttributes = new { @class = "form-control", @placeholder = "ប្រភេទឯកតា" } })
+                                @Html.ValidationMessageFor(model => model.UnitType, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("គំណត់សំគាល់", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.PrdDesc, new { htmlAttributes = new { @class = "form-control", @placeholder = "គំណត់សំគាល់" } })
+                                @Html.ValidationMessageFor(model => model.PrdDesc, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("តម្លៃទិញ", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.BuyingCost, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.BuyingCost, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("តម្លៃលក់", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.SellingPriceUSD, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.SellingPriceUSD, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("តម្លៃលក់ដុំ", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.SellingPriceUSDForThisCus, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.SellingPriceUSDForThisCus, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.Label("ចំនួនតិចបំផុតក្នុងស្តុក", htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.minimalStock, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                                        @Html.ValidationMessageFor(model => model.minimalStock, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("ពន្ធ", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.TaxNote, ViewBag.TaxNoteList as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                                        @Html.ValidationMessageFor(model => model.TaxNote, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("ប្រភេទលុយ", htmlAttributes: new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.Money_Sale_Type, ViewBag.MoneySaleTypeList as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                                        @Html.ValidationMessageFor(model => model.Money_Sale_Type, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @*@Html.Raw(ViewBag.Error)*@
+                                        @Html.Label("រូបភាព", htmlAttributes: new { @class = "control-label" })
+                                        @*<img src="@Url.Content("~/App_Data/Images/default.png")" id="imgPreview" style="margin:10px;" height="100" width="100" />*@
+                                        @Html.TextBox("ImgUpload", "", new { @class = "form-control", @type = "file", @accept = "image/jpeg, image/png" })
+                                        @Html.Hidden("Image", "", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <label>
+                                            @Html.CheckBox("IsUnique") មានតែមួយ
+                                        </label>
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <label style="margin-top:12px;">
+                                            @Html.CheckBox("isCutStock", true) កាត់ស្តុក
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col text-right">
+                            <button type="button" class="btn btn-danger btn-min" data-dismiss="modal">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                @Resources.Buttons.Cancel
+                            </button>
+                            <button type="submit" id="btnSaveOrUpdate" class="btn btn-success btn-min">
+                                <i class="far fa-check-circle"></i>
+                                @Resources.Buttons.Save
+                            </button>
+                            @*<button type="button" id="btnSave" class="btn btn-success btn-min">
+                                <i class="far fa-check-circle"></i>
+                                @Resources.Buttons.Save
+                            </button>*@
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+                <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

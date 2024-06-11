@@ -1,0 +1,72 @@
+﻿@using WebApplication.Helpers
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../../index3.html" class="brand-link">
+        <img src="~/assets/admin/dist/img/AdminLTELogo.png" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">7Technology</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Home")" class="@Html.IsActive("Home", "Index")">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Employees")" class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Employees" ? "nav-link active" : "nav-link inactive")">
+
+                        @*<p>@ViewContext.RouteData.Values["Action"].ToString()</p>*@
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>Employee</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Category")" class="@Html.IsActive("Category", "Index")">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>Category</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Product")" class="@Html.IsActive("Product", "Index")">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>Product</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-flag" aria-hidden="true"></i>
+                        <p>
+                            Language
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("ChangeLanguage", "Home", new { lang = "em", returnUrl = Request.Url.AbsoluteUri })" class="nav-link inactive">
+                                <i class="nav-icon fas fa-globe" aria-hidden="true"></i>
+                                <p>
+                                    English
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("ChangeLanguage", "Home", new { lang = "km", returnUrl = Request.Url.AbsoluteUri })" class="nav-link inactive">
+                                <i class="nav-icon fas fa-globe" aria-hidden="true"></i>
+                                <p>
+                                    Khmer
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,2235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:Extensions.Constants">
+            <summary>
+            Constants used in the Extensions methods.
+            </summary>
+        </member>
+        <member name="T:Extensions.Constants.NumberType">
+            <summary>
+            Enum of the binary number types.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.BitsPerByte">
+            <summary>
+            Number of bits per byte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.KB">
+            <summary>
+            Number of bytes in a Kilobyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.MB">
+            <summary>
+            Number of bytes in a Megabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.GB">
+            <summary>
+            Number of bytes in a Gigabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.TB">
+            <summary>
+            Number of bytes in a Terabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.PB">
+            <summary>
+            Number of bytes in a Petabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.EB">
+            <summary>
+            Number of bytes in a Exabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.ZB">
+            <summary>
+            Number of bytes in a Zettabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.YB">
+            <summary>
+            Number of bytes in a Yottabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.BB">
+            <summary>
+            Number of bytes in a Brontobyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.GpB">
+            <summary>
+            Number of bytes in a Geopbyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.SB">
+            <summary>
+            Number of bytes in a Saganbyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.PaB">
+            <summary>
+            Number of bytes in a Pijabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.AB">
+            <summary>
+            Number of bytes in a Alphabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.PlB">
+            <summary>
+            Number of bytes in a Pectrolbyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.BrB">
+            <summary>
+            Number of bytes in a Bolgerbyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.SoB">
+            <summary>
+            Number of bytes in a Sambobyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.QB">
+            <summary>
+            Number of bytes in a Quesabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.KaB">
+            <summary>
+            Number of bytes in a Kinsabyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.RB">
+            <summary>
+            Number of bytes in a Rutherbyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.DB">
+            <summary>
+            Number of bytes in a Dubnibyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.HB">
+            <summary>
+            Number of bytes in a Hassiubyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.MrB">
+            <summary>
+            Number of bytes in a Meitnerbyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.DdB">
+            <summary>
+            Number of bytes in a Darmstadbyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.RtB">
+            <summary>
+            Number of bytes in a Roentbyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.ShB">
+            <summary>
+            Number of bytes in a Sophobyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.CB">
+            <summary>
+            Number of bytes in a Coperbyte.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.KkB">
+            <summary>
+            Number of bytes in a Koentekbyte.
+            </summary>
+        </member>
+        <member name="T:Extensions.Constants.CompoundFrequency">
+            <summary>
+            Enum of possible frequency in which interest compounding is done.
+            </summary>
+        </member>
+        <member name="T:Extensions.Constants.EncryptionProvider">
+            <summary>
+            List of encryption providers to use.
+            </summary>
+        </member>
+        <member name="T:Extensions.Constants.EnumerableType">
+            <summary>
+            Enum of possible enumerable types.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.HelpStrings">
+            <summary>
+            String array of args that will trigger help text.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.HexChars">
+            <summary>
+            Character array of all hexadecimal lower case characters.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.LoremIpsum">
+            <summary>
+            String array of lorem ipsum text.
+            </summary>
+        </member>
+        <member name="T:Extensions.Constants.MersenneComparisonType">
+            <summary>
+            Enum of possible comparison types in the Mersenne type.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.MorseCode">
+            <summary>
+            Dictionary of alphabetic to Morse code translation values.
+            </summary>
+        </member>
+        <member name="T:Extensions.Constants.QuoteType">
+            <summary>
+            Enum of possible quote types.
+            </summary>
+        </member>
+        <member name="T:Extensions.Constants.SubstringType">
+            <summary>
+            List of processing options for .Substring() method.
+            </summary>
+        </member>
+        <member name="T:Extensions.Constants.TimeSpanSumType">
+            <summary>
+            Enum for the timespan type returned from .Sum()
+            </summary>
+        </member>
+        <member name="T:Extensions.Constants.TimeZone">
+            <summary>
+            Enum of possible time zones.
+            </summary>
+        </member>
+        <member name="F:Extensions.Constants.TimeZones">
+            <summary>
+            Dictionary of time zones and their TimeZoneInfo registry strings.
+            </summary>
+        </member>
+        <member name="T:Extensions.PrimeNumber">
+            <summary>
+            Class to contain prime number details during async processing.
+            </summary>
+        </member>
+        <member name="P:Extensions.PrimeNumber.Number">
+            <summary>
+            The number being evaluated as a prime number.
+            </summary>
+        </member>
+        <member name="P:Extensions.PrimeNumber.IsPrime">
+            <summary>
+            The result of the prime number evaluation.
+            </summary>
+        </member>
+        <member name="M:Extensions.PrimeNumber.#ctor(System.Int64)">
+            <summary>
+            Class constructor method.
+            </summary>
+            <param name="target">The target number to store.</param>
+        </member>
+        <member name="T:Extensions.ArrayExtensions">
+            <summary>
+            Extension methods for the System.Array class.
+            </summary>
+        </member>
+        <member name="M:Extensions.ArrayExtensions.CopyTo(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Copies a given length of bytes from a byte[] starting at a 
+            definable offset.
+            </summary>
+            <param name="bytes">The byte array source being copied from.</param>
+            <param name="length">The number of bytes to copy.</param>
+            <param name="start">The offset starting point to start the copy.</param>
+            <returns>The copied bytes in a byte[].</returns>
+        </member>
+        <member name="M:Extensions.ArrayExtensions.Print(System.Byte[])">
+            <summary>
+            Print the byte[] to console, separated by spaces and space padded
+            on the right to allow proper alignment for debug/testing output.
+            </summary>
+            <param name="bytes">The byte array to print to console.</param>
+        </member>
+        <member name="T:Extensions.DictionaryExtensions">
+            <summary>
+            Extension methods for the System.Collections.Generic.Dictionary class.
+            </summary>
+        </member>
+        <member name="M:Extensions.DictionaryExtensions.ToQueryString(System.Collections.Generic.Dictionary{System.String,System.String},System.Char,System.Char)">
+            <summary>
+            Convert given Dictionary into a querystring.
+            </summary>
+            <param name="dic">The Dictionary containing the source keys and
+            values</param>
+            <param name="separator">The separator character to use.  
+            Defaults to ampersand.</param>
+            <param name="assigner">The assigner characters to use.
+            Defaults to '='.</param>
+            <returns>The constructed querystring ready for use.</returns>
+        </member>
+        <member name="T:Extensions.ListExtensions">
+            <summary>
+            Extension methods for the System.Collections.Generic.List class.
+            </summary>
+        </member>
+        <member name="M:Extensions.ListExtensions.Sum(System.Collections.Generic.List{System.TimeSpan},Extensions.Constants.TimeSpanSumType)">
+            <summary>
+            Calculate the Sum of TimeSpans in the given List.
+            </summary>
+            <param name="lst">The given list of TimeSpans to calculate.</param>
+            <param name="type">The type of return required as defined in the
+            Contants.TimeSpanSumType enum.</param>
+            <returns>The Sum of all the TimeSpans in the list, in the
+            requested format.</returns>
+        </member>
+        <member name="T:Extensions.ConsoleExtensions">
+            <summary>
+            Helper methods for console messages.
+            </summary>
+        </member>
+        <member name="M:Extensions.ConsoleExtensions.WriteHelp(System.String[])">
+            <summary>
+            Write an array of strings to the console in yellow, resetting
+            the console foreground color upon completion.
+            </summary>
+            <param name="lines">The array of strings to write in the 
+            message.</param>
+        </member>
+        <member name="M:Extensions.ConsoleExtensions.WriteHelp(System.String[],System.ConsoleColor)">
+            <summary>
+            Write an array of strings to the console in the given ConsoleColor,
+            resetting the console foreground color upon completion.
+            </summary>
+            <param name="lines">The array of strings to write in the 
+            message.</param>
+            <param name="textColor">The ConsoleColor to use for the text
+            color.</param>
+        </member>
+        <member name="T:Extensions.DateTimeExtensions">
+            <summary>
+            Extensions for the System.DateTime class.
+            </summary>
+        </member>
+        <member name="T:Extensions.ProcessExtensions">
+            <summary>
+            Extensions for the System.Diagnostics.Process class.
+            </summary>
+        </member>
+        <member name="M:Extensions.ProcessExtensions.Elevate(System.Diagnostics.Process,System.String[])">
+            <summary>
+            Elevate the current app to admin level.
+            The call to Process.Elevate() is made at the beginning of the
+            application flow resulting in the app restarting in admin mode.
+            </summary>
+            <param name="proc">The current app process.</param>
+            <param name="args">Array of arguments used to start the app.</param>
+            <returns>Restarts current app in admin mode.</returns>
+        </member>
+        <member name="T:Extensions.DoubleExtensions">
+            <summary>
+            Extension methods for the System.Double class.
+            </summary>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToNumberBytes(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Bytes.
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Bytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToKB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Kilobytes (2^10).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Kilobytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToMB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Megabytes (2^20).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Megabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToGB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Gigabytes (2^30).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Gigabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToTB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Terrabytes (2^40).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Terrabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToPB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Petabytes (2^50).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Petabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToEB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Exabytes (2^60).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Exabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToZB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Zettabytes (2^70).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Zettabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToYB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Yottabytes (2^80).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Yottabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToBB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Brontobytes (2^90).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Brontobytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToGpB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Geopbytes (2^100).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Geopbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToSB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Saganbytes (2^110).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Saganbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToPaB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Pijabytes (2^120).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Pijabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToAB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Alphabytes (2^130).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Alphabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToPlB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Pectrolbytes (2^140).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Pectrolbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToBrB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Bolgerbytes (2^150).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Bolgerbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToSoB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Sambobytes (2^160).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Sambobytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToQB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Quesabytes (2^170).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Quesabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToKaB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Kinsabytes (2^180).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Kinsabytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToRB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Rutherbytes (2^190).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Rutherbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToDB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Dubnibytes (2^200).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Dubnibytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToHB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Hassiubytes (2^210).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Hassiubytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToMrB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Meitnerbytes (2^220).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Meitnerbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToDdB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Darmstadbytes (2^230).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Darmstadbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToRtB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Roentbytes (2^240).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Roentbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToShB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Sophobytes (2^250).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Sophobytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToCB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Coperbytes (2^260).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Coperbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToKkB(System.Double,Extensions.Constants.NumberType)">
+            <summary>
+            Returns the given number expressed as Koentekbytes (2^270).
+            </summary>
+            <param name="number">The given number to convert.</param>
+            <param name="fromType">The number type of the given number.</param>
+            <returns>Returns the given number in Koentekbytes.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.CompoundInterest(System.Double,System.Double,System.Int32,Extensions.Constants.CompoundFrequency)">
+            <summary>
+            Calculate compounded interest end value given an amount, percent
+            interest per year and number of years.
+            </summary>
+            <param name="amount">The starting amount.</param>
+            <param name="percent">The annual interest rate 
+            i.e. 4% = 4 not 0.04</param>
+            <param name="years">The years of interest to calculate.</param>
+            <param name="frequency">The frequency with which interest is
+            applied.</param>
+            <returns>The compounded value.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.ToInt16(System.Double)">
+            <summary>
+            Shorthand extension encapsulating Convert.ToInt16() allowing
+            syntax changes from this:
+            ...Convert.ToInt16(doubleValue)...
+            to:
+            ...doubleValue.ToInt16()...
+            </summary>
+            <param name="number">The double value to convert.</param>
+            <returns>The value as Int16 format.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.IsEven(System.Double)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.IsOdd(System.Double)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.DoubleExtensions.IsPrime(System.Double)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to evaluate as a prime.</param>
+            <returns>True if the given number is prime, else False.</returns>
+        </member>
+        <member name="T:Extensions.Guid">
+            <summary>
+            Extensions for the Guid class.
+            </summary>
+        </member>
+        <member name="M:Extensions.Guid.NewCustomGuid(System.String)">
+            <summary>
+            Returns a custom GUID starting with a custom string.
+            </summary>
+            <param name="StartWith">A string containing hexadecimal
+            characters with which the GUID should start.</param>
+            <returns>A System.Guid that starts with the given characters.</returns>
+        </member>
+        <member name="T:Extensions.Int16Extensions">
+            <summary>
+            Extensions for the System.Int16 class.
+            </summary>
+        </member>
+        <member name="M:Extensions.Int16Extensions.IsEven(System.Int16)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.Int16Extensions.IsOdd(System.Int16)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.Int16Extensions.IsPrime(System.Int16)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to evaluate as a prime.</param>
+            <returns>True if the given number is prime, else False.</returns>
+        </member>
+        <member name="T:Extensions.Int32Extensions">
+            <summary>
+            Extensions for the System.Int32 class.
+            </summary>
+        </member>
+        <member name="M:Extensions.Int32Extensions.IsEven(System.Int32)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.Int32Extensions.IsOdd(System.Int32)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.Int32Extensions.IsPrime(System.Int32)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to evaluate as a prime.</param>
+            <returns>True if the given number is prime, else False.</returns>
+        </member>
+        <member name="T:Extensions.Int64Extensions">
+            <summary>
+            Extensions for the System.Int64 class.
+            </summary>
+        </member>
+        <member name="M:Extensions.Int64Extensions.IsEven(System.Int64)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.Int64Extensions.IsOdd(System.Int64)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.Int64Extensions.IsPrime(System.Int64)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to evaluate as a prime.</param>
+            <returns>True if the given number is prime, else False.</returns>
+        </member>
+        <member name="T:Extensions.LongExtensions">
+            <summary>
+            Extensions to the long class.
+            </summary>
+        </member>
+        <member name="M:Extensions.LongExtensions.IsEven(System.Int64)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.LongExtensions.IsOdd(System.Int64)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.LongExtensions.IsPrime(System.Int64)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to evaluate as a prime.</param>
+            <returns>True if the given number is prime, else False.</returns>
+        </member>
+        <member name="T:Extensions.Mersenne64">
+            <summary>
+            ***NEW*** value Type designed to hold excessively large numbers
+            such as Mersenne Prime numbers, hence the name.
+            10 bits (1111111111) = 1024 i.e. holds 3 digits.
+            Cornellion = 1 with 100,000,000 zeros.
+            Cornellion requires 333,333,334 bits to represent.
+            </summary>
+        </member>
+        <member name="F:Extensions.Mersenne64.divident">
+            <summary>
+            The bit map that holds the bitwise representation of the Mersenne
+            number.
+            </summary>
+        </member>
+        <member name="M:Extensions.Mersenne64.#ctor(System.Boolean[])">
+            <summary>
+            Class constructor.  Default is to initialize all bits as 1 for
+            333,333,334 bits i.e. represent the first number with 
+            100,000,000 digits.
+            </summary>
+            <param name="InitialValue">A bit array to use as default value.</param>
+        </member>
+        <member name="M:Extensions.Mersenne64.op_Division(Extensions.Mersenne64,Extensions.Mersenne64)">
+            <summary>
+            
+            </summary>
+            <param name="divident"></param>
+            <param name="dividor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Extensions.WebExceptionExtensions">
+            <summary>
+            Extension methods for the System.Net.WebException class.
+            </summary>
+        </member>
+        <member name="M:Extensions.WebExceptionExtensions.Retry(System.Net.WebException,System.Net.HttpWebRequest)">
+            <summary>
+            This extension of the System.Net.WebException class allows
+            developers an easy way to handle 429 Throttling errors.  When
+            the WebException is caught, you simply call Retry() on the 
+            exception, passing the request to it.  The handler will inspect
+            the HTTP Header for the "Retry-After" property and will sleep
+            the current thread for that period of time plus 1 minute.  Once
+            the thread reanimates, it will retry the request again.  If 
+            further throttling is encountered, the code will recursively
+            sleep until the request is successfully completed.
+            When no "Retry-After" header property exist, the exception is
+            simply rethrown.
+            </summary>
+            <param name="ex">The WebException thrown by throttling.</param>
+            <param name="request">The HttpWebRequest that caused the exception
+            to be thrown in the first place.</param>
+            <returns>The HttpWebResponse from the successful completion of
+            the HttpWebRequest.</returns>
+        </member>
+        <member name="T:Extensions.ObjectExtensions">
+            <summary>
+            Extension class to add Extension Properties to any class.
+            </summary>
+        </member>
+        <member name="F:Extensions.ObjectExtensions.extensionProperties">
+            <summary>
+            The private dictionary object where extension properties are stored.
+            </summary>
+        </member>
+        <member name="M:Extensions.ObjectExtensions.Get(System.Object,System.String)">
+            <summary>
+            Get the value of an extension property in the dictionary.
+            </summary>
+            <param name="obj">Our binding class.</param>
+            <param name="key">The key for the value to be returned.
+            This value is usually the name of the extension property
+            who's value is being returned.</param>
+            <returns>An object representing the value of the extension
+            property.  You would have to manually cast the return value
+            to the proper data type you know it to be.</returns>
+        </member>
+        <member name="M:Extensions.ObjectExtensions.Set(System.Object,System.String,System.Object)">
+            <summary>
+            Set the value of an extension property in the dictionary.
+            </summary>
+            <param name="obj">Our binding class.</param>
+            <param name="key">The key for the value.  This value is usually
+            the name of the extension property being stored.</param>
+            <param name="val">The value to which to set the extension
+            property.</param>
+        </member>
+        <member name="T:Extensions.ShortExtensions">
+            <summary>
+            Extensions to the long class.
+            </summary>
+        </member>
+        <member name="M:Extensions.ShortExtensions.IsEven(System.Int16)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.ShortExtensions.IsOdd(System.Int16)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.ShortExtensions.IsPrime(System.Int16)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to evaluate as a prime.</param>
+            <returns>True if the given number is prime, else False.</returns>
+        </member>
+        <member name="T:Extensions.StringExtensions">
+            <summary>
+            Extension methods for the System.String and System.Text.StringBuilder
+            classes.
+            </summary>
+        </member>
+        <member name="M:Extensions.StringExtensions.ContainsAny(System.String,System.Char[])">
+            <summary>
+            Checks if the given string contains any of the strings provided in
+            the IEnumerable.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="chars">The character array to validate against.</param>
+            <returns>True if the given string contains any characters provided
+            in the character array, otherwise False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ContainsAny(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Checks if the given string contains any of the strings provided in
+            the IEnumerable.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="strings">The IEnumerable i.e. List of strings or
+            string array to validate against.</param>
+            <returns>True if the given string contains any of the strings
+            provided in the IEnumerable, otherwise False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ContainsAny(System.Text.StringBuilder,System.Char[])">
+            <summary>
+            Checks if the given string contains any of the strings provided in
+            the IEnumerable.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="chars">The character array to validate against.</param>
+            <returns>True if the given string contains any characters provided
+            in the character array, otherwise False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ContainsAny(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Checks if the given string contains any of the strings provided in
+            the IEnumerable.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="strings">The IEnumerable i.e. List of strings or
+            string array to validate against.</param>
+            <returns>True if the given string contains any of the strings
+            provided in the IEnumerable, otherwise False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ContainsOnly(System.String,System.Char[])">
+            <summary>
+            Checks if the given string contains only the characters provided in
+            the IEnumerable.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="chars">The character array to validate against.</param>
+            <returns>True if the given string only contains characters provided
+            in the IEnumerable, otherwise False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ContainsOnly(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Checks if the given string contains only the strings provided in
+            the IEnumerable.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="strings">The IEnumerable i.e. List of strings or
+            string array to validate against.</param>
+            <returns>True if the given string only contains strings provided
+            in the IEnumerable, otherwise False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ContainsOnly(System.Text.StringBuilder,System.Char[])">
+            <summary>
+            Checks if the given string contains only the characters provided in
+            the IEnumerable.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="chars">The character array to validate against.</param>
+            <returns>True if the given string only contains characters provided
+            in the IEnumerable, otherwise False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ContainsOnly(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Checks if the given string contains only the strings provided in
+            the IEnumerable.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="strings">The IEnumerable i.e. List of strings or
+            string array to validate against.</param>
+            <returns>True if the given string only contains strings provided
+            in the IEnumerable, otherwise False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.DoubleQuote(System.String)">
+            <summary>
+            Return the given string encased in double quotes.
+            </summary>
+            <param name="str">The given string to be quoted.</param>
+            <returns>The given string encased in double quotes.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.DoubleQuote(System.Text.StringBuilder)">
+            <summary>
+            Return the given string encased in double quotes.
+            </summary>
+            <param name="str">The given string to be quoted.</param>
+            <returns>The given string encased in double quotes.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ExceedsLength(System.String,System.Int32@,System.Boolean)">
+            <summary>
+            Checks if a referenced offset exceeds the length of the string.
+            </summary>
+            <param name="str">The current string to check against.</param>
+            <param name="offset">The referenced offset value.</param>
+            <param name="increment">Should the offset be incremented before
+            the length comparison takes place.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ExceedsLength(System.Text.StringBuilder,System.Int32@,System.Boolean)">
+            <summary>
+            Checks if a referenced offset exceeds the length of the string.
+            </summary>
+            <param name="str">The current string to check against.</param>
+            <param name="offset">The referenced offset value.</param>
+            <param name="increment">Should the offset be incremented before
+            the length comparison takes place.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.GetUrlRoot(System.String)">
+            <summary>
+            Get the URL root for the given string object containing a URL.
+            For example:
+              "https://blog.cjvandyk.com".GetUrlRoot() 
+              will return "https://blog.cjvandyk.com" whereas
+              "https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()
+              will also return "https://blog.cjvandyk.com".
+            </summary>
+            <param name="url">The System.String object containing the URL
+            from which the root is to be extracted.</param>
+            <returns>The root of the URL given the URL string.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.GetUrlRoot(System.Text.StringBuilder)">
+            <summary>
+            Get the URL root for the given string builder object containing a
+            URL.  For example:
+              "https://blog.cjvandyk.com".GetUrlRoot() 
+              will return "https://blog.cjvandyk.com" whereas
+              "https://blog.cjvandyk.com/sites/Approval".GetUrlRoot()
+              will also return "https://blog.cjvandyk.com".
+            </summary>
+            <param name="url">The System.Text.StringBuilder object containing
+            the URL from which the root is to be extracted.</param>
+            <returns>The root of the URL given the URL string.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HasLower(System.String,System.Boolean)">
+            <summary>
+            Check if given System.String object contains lower case.
+            </summary>
+            <param name="str">The string object to check.</param>
+            <param name="ignoreSpaces">Remove spaces before checking?</param>
+            <returns>True if the object contains any lower case, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HasLower(System.Text.StringBuilder)">
+            <summary>
+            Check if given System.Text.StringBuilder object contains lower case.
+            </summary>
+            <param name="str">The string object to check.</param>
+            <returns>True if the string contains any lower case, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HasNumeric(System.String,System.Boolean)">
+            <summary>
+            Checks if the given string contains any numeric characters.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if any characters in the given string are numeric,
+            else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HasNumeric(System.Text.StringBuilder,System.Boolean)">
+            <summary>
+            Checks if the given string contains any numeric characters.
+            </summary>
+            <param name="str">The given string builder object to check.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if any characters in the given string are numeric,
+            else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HasSymbol(System.String,System.Boolean)">
+            <summary>
+            Checks if the given System.String object contains symbols or 
+            special characters.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if any characters in the given string are 
+            symbols or special characters, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HasSymbol(System.Text.StringBuilder,System.Boolean,System.Boolean)">
+            <summary>
+            Checks if the given System.Text.StringBuilder object contains
+            symbols or special characters.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <param name="Classic">Use non-RegEx method.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if all characters in the given string contains
+            any symbols or special characters, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HasUpper(System.String,System.Boolean)">
+            <summary>
+            Check if given System.String object contains upper case.
+            </summary>
+            <param name="str">The string object to check.</param>
+            <param name="ignoreSpaces">Remove spaces before checking?</param>
+            <returns>True if the string contains any upper case, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HasUpper(System.Text.StringBuilder)">
+            <summary>
+            Check if given System.Text.StringBuilder object contains upper case.
+            </summary>
+            <param name="str">The string object to check.</param>
+            <returns>True if the string contains any upper case, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HtmlDecode(System.String)">
+            <summary>
+            Decode the HTML escaped components in a given string.
+            </summary>
+            <param name="str">The given source string to decode.</param>
+            <returns>The given source string without HTML escaped components.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HtmlDecode(System.Text.StringBuilder)">
+            <summary>
+            Decode the HTML escaped components in a given string.
+            </summary>
+            <param name="str">The given source string to decode.</param>
+            <returns>The given source string without HTML escaped components.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HtmlEncode(System.String)">
+            <summary>
+            Encode the given string to be HTML safe.
+            </summary>
+            <param name="str">The given source string to encode.</param>
+            <returns>The given source string in HTML safe format.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.HtmlEncode(System.Text.StringBuilder)">
+            <summary>
+            Encode the given string to be HTML safe.
+            </summary>
+            <param name="str">The given source string to encode.</param>
+            <returns>The given source string in HTML safe format.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsAlphabetic(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Checks if the given string contains all alphabetic characters.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <param name="Classic">Switch to force RegEx comparison instead of
+            Linq.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if all characters in the given string are alphabetic,
+            else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsAlphabetic(System.Text.StringBuilder,System.Boolean,System.Boolean)">
+            <summary>
+            Checks if the given string contains all alphabetic characters.
+            </summary>
+            <param name="str">The given string builder object to check.</param>
+            <param name="Classic">Switch to force RegEx comparison instead
+            of Linq.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if all characters in the given string are alphabetic,
+            else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsAlphaNumeric(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Checks if the given string contains only alphabetic and numeric 
+            characters.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <param name="Classic">Switch to force RegEx comparison instead of 
+            Linq.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if all characters in the given string are either 
+            alphabetic or numeric, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsAlphaNumeric(System.Text.StringBuilder,System.Boolean,System.Boolean)">
+            <summary>
+            Checks if the given string contains only alphabetic and numeric 
+            characters.
+            </summary>
+            <param name="str">The given string builder object to check.</param>
+            <param name="Classic">Switch to force RegEx comparison instead of 
+            Linq.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if all characters in the given string are either 
+            alphabetic or numeric, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsChar(System.String,System.Char[],System.Boolean)">
+            <summary>
+            Check if the given string contains only the characters in the 
+            Chars array being passed.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <param name="Chars">The array of valid characters that are checked
+            in the string.</param>
+            <param name="Classic">Switch to force RegEx comparison instead of
+            Linq.</param>
+            <returns>True if the given string contains only characters in the 
+            Chars array, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsChar(System.Text.StringBuilder,System.Char[],System.Boolean)">
+            <summary>
+            Check if the given string contains only the characters in the
+            Chars array being passed.
+            </summary>
+            <param name="str">The given string builder object to check.</param>
+            <param name="Chars">The array of valid characters that are checked
+            in the string.</param>
+            <param name="Classic">Switch to force RegEx comparison instead of
+            Linq.</param>
+            <returns>True if the given string contains only characters in the
+            Chars array, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsEmail(System.String)">
+            <summary>
+            Checks if a given System.String object is an email address.
+            </summary>
+            <param name="str">The System.String to validate as email.</param>
+            <returns>True if email, false if not.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsEmail(System.Text.StringBuilder)">
+            <summary>
+            Checks if a given System.Text.StringBuilder object is an email
+            address.
+            </summary>
+            <param name="str">The System.Text.StringBuilder to validate as
+            email.</param>
+            <returns>True if email, false if not.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsLower(System.String,System.Boolean)">
+            <summary>
+            Check if given System.String object is all lower case.
+            </summary>
+            <param name="str">The string object to check.</param>
+            <param name="ignoreSpaces">Remove spaces before checking?</param>
+            <returns>True if the object is all lower case, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsLower(System.Text.StringBuilder)">
+            <summary>
+            Check if given System.Text.StringBuilder object is all lower case.
+            </summary>
+            <param name="str">The string object to check.</param>
+            <returns>True if the entire string is lower case, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsNumeric(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Checks if the given string contains all numeric characters.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <param name="Classic">Switch to force RegEx comparison instead
+            of Linq.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if all characters in the given string are numeric,
+            else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsNumeric(System.Text.StringBuilder,System.Boolean,System.Boolean)">
+            <summary>
+            Checks if the given string contains all numeric characters.
+            </summary>
+            <param name="str">The given string builder object to check.</param>
+            <param name="Classic">Switch to force RegEx comparison instead of 
+            Linq.</param>
+            <param name="ignoreSpaces">Remove spaces before compare?</param>
+            <returns>True if all characters in the given string are numeric,
+            else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsStrong(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Checks if the given System.String object is a strong password
+            string.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="numberCriteriaRequired">The number of strong criteria
+            that are required to be checked for.</param>
+            <param name="requireUpper">Are upper case characters required?
+            Default is Yes.</param>
+            <param name="requireLower">Are lower case characters required?
+            Default is Yes.</param>
+            <param name="requireNumeric">Are numbers required?
+            Default is Yes.</param>
+            <param name="requireSymbol">Are symbols or special characters 
+            required?  Default is Yes.</param>
+            <returns>True if string matches all require... criteria, 
+            else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsStrong(System.Text.StringBuilder,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Checks if the given System.Test.StringBuilder object is a strong 
+            password string.
+            </summary>
+            <param name="str">The given string to check.</param>
+            <param name="numberCriteriaRequired">The number of strong criteria
+            that are required to be checked for.</param>
+            <param name="requireUpper">Are upper case characters required?
+            Default is Yes.</param>
+            <param name="requireLower">Are lower case characters required?
+            Default is Yes.</param>
+            <param name="requireNumeric">Are numbers required?
+            Default is Yes.</param>
+            <param name="requireSymbol">Are symbols or special characters 
+            required?  Default is Yes.</param>
+            <returns>True if string matches all require... criteria, 
+            else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsUpper(System.String,System.Boolean)">
+            <summary>
+            Check if given System.String object is all upper case.
+            </summary>
+            <param name="str">The string object to check.</param>
+            <param name="ignoreSpaces">Remove spaces before checking?</param>
+            <returns>True if the entire string is upper case, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsUpper(System.Text.StringBuilder)">
+            <summary>
+            Check if given System.Text.StringBuilder object is all upper case.
+            </summary>
+            <param name="str">The string object to check.</param>
+            <returns>True if the entire string is upper case, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsUrlRoot(System.String)">
+            <summary>
+            Check if the given string object containing a URL, is that of the
+            URL root only.  Returns True if so, False if not.  For example:
+              "https://blog.cjvandyk.com".IsUrlRootOnly() 
+              will return True whereas
+              "https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()
+              will return False.
+            </summary>
+            <param name="url">The System.String object containing the URL to 
+            be checked.</param>
+            <returns>True if the URL is a root, False if not.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsUrlRoot(System.Text.StringBuilder)">
+            <summary>
+            Check if the given string builder object containing a URL, is that
+             of the URL root only.  Returns True if so, False if not.  
+             For example:
+              "https://blog.cjvandyk.com".IsUrlRootOnly() 
+              will return True whereas
+              "https://blog.cjvandyk.com/sites/Approval".IsUrlRootOnly()
+              will return False.
+            </summary>
+            <param name="url">The System.Text.StringBuilder object containing 
+            the URL to be checked.</param>
+            <returns>True if the URL is a root, False if not.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsVowel(System.Char)">
+            <summary>
+            Checks if the given System.Char is an English vowel.
+            </summary>
+            <param name="C">The char to check.</param>
+            <returns>True if it's a vowel, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsVowel(System.String)">
+            <summary>
+            Checks if the given System.String is an English vowel.
+            This allows the developer the ability to check a string without
+            having to first convert to a char e.g. as a substring return.
+            </summary>
+            <param name="str">The string to check.</param>
+            <returns>True if it's a vowel, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsVowel(System.Text.StringBuilder)">
+            <summary>
+            Checks if the given System.Test.StringBuilder is an English vowel.
+            This allows the developer the ability to check a string without
+            having to first convert to a char e.g. as a substring return.
+            </summary>
+            <param name="str">The string to check.</param>
+            <returns>True if it's a vowel, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsZipCode(System.String)">
+            <summary>
+            Checks if the given System.String object is in the valid format
+            of a United States zip code i.e. nnnnn-nnnn or just nnnnn.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <returns>True if in valid format, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsZipCode(System.Text.StringBuilder)">
+            <summary>
+            Checks if the given System.Text.StringBuilder object is in the
+            valid format of a United States zip code i.e. nnnnn-nnnn or
+            just nnnnn.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <returns>True if in valid format, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.IsZipCode5Digits(System.String)">
+            <summary>
+            Checks if the given System.String is 5 digits long and numeric.
+            </summary>
+            <param name="str">The given string object to check.</param>
+            <returns>True if a 5 digit numeric, else False.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Lines(System.String)">
+            <summary>
+            Returns the number of sentences in the given string object.
+            </summary>
+            <param name="str">A System.String object.</param>
+            <returns>The number of sentences in the given object.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Lines(System.Text.StringBuilder)">
+            <summary>
+            Returns the number of sentences in the given string builder object.
+            </summary>
+            <param name="str">A System.Text.StringBuilder object.</param>
+            <returns>The number of sentences in the given object.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.LoremIpsum(System.String,System.Int32)">
+            <summary>
+            Returns a string containing 1 - 10 paragraphs of dummy text
+            in lorem ipsum style.
+            </summary>
+            <param name="str">The System.String object to be populated with
+            the dummy text.</param>
+            <param name="Paragraphs">An integer with the number of paragraphs
+            to be returned.  Presently supports 1-10</param>
+            <returns>The string containing the generated dummy text.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.LoremIpsum(System.Text.StringBuilder,System.Int32)">
+            <summary>
+            Returns a string containing 1 - 10 paragraphs of dummy text
+            in lorem ipsum style.
+            </summary>
+            <param name="str">The System.String object to be populated with
+            the dummy text.</param>
+            <param name="Paragraphs">An integer with the number of paragraphs
+            to be returned.  Presently supports 1-10</param>
+            <returns>The string containing the generated dummy text.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Match(System.String,System.String,System.Boolean)">
+            <summary>
+            Checks if the current string matches a given search mask.
+            It ignores duplicate '*' in the mask.  '*' is matched against
+            0 or more characters.  Duplicate '?' is treated as requiring
+            the number of characters.  '?' is matched against 1 or more
+            characters.
+            For example:
+                "abcdefgh".Match("***a?c*")
+            will return True while
+                "abcdefgh".Match("***ac*")
+            will return False but
+                "abcdefgh".Match("?a?c*")
+            will also return False because the first '?' requires a character
+            before 'a'.
+            </summary>
+            <param name="str">The current string being matched.</param>
+            <param name="mask">The search mask being used for the match.</param>
+            <param name="ignoreCase">Switch to ignore case sensitivity.</param>
+            <returns>True if the current string matches the given search mask.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Match(System.Text.StringBuilder,System.String,System.Boolean)">
+            <summary>
+            Checks if the current string matches a given search mask.
+            It ignores duplicate '*' in the mask.  '*' is matched against
+            0 or more characters.  Duplicate '?' is treated as requiring
+            the number of characters.  '?' is matched against 1 or more
+            characters.
+            For example:
+                "abcdefgh".Match("***a?c*")
+            will return True while
+                "abcdefgh".Match("***ac*")
+            will return False but
+                "abcdefgh".Match("?a?c*")
+            will also return False because the first '?' requires a character
+            before 'a'.
+            </summary>
+            <param name="str">The current string being matched.</param>
+            <param name="mask">The search mask being used for the match.</param>
+            <param name="ignoreCase">Switch to ignore case sensitivity.</param>
+            <returns>True if the current string matches the given search mask.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.MorseCodeBeep(System.String,System.Int32,System.Int32)">
+            <summary>
+            Takes a given System.String representing Morse code and audiblize
+            it according to standards.
+            https://www.infoplease.com/encyclopedia/science/engineering/electrical/morse-code
+            Assumes the input value to be in Morse code format already.
+            Use .ToMorseCode() to pre-convert text if needed.
+            </summary>
+            <param name="str">The System.String text in Morse code format.</param>
+            <param name="frequency">The beep frequency.</param>
+            <param name="duration">The duration of a dot beep in ms.</param>
+        </member>
+        <member name="M:Extensions.StringExtensions.MorseCodeBeep(System.Text.StringBuilder,System.Int32,System.Int32)">
+            <summary>
+            Takes a given System.Text.StringBuilder representing Morse code
+            and audiblize it according to standards.
+            https://www.infoplease.com/encyclopedia/science/engineering/electrical/morse-code
+            Assumes the input value to be in Morse code format already.
+            Use .ToMorseCode() to pre-convert text if needed.
+            </summary>
+            <param name="str">The System.Text.StringBuilder text in Morse
+            code format.</param>
+            <param name="frequency">The beep frequency.</param>
+            <param name="duration">The duration of a dot beep in ms.</param>
+        </member>
+        <member name="M:Extensions.StringExtensions.Quote(System.String,Extensions.Constants.QuoteType)">
+            <summary>
+            Return the given string encased in requested quotes.
+            Default is Constants.QuoteType.Double.
+            </summary>
+            <param name="str">The given string to be quoted.</param>
+            <param name="type">The type of quote to use.  Defaults to double.</param>
+            <returns>The given string encased in requested quotes.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Quote(System.Text.StringBuilder,Extensions.Constants.QuoteType)">
+            <summary>
+            Return the given string encased in requested quotes.
+            Default is Constants.QuoteType.Double.
+            </summary>
+            <param name="str">The given string to be quoted.</param>
+            <param name="type">The type of quote to use.  Defaults to double.</param>
+            <returns>The given string encased in requested quotes.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ReplaceTokens(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Takes a given string and replaces 1 to n tokens in the string
+            with replacement tokens as defined in the given Dictionary
+            of strings.
+            </summary>
+            <param name="str">The System.String object upon which token
+            replacement is to be done.</param>
+            <param name="tokens">A Dictionary of tokens and replacement
+            strings to be used for replacement.</param>
+            <returns>A System.String value with tokens replaced.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ReplaceTokens(System.Text.StringBuilder,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Takes a given string and replaces 1 to n tokens in the string
+            with replacement tokens as defined in the given Dictionary
+            of strings.
+            </summary>
+            <param name="str">The System.Text.StringBuilder upon which
+            token replacement is to be one.</param>
+            <param name="tokens">A Dictionary of tokens and replacement
+            strings to be used for replacement.</param>
+            <returns>A System.Text.StringBuilder value with tokens replaced.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.RemoveExtraSpace(System.String)">
+            <summary>
+            Trims leading and trailing white space and then removes all extra
+            white space in the given System.String object returning a single
+            spaced result.
+            </summary>
+            <param name="str">The given System.String object from which
+            extra spaces needs to be removed.</param>
+            <returns>The given string object with leading and strailing white
+            space removed and all other spaces reduced to single space.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.RemoveExtraSpace(System.Text.StringBuilder)">
+            <summary>
+            Trims leading and trailing white space and then removes all extra
+            white space in the given System.Text.StringBuilder returning a 
+            single spaced result.
+            </summary>
+            <param name="str">The given System.Text.StringBuilder object from
+            which extra spaces needs to be removed.</param>
+            <returns>The given string object with leading and strailing white
+            space removed and all other spaces reduced to single space.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.SingleQuote(System.String)">
+            <summary>
+            Return the given string encased in single quotes.
+            </summary>
+            <param name="str">The given string to be quoted.</param>
+            <returns>The given string encased in single quotes.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.SingleQuote(System.Text.StringBuilder)">
+            <summary>
+            Return the given string encased in single quotes.
+            </summary>
+            <param name="str">The given string to be quoted.</param>
+            <returns>The given string encased in single quotes.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Singularize(System.String,System.Char,System.Boolean)">
+            <summary>
+            Parses the given string removing multiples of a given character.
+            </summary>
+            <param name="str">The string to parse.</param>
+            <param name="target">The character to de-duplicate.</param>
+            <param name="ignoreCase">Switch to ignore case during comparrison.</param>
+            <returns>The given string with multiples of the given character
+            removed.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Singularize(System.Text.StringBuilder,System.Char,System.Boolean)">
+            <summary>
+            Parses the given string removing multiples of a given character.
+            </summary>
+            <param name="str">The string to parse.</param>
+            <param name="target">The character to de-duplicate.</param>
+            <param name="ignoreCase">Switch to ignore case during comparrison.</param>
+            <returns>The given string with multiples of the given character
+            removed.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Substring(System.String,System.Int32,Extensions.Constants.SubstringType)">
+            <summary>
+            Extension method to handle FromHead and FromTail types
+            which allows the caller to return the requested length
+            of characters from the head of the given string.
+            </summary>
+            <param name="str">The given string that is being searched.</param>
+            <param name="length">The requested length of characters to return.</param>
+            <param name="type">The type of return string requested.</param>
+            <returns>FromHead returns the "length" of characters from the head
+            of the given string.
+            FromTail returns the "length" of characters from the tail of the
+            given string.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Substring(System.String,System.Int32,System.String,Extensions.Constants.SubstringType,System.Int32)">
+            <summary>
+            Extension method to handle LeftOfIndex and RightOfIndex types
+            which allows the caller to locate a given number of occurrences
+            of a given search string and then return the requested length
+            of characters to either the left or the rigth of the located
+            search index.
+            </summary>
+            <param name="str">The given string that is being searched.</param>
+            <param name="length">The requested length of characters to return.</param>
+            <param name="index">The string to search for.</param>
+            <param name="type">The type of return string requested.</param>
+            <param name="occurrence">The number of occurrences to match.</param>
+            <returns>LeftOfIndex returns the "length" of characters to the LEFT
+            of the located index representing the "occurence"th match of the
+            "index" string.
+            RightOfIndex returns the "length" of characters to the RIGHT
+            of the located index representing the "occurence"th match of the
+            "index" string.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Substring(System.Text.StringBuilder,System.Int32,Extensions.Constants.SubstringType)">
+            <summary>
+            Extension method to handle FromHead and FromTail types
+            which allows the caller to return the requested length
+            of characters from the head of the given string.
+            </summary>
+            <param name="str">The given string that is being searched.</param>
+            <param name="length">The requested length of characters to return.</param>
+            <param name="type">The type of return string requested.</param>
+            <returns>FromHead returns the "length" of characters from the head
+            of the given string.
+            FromTail returns the "length" of characters from the tail of the
+            given string.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Substring(System.Text.StringBuilder,System.Int32,System.String,Extensions.Constants.SubstringType,System.Int32)">
+            <summary>
+            Extension method to handle LeftOfIndex and RightOfIndex types
+            which allows the caller to locate a given number of occurrences
+            of a given search string and then return the requested length
+            of characters to either the left or the rigth of the located
+            search index.
+            </summary>
+            <param name="str">The given string that is being searched.</param>
+            <param name="length">The requested length of characters to return.</param>
+            <param name="index">The string to search for.</param>
+            <param name="type">The type of return string requested.</param>
+            <param name="occurrence">The number of occurrences to match.</param>
+            <returns>LeftOfIndex returns the "length" of characters to the LEFT
+            of the located index representing the "occurence"th match of the
+            "index" string.
+            RightOfIndex returns the "length" of characters to the RIGHT
+            of the located index representing the "occurence"th match of the
+            "index" string.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Substring(System.Text.StringBuilder,System.Int32)">
+            <summary>
+            Retrieves a substring from this instance. The substring starts 
+            at a specified character position and continues to the end of the
+            string.
+            </summary>
+            <param name="str">The StringBuilder source instance.</param>
+            <param name="startIndex">The starting position of the substring
+            selection.</param>
+            <returns>A string that is equivalent to the substring that begins
+            at startIndex in this instance, or System.String.Empty if
+            startIndex is equal to the length of this instance.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Substring(System.Text.StringBuilder,System.Int32,System.Int32)">
+            <summary>
+            Retrieves a substring from this instance. The substring starts at
+            a specified character position and has a specified length.
+            </summary>
+            <param name="str">The StringBuilder source instance.</param>
+            <param name="startIndex">The starting position of the substring
+            selection.</param>
+            <param name="length">The length of the substring to be selected.</param>
+            <returns>A string that is equivalent to the substring of length
+            length that begins at startIndex in this instance, or 
+            System.String.Empty if startIndex is equal to the length of this
+            instance and length is zero.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ToBinary(System.String)">
+            <summary>
+            Returns the binary representation of a given string object.
+            </summary>
+            <param name="str">The System.String object to convert to binary.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ToBinary(System.Text.StringBuilder)">
+            <summary>
+            Returns the binary representation of a given StringBuilder object.
+            </summary>
+            <param name="str">The System.Text.StringBuilder object to convert
+            to binary.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ToEnum``1(System.String)">
+            <summary>
+            Convert a System.String to its Enum value.
+            </summary>
+            <typeparam name="T">The enum type.</typeparam>
+            <param name="str">The string to match to an enum.</param>
+            <returns>The enum value.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ToEnum``1(System.Text.StringBuilder)">
+            <summary>
+            Convert a System.String to its Enum value.
+            </summary>
+            <typeparam name="T">The enum type.</typeparam>
+            <param name="str">The string to match to an enum.</param>
+            <returns>The enum value.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.QueryStringToDictionary(System.String,System.Char,System.Char)">
+            <summary>
+            Converts the given querystring to a Dictionary.
+            </summary>
+            <param name="str">The given querystring to convert.</param>
+            <param name="separator">Defaults to ampersand per W3C standards.</param>
+            <param name="assigner">Defaults to = per W3C standards.</param>
+            <returns>The parsed dictionary containing querystring values.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.QueryStringToDictionary(System.Text.StringBuilder,System.Char,System.Char)">
+            <summary>
+            Converts the given querystring to a Dictionary.
+            </summary>
+            <param name="str">The given querystring to convert.</param>
+            <param name="separator">Defaults to ampersand per W3C standards.</param>
+            <param name="assigner">Defaults to = per W3C standards.</param>
+            <returns>The parsed dictionary containing querystring values.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.QueryStringToNameValueCollection(System.String,System.Char,System.Char)">
+            <summary>
+            Converts the given querystring to a NameValueCollection.
+            </summary>
+            <param name="str">The given querystring to convert.</param>
+            <param name="separator">Defaults to ampersand per W3C standards.</param>
+            <param name="assigner">Defaults to = per W3C standards.</param>
+            <returns>The parsed NameValueCollection containing querystring
+            values.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.QueryStringToNameValueCollection(System.Text.StringBuilder,System.Char,System.Char)">
+            <summary>
+            Converts the given querystring to a NameValueCollection.
+            </summary>
+            <param name="str">The given querystring to convert.</param>
+            <param name="separator">Defaults to ampersand per W3C standards.</param>
+            <param name="assigner">Defaults to = per W3C standards.</param>
+            <returns>The parsed NameValueCollection containing querystring
+            values.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ToMorseCode(System.String,System.Boolean)">
+            <summary>
+            Convert given System.String to its Morse code representation.
+            Undefined characters will return in the format:
+            Undefined:char
+            For example:
+            "sos@".ToMorseCode()
+            will return
+            "...---...Undefined:@"
+            </summary>
+            <param name="str">The given string to convert to Morse code.</param>
+            <param name="includeSpaces">Are spaces included in translation.</param>
+            <returns>The Morse code represenation of the given string.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.ToMorseCode(System.Text.StringBuilder,System.Boolean)">
+            <summary>
+            Convert given System.Text.Stringbuilder object to its Morse code
+            representation.
+            Undefined characters will return in the format:
+            Undefined:char>
+            For example:
+            "sos@".ToMorseCode()
+            will return
+            "...---...Undefined:@"
+            </summary>
+            <param name="str">The given string to convert to Morse code.</param>
+            <param name="includeSpaces">Are spaces included in translation.</param>
+            <returns>The Morse code represenation of the given string.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.TrimLength(System.String,System.Int32,System.String)">
+            <summary>
+            Returns part of the given System.String object tuncated to 
+            the requested length minus the length of the suffix.
+            If the string is null or empty, it returns said value.
+            If the string is shorter than the requested length, it returns
+            the whole string.
+            </summary>
+            <param name="str">The given System.String object.</param>
+            <param name="length">The requested length of the return string.</param>
+            <param name="suffix">The string appended to the end of the
+            returned string.  Default value is "..."</param>
+            <returns>Returns part of the given System.String object tuncated 
+            to the requested length minus the length of the suffix.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.TrimLength(System.Text.StringBuilder,System.Int32,System.String)">
+            <summary>
+            Returns part of the given System.Text.StringBuilder object 
+            tuncated to the requested length minus the length of the 
+            suffix.
+            If the string is null or empty, it returns said value.
+            If the string is shorter than the requested length, it returns
+            the whole string.
+            </summary>
+            <param name="str">The given System.Text.StringBuilder object.</param>
+            <param name="length">The requested length of the return string.</param>
+            <param name="suffix">The string appended to the end of the
+            returned string.  Default value is "..."</param>
+            <returns>Returns part of the given System.String object tuncated 
+            to the requested length minus the length of the suffix.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Words(System.String)">
+            <summary>
+            Returns the number of words in the given string object.
+            </summary>
+            <param name="str">A System.String object for which to count 
+            words.</param>
+            <returns>The number of words in the given object.</returns>
+        </member>
+        <member name="M:Extensions.StringExtensions.Words(System.Text.StringBuilder)">
+            <summary>
+            Returns the number of words in the given string builder object.
+            </summary>
+            <param name="str">A System.Text.StringBuilder object for which
+            to count words.</param>
+            <returns>The number of words in the given object.</returns>
+        </member>
+        <member name="T:Extensions.TimeZoneInfoExtensions">
+            <summary>
+            Extension methods for the System.DateTime.TimeZoneInfo class.
+            </summary>
+        </member>
+        <member name="M:Extensions.TimeZoneInfoExtensions.GetTimeZoneString(Extensions.Constants.TimeZone)">
+            <summary>
+            Get the registry ID string for the given time zone.
+            </summary>
+            <param name="timeZone">The target time zone from Constants.TimeZone.</param>
+            <returns>The string that can be used with 
+            TimeZoneInfo.FindSystemTimeZoneById() for time zone convertions.</returns>
+        </member>
+        <member name="T:Extensions.UInt16Extensions">
+            <summary>
+            Extensions for the System.UInt16 class.
+            </summary>
+        </member>
+        <member name="M:Extensions.UInt16Extensions.IsEven(System.UInt16)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.UInt16Extensions.IsOdd(System.UInt16)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.UInt16Extensions.IsPrime(System.UInt16)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to evaluate as a prime.</param>
+            <returns>True if the given number is prime, else False.</returns>
+        </member>
+        <member name="T:Extensions.UInt32Extensions">
+            <summary>
+            Extensions for the System.UInt32 class.
+            </summary>
+        </member>
+        <member name="M:Extensions.UInt32Extensions.IsEven(System.UInt32)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.UInt32Extensions.IsOdd(System.UInt32)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.UInt32Extensions.IsPrime(System.UInt32)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to evaluate as a prime.</param>
+            <returns>True if the given number is prime, else False.</returns>
+        </member>
+        <member name="T:Extensions.UInt64Extensions">
+            <summary>
+            Extensions for the System.UInt64 class.
+            </summary>
+        </member>
+        <member name="M:Extensions.UInt64Extensions.IsEven(System.UInt64)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.UInt64Extensions.IsOdd(System.UInt64)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.UInt64Extensions.IsPrime(System.UInt64,System.Boolean)">
+            <summary>
+            For internal use only. Does not waste CPU cycles validating input
+            data or checking for 2 or even numbers.  This method assumes it 
+            will always be passed odd numbers greater than 2.
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <param name="INTERNAL_USE_ONLY">Method to distinguish from other overloads.</param>
+            <returns>True if the given number is a prime number, else False.</returns>
+        </member>
+        <member name="T:Extensions.ULongExtensions">
+            <summary>
+            Extensions to the long class.
+            </summary>
+        </member>
+        <member name="M:Extensions.ULongExtensions.IsEven(System.UInt64)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.ULongExtensions.IsOdd(System.UInt64)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.ULongExtensions.IsPrime(System.UInt64)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to evaluate as a prime.</param>
+            <returns>True if the given number is prime, else False.</returns>
+        </member>
+        <member name="T:Extensions.Universal">
+            <summary>
+            Universal class for constants and enums.
+            </summary>
+        </member>
+        <member name="F:Extensions.Universal.assembly">
+            <summary>
+            The assembly used on out calls.
+            </summary>
+        </member>
+        <member name="F:Extensions.Universal.lockManager">
+            <summary>
+            The private object used to manage locks on file I/O.
+            </summary>
+        </member>
+        <member name="F:Extensions.Universal.PrimeStatePath">
+            <summary>
+            String path where to .Save() and .Load() the prime number list
+            so as to avoid recalculating the same numbers repeatedly.
+            </summary>
+        </member>
+        <member name="M:Extensions.Universal.Bigest(System.Int32,System.Int32)">
+            <summary>
+            Returns the smallest of two given values.
+            </summary>
+            <param name="val1">The first value to compare.</param>
+            <param name="val2">The second value to compare.</param>
+            <returns>The smallest of the two given values.</returns>
+        </member>
+        <member name="M:Extensions.Universal.GetExecutingAssembly">
+            <summary>
+            Gets the current assembly through reflection.
+            </summary>
+            <returns>The current Entry or Executing assembly.</returns>
+        </member>
+        <member name="M:Extensions.Universal.GetExecutingAssemblyName(System.Reflection.Assembly@,System.Boolean)">
+            <summary>
+            Gets the name of the current assembly.
+            </summary>
+            <param name="asm">Out parm to hold the assembly.</param>
+            <param name="escaped">Should the value be escaped?</param>
+            <returns>Returns the name of the current assembly, optionally 
+            escaped.</returns>
+        </member>
+        <member name="M:Extensions.Universal.GetExecutingAssemblyName(System.Boolean)">
+            <summary>
+            Gets the name of the current assembly.
+            </summary>
+            <param name="escaped">Should the value be escaped?</param>
+            <returns>Returns the name of the current assembly, optionally 
+            escaped.</returns>
+        </member>
+        <member name="M:Extensions.Universal.GetExecutingAssemblyFolder(System.Reflection.Assembly@,System.Boolean)">
+            <summary>
+            Gets the folder path of the current assembly.
+            </summary>
+            <param name="asm">Out parm to hold the assembly.</param>
+            <param name="escaped">Should the value be escaped?</param>
+            <returns>Returns the folder path of the current assembly, 
+            optionally escaped.</returns>
+        </member>
+        <member name="M:Extensions.Universal.GetExecutingAssemblyFolder(System.Boolean)">
+            <summary>
+            Gets the folder path of the current assembly.
+            </summary>
+            <param name="asm">Out parm to hold the assembly.</param>
+            <param name="escaped">Should the value be escaped?</param>
+            <returns>Returns the folder path of the current assembly, 
+            optionally escaped.</returns>
+        </member>
+        <member name="M:Extensions.Universal.GetExecutingAssemblyFullPath(System.Boolean)">
+            <summary>
+            Gets the full path and file name of the current assembly.
+            </summary>
+            <param name="escaped">Should the value be escaped?</param>
+            <returns>Returns the full path and file name of the current
+            assembly, optionally escaped.</returns>
+        </member>
+        <member name="M:Extensions.Universal.GetFQDN">
+            <summary>
+            Returns the current computer Fully Qualified Domain Name.
+            </summary>
+            <returns>Returns the current computer Fully Qualified Domain Name.</returns>
+        </member>
+        <member name="M:Extensions.Universal.IsEven(System.Numerics.BigInteger)">
+            <summary>
+            Checks if the given number is even.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is even, else False.</returns>
+        </member>
+        <member name="M:Extensions.Universal.IsOdd(System.Numerics.BigInteger)">
+            <summary>
+            Checks if the given number is odd.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the number is odd, else False.</returns>
+        </member>
+        <member name="M:Extensions.Universal.IsPrime(System.Numerics.BigInteger)">
+            <summary>
+            Checks if the given number is a prime number.
+            </summary>
+            <param name="number">The given number to check.</param>
+            <returns>True if the given number is a prime number, else False.</returns>
+        </member>
+        <member name="M:Extensions.Universal.GetNthPrime(System.Int64)">
+            <summary>
+            Gets the requested Nth prime number.
+            </summary>
+            <param name="Nth">The count number of the requested prime.</param>
+            <returns>The requested Nth prime number.</returns>
+        </member>
+        <member name="M:Extensions.Universal.GetNthPrimeAsync(System.Int64)">
+            <summary>
+            Gets the requested Nth prime number using asynchronous, parallel
+            processing techniques.
+            </summary>
+            <param name="Nth">The count number of the requested prime.</param>
+            <returns>The requested Nth prime number.</returns>
+        </member>
+        <member name="M:Extensions.Universal.IsPrimeAsync(Extensions.PrimeNumber)">
+            <summary>
+            Internal async method to determin
+            </summary>
+            <param name="prime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.Universal.Load``1(``0,System.String)">
+            <summary>
+            Universal object method used to serialize ANY object from disk.
+            </summary>
+            <typeparam name="T">The type of the target object.</typeparam>
+            <param name="obj">The triggering object.</param>
+            <param name="filePath">The path on disk for the save file.</param>
+            <returns>The object of type T loaded from disk.</returns>
+        </member>
+        <member name="M:Extensions.Universal.Save``1(``0,System.String)">
+            <summary>
+            Universal object method used to serialize ANY object to disk.
+            </summary>
+            <typeparam name="T">The type of the target object.</typeparam>
+            <param name="obj">The triggering object.</param>
+            <param name="filePath">The path on disk for the save file.</param>
+            <returns>True if save successful, otherwise False.</returns>
+        </member>
+        <member name="M:Extensions.Universal.printf(System.Object,System.ConsoleColor,System.ConsoleColor)">
+            <summary>
+            Simple printf method for console output with color control.  Both
+            text color and background color is returned to previous state
+            after the string has been written to console.
+            </summary>
+            <param name="msg">String to print to console.</param>
+            <param name="foreground">Overrideable text color, default to white.</param>
+            <param name="background">Overrideable background color, default to
+            black.</param>
+        </member>
+        <member name="M:Extensions.Universal.Smallest(System.Int32,System.Int32)">
+            <summary>
+            Returns the smallest of two given values.
+            </summary>
+            <param name="val1">The first value to compare.</param>
+            <param name="val2">The second value to compare.</param>
+            <returns>The smallest of the two given values.</returns>
+        </member>
+        <member name="M:Extensions.Universal.TimeStamp(System.Boolean)">
+            <summary>
+            Returns the current local date time stamp as a string in either
+            "YYYY-MM-DD" or "YYYY-MM-DD@hh.mm.ss.nnn" format.
+            </summary>
+            <param name="DateOnly">If true, return the current local date
+            time stamp as "YYYY-MM-DD" else return it as 
+            "YYYY-MM-DD@hh.mm.ss.nnn"</param>
+            <returns>Returns the current local date time stamp as a string in
+            either "YYYY-MM-DD" or "YYYY-MM-DD@hh.mm.ss.nnn" format.</returns>
+        </member>
+        <member name="M:Extensions.Universal.ValidateNoNulls(System.Object[])">
+            <summary>
+            Makes quick work of null validating all parameters you pass to it.
+            This method takes a variable number of parameters and validates that
+            all parameters are not null.  If a parameter is found to be null, a
+            ArgumentNullException is thrown.
+            For example:
+                void MyMethod(string str, double dbl, MyClass cls)
+                {
+                    Universal.ValidateNoNulls(str, dbl, cls);
+                    ...Your code here...
+                }
+            You do not have to pass all parameters, but can instead do this:
+                void MyMethod(string str, double dbl, MyClass cls)
+                {
+                    Universal.ValidateNoNulls(str, cls);
+                    ...Your code here...
+                }
+            where we chose NOT to validate the double dbl in this case.
+            </summary>
+            <param name="parms">The variable set of parameters.</param>
+        </member>
+        <member name="T:System.Logging">
+            <summary>
+            Class that provides easy logging mechanisms to screen, event log or file.
+            </summary>
+        </member>
+        <member name="F:System.Logging._lock">
+            <summary>
+            Lock used when writing to log file.
+            </summary>
+        </member>
+        <member name="P:System.Logging._top">
+            <summary>
+            The last cursor position top value.
+            </summary>
+        </member>
+        <member name="P:System.Logging._left">
+            <summary>
+            The last cursor position left value.
+            </summary>
+        </member>
+        <member name="P:System.Logging._text">
+            <summary>
+            The last console foreground color.
+            </summary>
+        </member>
+        <member name="P:System.Logging._background">
+            <summary>
+            The last console background color.
+            </summary>
+        </member>
+        <member name="P:System.Logging.LogFile">
+            <summary>
+            The file path to the current log file.
+            </summary>
+        </member>
+        <member name="M:System.Logging.#ctor(System.String)">
+            <summary>
+            Class constructor.
+            </summary>
+            <param name="LogFile">Optional log file path.  If no value
+            is provided, the log file is created in the executing assembly's
+            current folder.</param>
+        </member>
+        <member name="M:System.Logging.ConsoleMessage(System.String)">
+            <summary>
+            Write a message to the command console.
+            </summary>
+            <param name="Message">The message to write to the console.</param>
+        </member>
+        <member name="M:System.Logging.ConsoleMessage(System.String,System.Boolean)">
+            <summary>
+            Write a message to the command console.
+            </summary>
+            <param name="Message">The message to write to the console.</param>
+            <param name="FixedLocation">Optional switch to keep the cursor
+            fixed in its location.  This is useful when writing progress
+            messages like percent complete.</param>
+        </member>
+        <member name="M:System.Logging.ConsoleMessage(System.String,System.ConsoleColor,System.Boolean)">
+            <summary>
+            Write a message to the command console.
+            </summary>
+            <param name="Message">The message to write to the console.</param>
+            <param name="TextColor">Control the text color of the output.</param>
+            <param name="FixedLocation">Optional switch to keep the cursor
+            fixed in its location.  This is useful when writing progress
+            messages like percent complete.</param>
+        </member>
+        <member name="M:System.Logging.ConsoleMessage(System.String,System.ConsoleColor,System.ConsoleColor,System.Boolean)">
+            <summary>
+            Write a message to the command console.
+            </summary>
+            <param name="Message">The message to write to the console.</param>
+            <param name="TextColor">Control the text color of the output.</param>
+            <param name="BackgroundColor">Control the background color.</param>
+            <param name="FixedLocation">Optional switch to keep the cursor
+            fixed in its location.  This is useful when writing progress
+            messages like percent complete.</param>
+        </member>
+        <member name="M:System.Logging.SetCursor(System.Boolean)">
+            <summary>
+            Set or capture the cursor position on the console.
+            </summary>
+            <param name="reset">If true, set the console cursor to the last
+            captured coordinates.  If false, capture the current console
+            cursor coordinates.  Default it false.</param>
+        </member>
+        <member name="T:System.Timer">
+            <summary>
+            Timer class for timing things like a stopwatch.
+            </summary>
+        </member>
+        <member name="P:System.Timer.runtime">
+            <summary>
+            The cumulated running time of the timer.
+            </summary>
+        </member>
+        <member name="M:System.Timer.#ctor">
+            <summary>
+            Constructor method.
+            </summary>
+        </member>
+        <member name="M:System.Timer.Start">
+            <summary>
+            Start the timer.
+            </summary>
+        </member>
+        <member name="M:System.Timer.Stop">
+            <summary>
+            Stop the timer.
+            </summary>
+            <returns>Return the cumulated running time of the timer.</returns>
+        </member>
+        <member name="M:System.Timer.Pause">
+            <summary>
+            Pause the timer.
+            </summary>
+            <returns>Return the cumulated running time of the timer.</returns>
+        </member>
+        <member name="M:System.Timer.Resume">
+            <summary>
+            Resume the timer.
+            </summary>
+        </member>
+        <member name="M:System.Timer.Reset">
+            <summary>
+            Reset the timer.
+            </summary>
+        </member>
+    </members>
+</doc>

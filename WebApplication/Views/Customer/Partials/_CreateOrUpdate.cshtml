@@ -1,0 +1,110 @@
+﻿@model WebApplication.Models.Customer
+@using (Html.BeginForm("Create", "Customer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="modal fade" id="modal-form">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal-title" class="modal-title">
+                        @Resources.Buttons.Create
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="row row-cols-2">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.HiddenFor(model => model.memberID, new { @class = "form-control" })
+                                @Html.Label(Resources.Customer.fullName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.fullName, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = Resources.Customer.fullName } })
+                                @Html.ValidationMessageFor(model => model.fullName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(Resources.Customer.Gender, htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.Gender, ViewBag.Genders as SelectList, new { @class = "form-control", @style = "width:100%" })
+                                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(Resources.Customer.Nationality, htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.Nationality, ViewBag.Nationalities as SelectList, new { @class = "form-control", @style = "width:100%" })
+                                @Html.ValidationMessageFor(model => model.Nationality, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(Resources.Customer.Mobile, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Customer.Mobile } })
+                                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(@Resources.Customer.idType, htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.idType, ViewBag.AccountTypes as SelectList, new { @class = "form-control", @style = "width:100%" })
+                                @Html.ValidationMessageFor(model => model.idType, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(Resources.Customer.icpassportNo, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.icpassportNo, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Customer.icpassportNo } })
+                                @Html.ValidationMessageFor(model => model.icpassportNo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        @*<div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(Resources.Customer.eMail, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.eMail, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Customer.eMail } })
+                                @Html.ValidationMessageFor(model => model.eMail, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(Resources.Customer.Address, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.Address, new { @class = "form-control", @rows = 1, @placeholder = Resources.Customer.Address })
+                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(@Resources.Customer.Passport_Issue, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Passport_Issue, new { @class = "form-control singledatepicker" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(@Resources.Customer.Passport_Expire, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Passport_Expire, new { @class = "form-control singledatepicker" })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.Label(@Resources.Customer.Description, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.Address, new { @class = "form-control", @placeholder = @Resources.Customer.Description })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-min mr-2" data-dismiss="modal">
+                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                        @Resources.Buttons.Cancel
+                    </button>
+                    <button type="submit" id="btnSaveOrUpdate" class="btn btn-success btn-min">
+                        <i class="far fa-check-circle"></i>
+                        @Resources.Buttons.Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

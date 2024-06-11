@@ -1,0 +1,41 @@
+﻿<div class="row row-cols-6">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-2 mt-1">
+        <div class="input-group">
+            @Html.DropDownList("memberID", ViewData["CustomerList"] as SelectList, new { @class = "form-control select2bs4" })
+            <div class="input-group-append">
+                <span class="input-group-text text-primary"><i class="fa fa-plus-circle"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-2 mt-1">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="ស្កេនកូដ...">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-5 mt-1">
+        <div class="form-group">
+            @Html.DropDownList("ProductFilter", ViewData["ProductList"] as SelectList, "ស្វែងរក...", new { @class = "form-control select2bs4", @style = "width:100%" })
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mt-1">
+        <a href="#" id="btnPlus" class="btn btn-outline-primary">
+            <i class="fa fa-plus-circle"></i>
+            <span class="badge badge-danger" id="badge-count">0</span>
+        </a>
+        <a href="#" id="btnPlusOk" class="btn btn-outline-success">
+            <i class="far fa-check-circle"></i>
+        </a>
+        <div class="float-right">
+            <a href="#" class="btn btn-outline-success" data-toggle="modal" data-target="#modal-form">
+                <i class="fab fa-paypal"></i> Pay
+            </a>
+            <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal-keep">
+                <i class="far fa-check-circle"></i> Keep In
+            </a>
+        </div>
+    </div>
+</div>
+<hr />

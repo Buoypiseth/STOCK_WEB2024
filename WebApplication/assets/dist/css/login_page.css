@@ -1,0 +1,64 @@
+#login-page {
+	background-image: url(/assets/img/bg.jpg);
+	height: 100vh;
+	width: 100vw;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#login-box {
+	background-color: hsla(201, 100%, 6%, 0.6);
+	padding: 30px 30px;
+	min-width: 400px;
+	width: 50%;
+	max-width: 600px;
+	border-radius: 2px;
+}
+
+#login-form {
+	padding-left: 90px;
+	padding-right: 90px;
+}
+
+.login-title {
+	color: #fff;
+	text-align: center;
+	margin: 0;
+	margin-bottom: 10px;
+	font-size: 2.5em;
+	font-weight: normal;
+}
+
+#login-box p {
+	border-bottom: 2px solid red;
+	margin-bottom: 20px;
+	background-color: lightgrey;
+}
+
+#login-form .form-control, .btn {
+	border-radius: 5rem;
+}
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+	#login-form {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+/*// Small devices (landscape phones, 576px and up)*/
+@media (max-width: 767.98px) {
+	#login-form {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media (max-width: 991.98px) {
+	#login-form {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}

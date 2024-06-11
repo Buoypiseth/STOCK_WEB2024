@@ -1,0 +1,74 @@
+﻿@model WebApplication.Models.Category
+@using (Html.BeginForm("Create", "Category", FormMethod.Post))
+{
+    <div class="modal fade" id="modal-form">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 id="modal-title" class="modal-title text-secondary">
+                        <i class="fa fa-plus-circle"></i>
+                        @Resources.Buttons.Create
+                    </h6>
+                    <div class="float-right">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.HiddenFor(model => model.PrdCategID, new { htmlAttributes = new { @class = "form-control", @placeholder = "id" } })
+                            @Html.Label("ក្រុម", htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.PrdCategory, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "ក្រុម" } })
+                            @Html.ValidationMessageFor(model => model.PrdCategory, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("ប្រភេទ", htmlAttributes: new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.GroupCategoryID, ViewBag.GroupCategory as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                            @Html.ValidationMessageFor(model => model.GroupCategoryID, "", new { @class = "text-danger" })
+                        </div>
+                        <hr />
+                        <div class="form-group pb-2">
+                            @Html.Label("ម៉ាស៊ីព្រីន", htmlAttributes: new { @class = "control-label" })
+                            @Html.DropDownListFor(model => model.Printer_Index_Name, ViewBag.PrinterName as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                            @Html.ValidationMessageFor(model => model.Printer_Index_Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group clearfix pb-2">
+                            <div class="icheck-danger d-inline">
+                                @Html.CheckBox("isPrintToKitchen", new { @id = "checkboxDanger1" })
+                                <label for="checkboxDanger1">
+                                    ព្រីនផ្ទះបាយ
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <div class="icheck-primary d-inline">
+                                @Html.CheckBox("isPrintToBar", new { @id = "checkboxPrimary1" })
+                                <label for="checkboxPrimary1">
+                                    ព្រីនទៅបា
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-danger btn-min" data-dismiss="modal">
+                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                        @Resources.Buttons.Cancel
+                    </button>
+                    <button type="submit" id="btnSaveOrUpdate" class="btn btn-success btn-min">
+                        <i class="far fa-check-circle"></i>
+                        @Resources.Buttons.Save
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+}

@@ -1,0 +1,30 @@
+﻿    @if (@ViewBag.Error == true)
+    {
+        <p class="login-box-msg text-danger">Something went wrong! No data.</p>
+    }
+    <div class="row row-cols-6">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mt-1">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="ស្កេនវិក័យប័ត្រ...">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-5 mt-1">
+            <div class="form-group">
+                @Html.DropDownList("customerOrderID", ViewData["InvoiceList"] as SelectList, "ស្វែងរក...", new { @class = "form-control select2bs4", @style = "width:100%" })
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3 mt-1">
+            <a href="#" id="btnCheckOk" class="btn btn-outline-success">
+                <i class="far fa-check-circle"></i>
+            </a>
+            <div class="float-right">
+                <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal-form">
+                    <i class="far fa-check-circle"></i> Return
+                </a>
+            </div>
+        </div>
+    </div>
+<hr />

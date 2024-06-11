@@ -1,0 +1,113 @@
+﻿@model WebApplication.Models.tbl_BuyProducts
+<div class="modal fade" id="modalPayment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-title" class="modal-title">
+                    @Resources.BuyProduct.Payment
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Create", "BuyProduct", FormMethod.Post, new { @id = "formPayment" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="row row-cols-2">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.InvoiceNo, htmlAttributes: new { @class = "control-label" })
+                                @Html.HiddenFor(model => model.BuyID, new { @class = "form-control", @Value = ViewBag.buyId })
+                                @Html.EditorFor(model => model.InvoiceNo, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.InvoiceNo, @required = "required", @placeholder = Resources.BuyProduct.InvoiceNo } })
+                                @Html.ValidationMessageFor(model => model.InvoiceNo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.Supplier, htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.SupplierID, ViewBag.Suppliers as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                                @Html.ValidationMessageFor(model => model.SupplierID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.Date, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control singledatetimepicker" } })
+                                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.Total, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.AmtDis, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.AmtDis, new { htmlAttributes = new { @class = "form-control", @requeired = true, @Value = 0, @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.AmtDis, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.PerDis, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.PerDis, new { htmlAttributes = new { @class = "form-control", @requeired = true, @Value = 0, @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.PerDis, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.GrandTotal, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.GrandTotal, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.GrandTotal, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.AmtPay, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.AmtPay, new { htmlAttributes = new { @class = "form-control", @requeired = true, @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.AmtPay, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.AmtLoan, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.AmtLoan, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.AmtLoan, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.DateReturn, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.DateReturn, new { htmlAttributes = new { @class = "form-control singledatepicker" } })
+                                @Html.ValidationMessageFor(model => model.DateReturn, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.Label(Resources.BuyProduct.Description, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @rows = 3, @placeholder = Resources.BuyProduct.Description })
+                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end pt-2">
+                        <button type="button" class="btn btn-danger btn-min mr-3" data-dismiss="modal">
+                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                            @Resources.Buttons.Cancel
+                        </button>
+                        <button type="submit" id="" class="btn btn-success btn-min">
+                            <i class="far fa-check-circle"></i>
+                            @Resources.Buttons.Save
+                        </button>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

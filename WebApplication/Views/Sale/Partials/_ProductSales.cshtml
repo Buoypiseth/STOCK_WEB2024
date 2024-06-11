@@ -1,0 +1,121 @@
+﻿@model WebApplication.Models.PurchaseModel
+@using (Html.BeginForm("AddOrders", "Purchase", FormMethod.Post, new { @id = "formOrder" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="row row-cols-6">
+    <div class="col-12 col-sm-4">
+        <div class="form-group">
+            @Html.Label(@Resources.Category.Name, htmlAttributes: new { @class = "control-label" })
+            @*@Html.DropDownList("ProductFilter", ViewData["ProductList"] as SelectList, "ស្វែងរក...", new { @class = "form-control select2bs4", @style = "width:100%" })*@
+            @Html.EditorFor(model => model.PrdNameEng, new { htmlAttributes = new { @class = "form-control form-control-sm", @readonly = "True", @placeholder = Resources.Category.Name } })
+        </div>
+    </div>
+    <div class="col-6 col-sm-2">
+        <div class="form-group">
+            @*@Html.HiddenFor(model => model.ProductID, new { htmlAttributes = new { @class = "form-control" } })*@
+
+            @Html.Label("តម្លៃលក់", htmlAttributes: new { @class = "control-label" })
+            @Html.DropDownList("ProductFilterf", ViewData["ProductList"] as SelectList, "ស្វែងរក...", new { @class = "form-control form-control-sm select2bs4", @style = "width:100%" })
+            @Html.ValidationMessageFor(model => model.PrdNameEng, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-6 col-sm-2">
+        <div class="form-group">
+            @Html.Label("តម្លៃលក់ជាក់ស្តែង($)", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control form-control-sm", @type = "Number", @required = "required", @placeholder = "0" } })
+            @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-6 col-sm-2">
+        <div class="form-group">
+            @Html.Label("តម្លៃលក់ជាក់ស្តែង($)", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.SellingPriceUSD, new { htmlAttributes = new { @class = "form-control form-control-sm", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+            @Html.ValidationMessageFor(model => model.SellingPriceUSD, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-6 col-sm-2">
+        <div class="form-group">
+            @Html.Label("ចំនួន", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.transCost, new { htmlAttributes = new { @class = "form-control form-control-sm", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+            @Html.ValidationMessageFor(model => model.transCost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-12 col-sm-4">
+        <div class="form-group">
+            @Html.Label("ពិពណ៌នា", htmlAttributes: new { @class = "control-label" })
+            @Html.TextAreaFor(model => model.ExpireDate, new { @class = "form-control form-control-sm", @rows = 1 })
+            @Html.ValidationMessageFor(model => model.ExpireDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!--<div class="col-12 col-sm-2">
+        <div class="row">
+            <div class="col-6 col-sm-4">-->
+    @*@Html.Label("ពន្ធ", htmlAttributes: new { @class = "control-label" })*@
+    <!--<div class="form-group clearfix">
+            <div class="icheck-primary d-inline">
+                <input type="checkbox" checked="" id="checkboxTax">
+                <label for="checkboxTax">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">-->
+    @*@Html.Label("បញ្ចុះ(%)", htmlAttributes: new { @class = "control-label" })*@
+    <!--<div class="form-group clearfix">
+                    <div class="icheck-primary d-inline">
+                        <input type="checkbox" checked="" id="checkboxDis">
+                        <label for="checkboxDis">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="col-6 col-sm-2">
+        <div class="form-group">
+            @Html.Label("បញ្ចុះតម្លៃ($)", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.BuyingCost, new { htmlAttributes = new { @class = "form-control form-control-sm", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+            @Html.ValidationMessageFor(model => model.BuyingCost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-6 col-sm-2">
+        <div class="form-group">
+            @Html.Label("បញ្ចុះតម្លៃ(៛)", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.BuyingCost, new { htmlAttributes = new { @class = "form-control form-control-sm", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+            @Html.ValidationMessageFor(model => model.BuyingCost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-6 col-sm-2">
+        <div class="form-group clearfix">
+            @Html.Label("បញ្ចុះតម្លៃ(៛)", htmlAttributes: new { @class = "control-label" })
+            <div class="icheck-primary d-inline">
+                <input type="checkbox" checked="" id="checkboxDis">
+                <label for="checkboxDis">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-2">
+        <div class="form-group">
+            @Html.Label("តម្លៃទិញ", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.BuyingCost, new { htmlAttributes = new { @class = "form-control form-control-sm", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+            @Html.ValidationMessageFor(model => model.BuyingCost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-6 offset-6 col-sm-2 offset-sm-10">
+        <div class="text-right mt-1">
+            <button type="submit" class="btn btnSave btn-primary btn-min">
+                <i class="fa fa-plus-circle"></i>
+                @*@Resources.Buttons.Save*@
+                Add
+            </button>
+            <a href="#" class="btn btn-min btn-success" data-toggle="modal" data-target="#modal-form">
+                <i class="far fa-check-circle"></i>
+                @*@Resources.Buttons.Create*@
+                Payment
+            </a>
+        </div>
+    </div>
+</div>
+}

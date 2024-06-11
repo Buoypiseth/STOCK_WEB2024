@@ -1,0 +1,32 @@
+﻿<div class="modal fade" id="modalHold" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-title" class="modal-title">
+                    Hold
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("CreateHold", "Sale", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.TextBox("CustName", "", new { @class = "form-control", @placeholder = Resources.Sale.CustName })
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col text-right">
+                            <button type="button" id="btnCreateHold" class="btn btn-success btn-block">
+                                <i class="far fa-check-circle mr-2"></i>
+                                @Resources.Buttons.Save
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

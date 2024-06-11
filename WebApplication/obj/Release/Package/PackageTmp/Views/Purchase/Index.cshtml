@@ -1,0 +1,259 @@
+﻿@model IEnumerable<WebApplication.Models.PurchaseModel>
+@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title text-secondary">
+            <i class="fas fa-edit"></i>
+            @Resources.Strings.Employee
+        </h3>
+        <div class="float-right">
+            <a href="#" class="btn btn-min btn-primary" data-toggle="modal" data-target="#modal-form">
+                <i class="fa fa-plus-circle"></i>
+                @Resources.Buttons.Create
+            </a>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        @Html.Partial("Partials/_PurchaseOrder")
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover data-table dt-responsive nowrap" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>ល.រ</th>
+                            <th>ផលិតផល</th>
+                            <th>លេខកូដ</th>
+                            <th>គិតជា</th>
+                            <th>ចំនួន</th>
+                            <th>តម្លៃទិញចូល</th>
+                            <th>តម្លៃសរុប</th>
+                            <th>សរុបថ្លៃដឹក</th>
+                            <th>ថ្ងៃផុតកំណត់</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2@9-sweetaler2.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script type="text/javascript">
+        var ProductID = $('#ProductID');
+        var PrdNameEng = $('#PrdNameEng');
+        var PrdCategID = $('#PrdCategID');
+        var OrderComment = $('#OrderComment');
+        var barCode = $('#barCode');
+        var UnitType = $('#UnitType');
+        var PrdDesc = $('#PrdDesc');
+        var BuyingCost = $('#BuyingCost');
+        var SellingPriceUSD = $('#SellingPriceUSD');
+        var SellingPriceUSDForThisCus = $('#SellingPriceUSDForThisCus');
+        var minimalStock = $('#minimalStock');
+        var TaxNote = $('#TaxNote');
+        var Money_Sale_Type = $('#Money_Sale_Type');
+        var IsUnique = $('#IsUnique');
+        var isCutStock = $('#isCutStock');
+        var Image = $('#Image');
+
+        var modalForm = $('#modal-form');
+        var btnSaveOrUpdate = $('#btnSaveOrUpdate');
+        var modalTitle = $('#modal-title');
+
+        $(function () {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            $('.select2').select2();
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+
+            modalForm.on('hidden.bs.modal', function (e) {
+                $('form')[0].reset();
+                BuyingCost.prop("disabled", false);
+            });
+
+            $('form').submit(function (e) {
+                e.preventDefault();// stop the standard form submission
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: new FormData(this),
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (message) {
+                        if (message == 'True') {
+                            _dataTable.draw();
+                            Toast.fire({
+                                type: 'success',
+                                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                            })
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong! //' + message
+                            })
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+            });
+
+            $(document).on('click', '.btnEdit', function () {
+                modalForm.modal('show');
+                var data = {};
+                data.ProductID = $(this).data('id');
+                $.ajax({
+                    url: '@Url.Action("Edit", "Product")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    success: function (res) {
+                        ProductID.val(res.ProductID);
+                        PrdNameEng.val(res.PrdNameEng);
+                        initDatePicker();
+                        //SellingPriceUSD.val(res.SellingPriceUSD);
+                        //OrderComment.val(res.OrderComment);
+                        //barCode.val(res.barCode);
+                        //UnitType.val(res.UnitType);
+                        //PrdDesc.val(res.PrdDesc);
+                        //SellingPriceUSDForThisCus.val(res.SellingPriceUSDForThisCus);
+                        //minimalStock.val(res.minimalStock);
+                    }
+                });
+            });
+
+            $(document).on('click', '.btnDelete', function () {
+                var data = {};
+                data.ProductID = $(this).data('id');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        $.ajax({
+                            url: '@Url.Action("Delete", "Product")',
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            data: JSON.stringify(data),
+                            dataType: "json",
+                            success: function (message) {
+                                if (message == 'True') {
+                                    _dataTable.draw();
+                                    Toast.fire({
+                                        type: 'success',
+                                        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                                    })
+                                }
+                                else {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: 'Something went wrong! //' + message
+                                    })
+                                }
+                            },
+                            error: function (message) {
+                                if (message == 405) {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: 'You do not have access to do that.'
+                                    })
+                                }
+                            }
+                        });
+                    }
+                }).catch(Swal.noop);
+            });
+
+            var _dataTable = $('.data-table')
+                .DataTable({
+                    sAjaxSource: '@Url.Action("GetData", "Purchase")',
+                    bServerSide: true,
+                    pageLength: 25,
+                    bProcessing: true,
+                    bSearchable: true,
+                    columns: [
+                        {
+                            data: null, "sortable": false,
+                            render: function (data, type, row, meta) {
+                                return meta.row + meta.settings._iDisplayStart + 1;
+                            }
+                        },
+                        { data: "PrdNameEng", autoWidth: true, searchable: true },
+                        { data: "OrderComment", searchable: true },
+                        { data: "unitType", searchable: true },
+                        { data: "Quantity", searchable: true },
+                        { data: "BuyingCost", searchable: true },
+                        { data: "TotalCost", searchable: true },
+                        { data: "transCost", searchable: true },
+                        { data: "ExpireDate", searchable: true },
+                        {
+                            data: "ProductID",
+                            render: function (data, type, full, meta) {
+                                var actions = '<button type="button" data-id="' + data + '" class="btn btnDelete btn-sm btn-danger mx-1"><i class="fa fa-trash"></i></button>';
+                                    actions += '<button type="button" data-id="' + data + '" class="btn btnEdit btn-sm btn-primary mx-1" > <i class="fa fa-edit"></i></a >';
+                                return actions;
+                            }
+                        }
+                    ]
+                });
+                function initDatePicker() {
+                    $('.singledatepicker').daterangepicker({
+                        opens: 'right',
+                        drops: 'down',
+                        singleDatePicker: true,
+                        showDropdowns: true,
+                        minYear: 2000,
+                        maxYear: parseInt(moment().format('YYYY'), 10),
+                        locale: {
+                            format: 'YYYY-MM-DD',
+                            firstDay: 1
+                        }
+                    });
+                }
+            });
+    </script>
+}
+

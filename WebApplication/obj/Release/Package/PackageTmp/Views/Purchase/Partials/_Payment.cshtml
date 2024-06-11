@@ -1,0 +1,113 @@
+﻿@model WebApplication.Models.Buy_Products
+<div class="modal fade" id="modal-form">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 id="modal-title" class="modal-title text-secondary">
+                    <i class="fa fa-edit"></i>
+                    @Resources.Buttons.Payment
+                </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Payment", "Purchase", FormMethod.Post, new { @id = "formPayment" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="row row-cols-2">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("វិក័យប័ត្រ", htmlAttributes: new { @class = "control-label", @id="lbInvoice" })
+                                @Html.EditorFor(model => model.InvoiceNo, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "វិក័យប័ត្រ" } })
+                                @Html.ValidationMessageFor(model => model.InvoiceNo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("អ្នកផ្គត់ផ្គង់", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.SupplierID, ViewBag.SuppliersList as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                                @Html.ValidationMessageFor(model => model.SupplierID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("បញ្ចូលទៅស្តុក", htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.StockID, ViewBag.StockTypeList as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                                @Html.ValidationMessageFor(model => model.StockID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("កាលបរិច្ឆេទទិញ", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control singledatetimepicker" } })
+                                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("លុយសរុប", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("បញ្ចុះតម្លៃ(%)", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.PerDis, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.PerDis, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("លុយត្រូវបង់", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.GrandTotal, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.GrandTotal, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("បង់លុយ", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.AmtPay, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.AmtPay, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("លុយជំពាក់", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.AmtLoan, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                                @Html.ValidationMessageFor(model => model.AmtLoan, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.Label("ថ្ងៃត្រូវសង", htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.DateReturn, new { htmlAttributes = new { @class = "form-control singledatetimepicker" } })
+                                @Html.ValidationMessageFor(model => model.DateReturn, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <button type="button" class="btn btn-danger btn-min" data-dismiss="modal">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                @Resources.Buttons.Cancel
+                            </button>
+                        </div>
+                        <div class="col text-right">
+                            <button type="submit" class="btn btnSave btn-success btn-min">
+                                <i class="far fa-check-circle"></i>
+                                @Resources.Buttons.Save
+                            </button>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

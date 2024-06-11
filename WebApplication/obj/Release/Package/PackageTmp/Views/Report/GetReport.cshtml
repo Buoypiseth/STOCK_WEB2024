@@ -1,0 +1,30 @@
+﻿@using ReportViewerForMvc;
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title text-secondary">
+            <i class="fas fa-edit"></i>
+            @Resources.Strings.Employee
+        </h3>
+        <div class="float-right">
+            <a href="#" class="btn btn-min btn-primary" data-toggle="modal" data-target="#modal-form">
+                <i class="fa fa-plus-circle"></i>
+                @Resources.Buttons.Create
+            </a>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div class="d-flex justify-content-center">
+            <div class="row">
+                <div class="col">
+                    @Html.ReportViewer(ViewBag.ReportViewer as Microsoft.Reporting.WebForms.ReportViewer)
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
+
+
+
+

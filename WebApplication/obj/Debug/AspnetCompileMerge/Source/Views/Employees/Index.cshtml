@@ -1,0 +1,239 @@
+﻿@model IEnumerable<WebApplication.Models.tbl_test>
+@section Styles {
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet" >
+    @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/assets/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title text-secondary">
+            <i class="fas fa-edit"></i>
+            @Resources.Strings.Employee
+        </h3>
+        <div class="float-right">
+            <a href="@Url.Action("Create", "Employees")" class="btn btn-min btn-primary">
+                <i class="fa fa-plus-circle"></i>
+                @Resources.Buttons.Create
+            </a>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover data-table dt-responsive nowrap" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name </th>
+                            @*<th>Test1 </th>*@
+                            @*<th>Test2 </th>
+        <th>Test3 </th>
+        <th>Test4 </th>
+        <th>Test5 </th>
+        <th>Test6 </th>
+        <th>Test7 </th>
+        <th>Test8 </th>
+        <th>Test9 </th>
+        <th>Test10 </th>
+        <th>Test11 </th>
+        <th>Test12 </th>
+        <th>Test13 </th>
+        <th>Test14 </th>
+        <th>Test15 </th>
+        <th>Test16 </th>
+        <th>Test17 </th>
+        <th>Test18 </th>*@
+                            <th>Actions on repository </th>
+                            <th>Actions on script </th>
+
+                            @*<th>Test21 </th>*@
+                            @*<th>Position</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*@foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test11)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test13)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test14)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test16)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test17)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test18)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test19)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test20)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test21)
+            </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.EmpId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.EmpId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.EmpId })
+                    </td>
+                    </tr>
+                    }*@
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    @*<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>*@
+    <script src="~/assets/plugins/sweetalert2/sweetalert2@9-sweetaler2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            dataTable();
+            //testLoad();
+        });
+        function testLoad() {
+            $(".data-table").DataTable({
+                "processing": true,
+                "serverSide": true,
+                "filter": true,
+                "ajax": {
+                    "url": "@Url.Action("GetData", "Employees")",
+                    //"type": "POST",
+                    "datatype": "json"
+                },
+                //"columnDefs": [{
+                //    "targets": [0],
+                //    "visible": false,
+                //    "searchable": false
+                //}],
+                "columns": [
+                    { "data": "ID", "name": "ID", "autoWidth": true },
+                    { "data": "Name", "name": "Name", "autoWidth": true },
+                    //{ "data": "lastName", "name": "Last Name", "autoWidth": true },
+                    //{ "data": "contact", "name": "Country", "autoWidth": true },
+                    //{ "data": "email", "name": "Email", "autoWidth": true },
+                    //{ "data": "dateOfBirth", "name": "Date Of Birth", "autoWidth": true },
+                    {
+                        "render": function (data, row) { return "<a href='#' class='btn btn-danger'>Delete</a>"; }
+                    },
+                ]
+            });
+        }
+
+        function dataTable() {
+            var _dataTable = $('.data-table')
+            .DataTable({
+                "sAjaxSource": "@Url.Action("GetData", "Employees")",
+                "bServerSide": true,
+                "pageLength": 25,
+                "bProcessing": true,
+                "bSearchable": true,
+                //"order": [[1, 'asc']],
+                //"language": {
+                //    "emptyTable": "No record found.",
+                //    "processing":
+                //        '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i><span class="sr-only">Loading...</span> '
+                //},
+                "columns": [
+                    {
+                        "data": "ID",
+                        "autoWidth": true,
+                        "searchable": true
+                    },
+                    {
+                        "data": "Name",
+                        "autoWidth": true,
+                        "searchable": true
+                    },
+                    //{ "data": "Test2" },
+                    //{ "data": "Test3" },
+                    //{ "data": "Test4" },
+                    //{ "data": "Test5" },
+                    //{ "data": "Test6" },
+                    //{ "data": "Test7" },
+                    //{ "data": "Test8" },
+                    //{ "data": "Test9" },
+                    //{ "data": "Test10" },
+                    //{ "data": "Test11" },
+                    //{ "data": "Test12" },
+                    //{ "data": "Test13" },
+                    //{ "data": "Test14" },
+                    //{ "data": "Test15" },
+                    //{ "data": "Test16" },
+                    //{ "data": "Test17" },
+                    //{ "data": "Test18" },
+                    //{ "data": "Test19" },
+                    { "data": "Actions" },
+                    {
+                        "data": "ID",
+                        "render": function (data, type, full, meta) {
+                            var btnDelete = '<button type="button" data-remote="' + data + '" class="btn btnDelete btn-sm btn-danger mx-1"><i class="fa fa-trash"></i></button>';
+                            var btnEdit   = '<a href=@Url.Action("Edit", "Employees") class="btn btnEdit btn-sm btn-primary mx-1" > <i class="fa fa-edit"></i></a >';
+                            return btnDelete + btnEdit;
+                        }
+                    }
+                ]
+            });
+        }
+    </script>
+}

@@ -1,0 +1,324 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout01.cshtml";
+}
+@model WebApplication.Models.SalesModel
+@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+}
+
+@*@{
+    if (ViewBag.InvoiceID > 0)
+    {
+        @Html.Partial("Partials/_PaymentReturn")
+    }
+    else
+    {
+        @Html.Partial("Partials/_Payment")
+    }
+}*@
+@Html.Partial("Partials/_SaleReturnHead")
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-sm table-hover data-table dt-responsive nowrap" style="width:100%">
+            <thead style="background-color: #969696; color: #fff">
+                <tr>
+                    <th>ល.រ</th>
+                    <th>ផលិតផល</th>
+                    <th>គិតជា</th>
+                    <th>ចំនួន</th>
+                    <th>ចំនួនត្រឡប់</th>
+                    <th>តម្លៃឯកតា($)</th>
+                    <th>បញ្ចុះតម្លៃ($)</th>
+                    <th>តម្លៃសរុប($)</th>
+                    <th>សកម្ម</th>
+                    <th>cid</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="7">Total</th>
+                    <th colspan="2"></th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2@9-sweetaler2.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script type="text/javascript">
+        ////declare variable ----------------------
+        var customerOrderID = $('#customerOrderID');
+        var InvoiceID = $('#InvoiceID');
+        var netAmountReturn = $('#netAmountReturn');
+        var _msg = @ViewBag.Msg;
+        $(function () {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            if (_msg == 0) {
+                //Toast.fire({
+                //    type: 'error',
+                //    title: 'Something went wrong! No data.',
+                //});
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong! No data.',
+                })
+            }
+
+            $('.select2').select2();
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+
+            $('.singledatepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    firstDay: 1
+                }
+            });
+
+            $('.singledatetimepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                timePicker: true,
+                timePicker24Hour: true,
+                locale: {
+                    format: 'YYYY-MM-DD hh:mm',
+                    firstDay: 1
+                }
+            });
+
+/////////call order product--------------------------------
+        customerOrderID.on('change', function () {
+            var customerOrderID = $("#customerOrderID option:selected").val();
+            if (customerOrderID == "") {
+                return true;
+            }
+            //_dataTable.draw();
+            //loadData(customerOrderID);
+        });
+
+        loadData();
+        $(document).on('click', '#btnCheckOk', function () {
+            if (customerOrderID.val() == "") {
+                return true;
+            }
+            loadData(customerOrderID.val());
+        });
+
+////////save payment--------------------------------------
+            $(document).on('click', '#btnReturn', function () {
+                 var data = {};
+                data.customerOrderID = InvoiceID.val();
+                data.netAmountReturn = netAmountReturn.val();
+			    $.ajax({
+                    url: '@Url.Action("PayReturnToCustomer", "Sales")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    success: function (message) {
+                        if (message == 'True') {
+                            loadData();
+                            Toast.fire({
+                                type: 'success',
+                                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                            })
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong! ' + message
+                            })
+                        }
+                    }
+                });
+            });
+
+            $(document).on('change', '.orderQtyReturnTemp', function () {
+                var orderDetailsID = $(this).data('id');
+                var orderQtyReturnTemp = $(this).val();
+                var val;
+                val = orderQtyReturnTemp.substr(0, 1);
+                val = val.replace(/[^a-z0-9]/gi, 'No');
+                if (isNaN(orderQtyReturnTemp) || orderQtyReturnTemp == '' || val == 'No') {
+                    $(this).val(0);
+                    return true;
+                }
+                updateOrder(orderDetailsID, orderQtyReturnTemp, 'orderQtyReturn');
+            });
+
+            function updateOrder(id, val, type) {
+                var data = {};
+                data.orderDetailsID = id;
+                data.Val = val;
+                data.Type = type;
+                $.ajax({
+                    url: '@Url.Action("UpdateOrder", "Sales")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    processData: false,
+                    success: function (message) {
+                        loadData(InvoiceID.val());
+                        if (message == 'True') {
+                            Toast.fire({
+                                type: 'success',
+                                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                            })
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong! ' + message
+                            })
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+            }
+        });
+
+        function loadData(id = 0) {
+            $('.data-table').DataTable({
+            sAjaxSource: '@Url.Action("GetDataReturn", "Sales")',
+            fnServerParams: function (aoData) {
+                aoData.push({ "name": "customerOrderID", "value": id });
+            },
+            bDestroy: true,
+            bServerSide: true,
+            pageLength: 25,
+            bProcessing: true,
+            lengthChange: false,
+            searching: false,
+            columns: [
+                {
+                    data: null, "sortable": false,
+                    render: function (data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1;
+                    }
+                },
+                { data: "PrdNameEng", autoWidth: true, searchable: true },
+                { data: "unitType", searchable: true },
+                {
+                    data: "orderQty",
+                    render: function (data, type, full, meta) {
+                        if (full.orderQtyReturn == 0) {
+                            return data;
+                        }
+                        var result = data - full.orderQtyReturn;
+                        return data + ' - ' + full.orderQtyReturn + ' = ' + result;
+                    }
+                },
+                {
+                    data: "orderQtyReturnTemp",
+                    render: function (data, type, full, meta) {
+                        return '<input type="text" data-id="' + full.orderDetailsID + '" class="orderQtyReturnTemp textbox-grid" value="' + full.orderQtyReturnTemp + '">';
+                    }
+                },
+                { data: "unitPrice", searchable: false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                { data: "AmtDisc", searchable: false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                { data: "totalAmtReturnTemp", searchable: false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                {
+                    data: "orderQtyReturnTemp",
+                    render: function (data, type, full, meta) {
+                        if (data > 0) {
+                            return 'រង់ចាំ';
+                        }
+                        return '-';
+                    }
+                },
+                { data: "customerOrderID", searchable: false }
+            ],
+            columnDefs: [
+                {
+                    "targets": [9],
+                    "visible": false,
+                    "searchable": false
+                }],
+                footerCallback: function (row, data, start, end, display) {
+                    var api = this.api(), data;
+                    // Remove the formatting to get integer data for summation
+                    var intVal = function (i) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '') * 1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+
+                    // Total over all pages
+
+                    totalAmt = api
+                        .column(7)
+                        .data()
+                        .reduce(function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0);
+
+                    invoiceId = api
+                        .column(9)
+                        .data()
+                        .reduce(function (a, b) {
+                            return intVal(b);
+                        }, 0);
+
+                    $(api.column(7).footer()).html(
+                        '$' + totalAmt.toFixed(2),
+                        netAmountReturn.val(totalAmt.toFixed(2))
+                    );
+
+                    $(api.column(9).footer()).html(
+                        invoiceId,
+                        InvoiceID.val(invoiceId)
+                    );
+                }
+            });
+        }
+    </script>
+}
+
+
+

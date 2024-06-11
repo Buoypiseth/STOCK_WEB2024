@@ -1,0 +1,44 @@
+﻿.table_header{
+    background-color:#0576a1; 
+    color:#ffffff; 
+    text-align:center;
+}
+    .table_header a {
+    color:#ffffff; 
+    }
+    .table_header a:hover {
+    color:#ffd800; 
+    }
+.table_ColNo{
+    background-color:#046a90; 
+    text-align: center;
+    color:#ffffff;
+    width:50px;
+}
+
+
+.postgrid{
+    float:left; width:60px; height:60px; background-color:#c9e0ed; margin:1px; text-align:center;
+}
+.small_later{
+    font-size: 12px; font-weight:bold; padding-right:5px; float: right;
+}
+.normal_later{
+    margin-top: -5px;
+}
+.result_short{
+    border:1px dotted #808080;
+}
+.result_full{
+    border:1px dotted #808080
+}
+.result_block{
+    float:left; width:100px; 
+    height:auto; 
+    border-right:1px dotted #808080; 
+    text-align:right; 
+    padding-right:10px;
+}
+.is_win {
+    color:red;
+}

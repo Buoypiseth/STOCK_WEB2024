@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cf3dfd1723bc4e3894940ed0034dbbc0" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="role_dbModel.Buy_Products" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="role_dbModel.Category" Width="1.5" PointX="2.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="role_dbModel.Customer" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="role_dbModel.Exchange_Rates" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="role_dbModel.Main_Stocks" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="role_dbModel.Pending_Purchases" Width="1.5" PointX="11.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="role_dbModel.Product" Width="1.5" PointX="5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="role_dbModel.Products_Customers_Prices" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="role_dbModel.Stock_Types" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="role_dbModel.Supplier" Width="1.5" PointX="2.75" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="role_dbModel.FK__tbl_produ__PrdCa__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="role_dbModel.FK__Products__Suppli__3587F3E0" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="role_dbModel.Role" Width="1.5" PointX="14.5" PointY="10.5" />
+        <EntityTypeShape EntityType="role_dbModel.UserRoleMapping" Width="1.5" PointX="16.625" PointY="7.25" />
+        <EntityTypeShape EntityType="role_dbModel.User" Width="1.5" PointX="14.375" PointY="6.75" />
+        <AssociationConnector Association="role_dbModel.FK__UserRoleM__RoleI__1A14E395" />
+        <AssociationConnector Association="role_dbModel.FK__UserRoleM__UserI__1920BF5C" />
+        <EntityTypeShape EntityType="role_dbModel.Stock_Products" Width="1.5" PointX="3.875" PointY="1" />
+        <EntityTypeShape EntityType="role_dbModel.Customer_Order_Details_Temp" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="role_dbModel.Customer_Orders_Details" Width="1.5" PointX="14.375" PointY="13.75" />
+        <EntityTypeShape EntityType="role_dbModel.Customer_Orders" Width="1.5" PointX="5.375" PointY="15.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

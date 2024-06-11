@@ -1,0 +1,109 @@
+﻿@model WebApplication.Models.UserRoleMapping
+@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">
+            <i class="fas fa-edit"></i>
+            @Resources.Globle.SetRole
+        </h5>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                @using (Html.BeginForm("Edit", "Role", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        @Html.Hidden("UserId", "", new { @class = "form-control", @Value = ViewBag.Id })
+                        @Html.Label(Resources.UserRole.UserLevel, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownList("UserLevel", ViewBag.UserLevels as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label(Resources.UserRole.StockID, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownList("StockID", ViewBag.Stocks as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label(Resources.UserRole.Role, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownList("RoleId", ViewBag.Roles as IEnumerable<SelectListItem>, "--select roles--", new { @class = "form-control select2bs4", @data_placeholder = "-- select roles--", multiple = "multiple", @required = "required", @style = "width:100%" })
+                    </div>
+                    <div class="float-right pt-1">
+                        <a href="@Request.UrlReferrer" class="btn btn-danger btn-min mr-2">
+                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                            @Resources.Globle.Cancel
+                        </a>
+                        <button type="submit" class="btn btn-success btn-min">
+                            <i class="far fa-check-circle"></i>
+                            @Resources.Globle.Save
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2@9-sweetaler2.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            $('.select2').select2();
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+            $('.singledatepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    firstDay: 1,
+                }
+            });
+
+            $('.singledatetimepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                timePicker: true,
+                timePicker24Hour: true,
+                locale: {
+                    format: 'YYYY-MM-DD hh:mm',
+                    firstDay: 1
+                }
+            })
+        });
+    </script>
+}
+

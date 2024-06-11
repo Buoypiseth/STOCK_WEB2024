@@ -1,0 +1,474 @@
+﻿@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <div class="card-title align-self-center">
+                @Resources.BuyProduct.Title
+            </div>
+            <div>
+                <button type="button" class="btn btn-min btn-primary mr-2" data-toggle="modal" data-target="#modalSupplier">
+                    <i class="fa fa-plus-circle"></i>
+                    Supplier
+                </button>
+                <button type="button" class="btn btn-min btn-success" data-toggle="modal" data-target="#modalPayment">
+                    <i class="fa fa-plus-circle"></i>
+                    @Resources.Buttons.Payment
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-hover table-sm data-table dt-responsive nowrap" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>@Resources.BuyProduct.PrdNameEng</th>
+                            <th>@Resources.BuyProduct.UnitType</th>
+                            <th>@Resources.BuyProduct.barCode</th>
+                            <th>@Resources.BuyProduct.totalInStock</th>
+                            @*<th>@Resources.BuyProduct.SellingPriceUSD</th>*@
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <table class="table table-hover table-sm dt-responsive dataTable nowrap" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>@Resources.BuyProduct.PrdNameEng</th>
+                            @*<th>@Resources.BuyProduct.BuyingCost</th>*@
+                            <th>@Resources.BuyProduct.Quantity</th>
+                            <th>@Resources.BuyProduct.TotalCost</th>
+                            <th>@Resources.BuyProduct.ExpireDate</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*modol buy product*@
+<div class="modal fade" id="modalPurchase" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-title" class="modal-title">
+                    @Resources.BuyProduct.Title
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("AddOrder", "BuyProduct", FormMethod.Post, new { id = "formAddOrder" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label for="PurchaseDate">@Resources.BuyProduct.PurchaseDate</label>
+                        <input type="hidden" name="ProductID" id="ProductID" class="form-control" />
+                        <input type="text" name="PurchaseDate" id="PurchaseDate" class="form-control singledatetimepicker" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Quantity">@Resources.BuyProduct.Quantity</label>
+                        <input type="number" name="Quantity" id="Quantity" value="1" placeholder="0" required class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="ExpireDate">@Resources.BuyProduct.ExpireDate</label>
+                        <input type="text" name="ExpireDate" id="ExpireDate" class="form-control singledatepicker" />
+                    </div>
+                    <div class="form-group">
+                        <label for="BuyingCost">@Resources.BuyProduct.BuyingCost</label>
+                        <input type="number" name="BuyingCost" id="BuyingCost" placeholder="0.00" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="SellingPriceUSD">@Resources.BuyProduct.SellingPriceUSD</label>
+                        <input type="number" name="SellingPriceUSD" id="SellingPriceUSD" placeholder="0.00" class="form-control" />
+                    </div>
+                    <div class="row mt-4 mb-2">
+                        <div class="col text-right">
+                            <button type="button" id="btnSave" class="btn btn-primary btn-block">
+                                <i class="far fa-check-circle"></i>
+                                @Resources.Buttons.Save
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@*modal create supplier*@
+@Html.Partial("Partials/_Supplier")
+@*modal payment purchase*@
+@Html.Partial("Partials/_Payment")
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    <script src="~/assets/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script type="text/javascript">
+        var sidebarCollapse = $('#sidebarCollapse');
+        var modalPurchase = $('#modalPurchase');
+        var modalPayment = $('#modalPayment');
+
+        var BuyID = $('#BuyID');
+        var ProductID = $('#ProductID');
+        var PurchaseDate = $('#PurchaseDate');
+        var ExpireDate = $('#ExpireDate');
+        var BuyingCost = $('#BuyingCost');
+        var SellingPriceUSD = $('#SellingPriceUSD');
+        var Quantity = $('#Quantity');
+        var Description = $('#Description');
+
+        var totalCost = $('#Total');
+        var amtDis = $('#AmtDis');
+        var perDis = $('#PerDis');
+        var grandTotal = $('#GrandTotal');
+        var amtPay = $('#AmtPay');
+        var amtLoan = $('#AmtLoan');
+        var dateReturn = $('#DateReturn');
+
+        $(function () {
+            sidebarCollapse.addClass("sidebar-collapse");
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+            $('body').on('shown.bs.modal', modalPurchase, function () {
+                $('#Quantity').focus();
+                $('.singledatepicker').daterangepicker({
+                    opens: 'right',
+                    drops: 'down',
+                    singleDatePicker: true,
+                    showDropdowns: true,
+                    minYear: 2000,
+                    maxYear: parseInt(moment().format('YYYY'), 10),
+                    locale: {
+                        format: 'YYYY-MM-DD',
+                        firstDay: 1
+                    }
+                });
+
+                var _formatDate = 'YYYY-MM-DD hh:mm a';
+                $('.singledatetimepicker').daterangepicker({
+                    timePicker: true,
+                    singleDatePicker: true,
+                    showDropdowns: true,
+                    minYear: 2000,
+                    maxYear: parseInt(moment().format('YYYY'), 10),
+                    startDate: moment(),
+                    locale: {
+                        format: _formatDate,
+                        firstDay: 1
+                    }
+                }).on('apply.daterangepicker', function (ev, picker) {
+                    $(this).val(picker.startDate.format(_formatDate));
+                });
+            });
+            $('body').on('shown.bs.modal', modalPayment, function () {
+                $('#InvoiceNo').focus();
+                $('.singledatepicker').daterangepicker({
+                    opens: 'right',
+                    drops: 'down',
+                    singleDatePicker: true,
+                    showDropdowns: true,
+                    minYear: 2000,
+                    maxYear: parseInt(moment().format('YYYY'), 10),
+                    locale: {
+                        format: 'YYYY-MM-DD',
+                        firstDay: 1
+                    }
+                });
+
+                var _formatDate = 'YYYY-MM-DD hh:mm a';
+                $('.singledatetimepicker').daterangepicker({
+                    timePicker: true,
+                    singleDatePicker: true,
+                    showDropdowns: true,
+                    minYear: 2000,
+                    maxYear: parseInt(moment().format('YYYY'), 10),
+                    startDate: moment(),
+                    locale: {
+                        format: _formatDate,
+                        firstDay: 1
+                    }
+                }).on('apply.daterangepicker', function (ev, picker) {
+                    $(this).val(picker.startDate.format(_formatDate));
+                });
+            });
+            //$('#modalPayment').on('hidden.bs.modal', function (e) {
+            //    $('#formPayment').trigger("reset");
+            //    dataTable.draw();
+            //});
+            $(document).on('click', '.btnModal', function () {
+                ProductID.val($(this).data('id'));
+                BuyingCost.val($(this).data('cost'));
+                SellingPriceUSD.val($(this).data('price'));
+                modalPurchase.modal('show');
+            });
+            $('#PerDis').on('keyup', function () {
+                calPerDis();
+            });
+            function calPerDis() {
+                var gTotal = 0;
+                var totalDisc = perDis.val();
+                if (perDis.val() == "") {
+                    totalDisc = 0;
+                }
+
+                gTotal = (parseFloat(totalDisc) / 100) * parseFloat(totalCost.val());
+                amtDis.val(gTotal.toFixed(2));
+
+                gTotal = parseFloat(totalCost.val()) - gTotal;
+                grandTotal.val(gTotal.toFixed(2));
+                amtLoan.val(gTotal.toFixed(2));
+                calAmtPay();
+            }
+            $('#AmtDis').on('keyup', function () {
+                calAmtDis();
+            });
+            function calAmtDis() {
+                var gTotal = 0;
+                var totalDisc = amtDis.val();
+                if (amtDis.val() == "") {
+                    totalDisc = 0;
+                }
+
+                gTotal = parseFloat(totalDisc) / parseFloat(totalCost.val());
+                gTotal = gTotal * 100;
+                perDis.val(gTotal.toFixed(2));
+
+                gTotal = parseFloat(totalCost.val()) - parseFloat(totalDisc);
+                grandTotal.val(gTotal.toFixed(2));
+                amtLoan.val(gTotal.toFixed(2));
+                calAmtPay();
+            }
+            $('#AmtPay').on('keyup', function () {
+                calAmtPay();
+            });
+            function calAmtPay() {
+                var gTotal = 0;
+                var gAmtPay = amtPay.val();
+                var gAmtLoan = 0;
+
+                if (amtPay.val() == "") {
+                    gAmtPay = 0;
+                    gAmtLoan = grandTotal.val();
+                    amtLoan.val(gAmtLoan.toFixed(2));
+                }
+
+                gTotal = parseFloat(grandTotal.val());
+                gAmtPay = parseFloat(gAmtPay);
+
+                if (gAmtPay >= gTotal) {
+                    amtPay.val(gTotal.toFixed(2));
+                    amtLoan.val(0);
+                }
+                else {
+                    gAmtLoan = gTotal - gAmtPay;
+                    amtLoan.val(gAmtLoan.toFixed(2));
+                }
+
+                if (gAmtLoan > 0) {
+                    dateReturn.prop("disabled", false);
+                } else {
+                    dateReturn.prop("disabled", true);
+                }
+            }
+
+             $(document).on('click', '#btnSave', function () {
+                 var data = {};
+                 data.BuyID = BuyID.val();
+                 data.ProductID = ProductID.val();
+                 data.PurchaseDate = PurchaseDate.val();
+                 data.ExpireDate = ExpireDate.val();
+                 data.BuyingCost = BuyingCost.val();
+                 data.SellingPriceUSD = SellingPriceUSD.val();
+                 data.Quantity = Quantity.val();
+                 data.Description = Description.val();
+                 if (Quantity.val() == 0) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Oops...',
+                        text: 'The field quantity required.'
+                    })
+
+                    return true;
+                }
+
+               $.ajax({
+                    url: '@Url.Action("AddOrder", "BuyProduct")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    processData: false,
+                   success: function (response) {
+                       if (response) {
+                           dataTable.draw();
+                           modalPurchase.modal('hide');
+                           $('#formAddOrder').trigger("reset");
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: response
+                            })
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+             });
+
+             $(document).on('click', '.btnDelete', function () {
+                var data = {};
+                data.MainStockID = $(this).data('id');
+                $.ajax({
+                    url: '@Url.Action("Delete", "BuyProduct")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    success: function (response) {
+                        if (response == 'True') {
+                            dataTable.draw();
+                            //Toast.fire({
+                            //    type: 'success',
+                            //    title: 'The item was successfully deleted.'
+                            //})
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: response
+                            })
+                        }
+                    },
+                    error: function (response) {
+                        if (response == 405) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'You do not have access to do that.'
+                            })
+                        }
+                    }
+                });
+            });
+
+            var dataTableProduct = $('.data-table')
+                .DataTable({
+                    "sAjaxSource": '@Url.Action("GetForPurchase", "Product")',
+                    "bServerSide": true,
+                    "pageLength": 25,
+                    "bProcessing": true,
+                    "bSearchable": true,
+                    "columns": [
+                        //{
+                        //    "data": null, "sortable": false,
+                        //    "render": function (data, type, row, meta) {
+                        //        return meta.row + meta.settings._iDisplayStart + 1;
+                        //    }
+                        //},
+                        { "data": "PrdNameEng" },
+                        { "data": "OrderComment", "sortable": false },
+                        { "data": "barCode", "sortable": false },
+                        { "data": "totalInStock", "sortable": false },
+                        //{ "data": "SellingPriceUSD", "sortable": false, render: $.fn.dataTable.render.number(',', '.', 2, '')  },
+                        {
+                            "data": "ProductID",
+                            "sortable": false,
+                            "render": function (data, type, res, meta) {
+                                var actions = '<button type="button" data-id="' + data + '" data-cost="' + res.BuyingCost + '" data-price="' + res.SellingPriceUSD + '" class="btn btnModal btn-sm btn-primary mx-1"><i class="fa fa-plus-circle"></i></a>';
+                                return actions;
+                            }
+                        }
+                    ]
+                });
+            //------------load main stock ordering-------------
+            var dataTable = $('.dataTable')
+                .DataTable({
+                    "sAjaxSource": '@Url.Action("GetMainStockOrdering", "BuyProduct")',
+                    "bRetrieve": true,
+                    "bServerSide": true,
+                    "pageLength": 25,
+                    "bProcessing": true,
+                    "bSearchable": true,
+                    "columns": [
+                        //{
+                        //    "data": null, "sortable": false,
+                        //    "render": function (data, type, row, meta) {
+                        //        return meta.row + meta.settings._iDisplayStart + 1;
+                        //    }
+                        //},
+                        { "data": "PrdNameEng" },
+                        //{ "data": "BuyingCost", "sortable": false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                        { "data": "Quantity","sortable": false },
+                        { "data": "TotalCost", "sortable": false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                        {
+                            "data": "ExpireDate", "sortable": false,
+                            render: function (data, type, row, meta) {
+                                return moment(data).format('YYYY-MM-DD');
+                            }
+                        },
+                        {
+                            "data": "MainStockID",
+                            "sortable": false,
+                            "render": function (data, type, res, meta) {
+                                var actions = '<button type="button" data-id="' + data + '" class="btn btnDelete btn-sm btn-danger mx-1"><i class="fa fa-trash"></i></a>';
+                                return actions;
+                            }
+                        }
+                    ],
+                    footerCallback: function (row, data, start, end, display) {
+                        var api = this.api(), data;
+                        // Remove the formatting to get integer data for summation
+                        var intVal = function (i) {
+                            return typeof i === 'string' ?
+                                i.replace(/[\$,]/g, '') * 1 :
+                                typeof i === 'number' ?
+                                    i : 0;
+                        };
+
+                        // Total over all pages
+
+                        total = api
+                            .column(2)
+                            .data()
+                            .reduce(function (a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        $(api.column(2).footer()).html(
+                            totalCost.val(total.toFixed(2)),
+                            grandTotal.val(total.toFixed(2)),
+                            amtLoan.val(total.toFixed(2)),
+                        );
+                    }
+                });
+            });
+    </script>
+}

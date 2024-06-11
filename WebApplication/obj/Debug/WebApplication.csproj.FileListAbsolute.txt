@@ -1,0 +1,983 @@
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\WebApplication.dll.config
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\csc.exe
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\csc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\csc.rsp
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\csi.exe
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\csi.exe.config
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\csi.rsp
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.Managed.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.AppContext.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Console.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Globalization.Calendars.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.IO.Compression.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.IO.FileSystem.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Net.Sockets.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.ValueTuple.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Xml.XmlDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Xml.XPath.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\vbc.exe
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\vbc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\vbc.rsp
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\VBCSCompiler.exe
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Authentication.Cookies.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Authentication.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Cryptography.Internal.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Cryptography.KeyDerivation.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.DataProtection.Abstractions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.DataProtection.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.FileProviders.Abstractions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Hosting.Abstractions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Http.Abstractions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Http.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Http.Extensions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Http.Features.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Identity.Core.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Identity.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.WebUtilities.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Configuration.Binder.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Configuration.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Identity.Core.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Logging.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Options.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.OptionsModel.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.PlatformAbstractions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.WebEncoders.Core.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.WebEncoders.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Net.Http.Headers.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Owin.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Owin.Security.Cookies.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Owin.Security.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Owin.Security.OAuth.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Owin.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Buffers.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.ComponentModel.Annotations.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Diagnostics.DiagnosticSource.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Memory.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Numerics.Vectors.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Threading.Tasks.Extensions.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.ValueTuple.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Authentication.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Authentication.Cookies.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Cryptography.Internal.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Cryptography.KeyDerivation.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.DataProtection.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.DataProtection.Abstractions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.FileProviders.Abstractions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Hosting.Abstractions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Http.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Http.Abstractions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Http.Extensions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Http.Features.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Identity.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Identity.Core.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNet.WebUtilities.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Configuration.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Configuration.Binder.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Identity.Core.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Logging.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Options.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.OptionsModel.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.PlatformAbstractions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.Primitives.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.WebEncoders.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Extensions.WebEncoders.Core.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Net.Http.Headers.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Owin.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Owin.Security.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Owin.Security.Cookies.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\Microsoft.Owin.Security.OAuth.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Buffers.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Diagnostics.DiagnosticSource.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Memory.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Numerics.Vectors.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.Threading.Tasks.Extensions.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\bin\System.ValueTuple.xml
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.csprojAssemblyReference.cache
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.Resources.Employee.resources
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.Resources.Buttons.resources
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.Resources.Strings.resources
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.Resources.Employee.km.resources
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.Resources.Buttons.km.resources
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.Resources.Strings.km.resources
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.csproj.GenerateResource.cache
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Theme\WebApplication\obj\Debug\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\SqlServerTypes\x64\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\SqlServerTypes\x86\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\WebApplication.dll.config
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\csc.exe
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\csc.exe.config
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\csc.rsp
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\csi.exe
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\csi.exe.config
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\csi.rsp
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.Managed.Core.targets
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.AppContext.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Console.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Globalization.Calendars.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.IO.Compression.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.IO.FileSystem.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Net.Sockets.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.ValueTuple.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Xml.XmlDocument.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Xml.XPath.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\vbc.exe
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\vbc.exe.config
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\vbc.rsp
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\VBCSCompiler.exe
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.ReportViewer.Common.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.ReportViewer.Design.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.ReportViewer.WebDesign.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.ReportViewer.WebForms.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.ReportViewer.WinForms.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.SqlServer.Types.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\EnvDTE.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\stdole.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.VisualStudio.OLE.Interop.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\Microsoft.MSXML.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\de\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\es\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\it\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.Resources.Employee.resources
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.Resources.Buttons.resources
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.Resources.Category.resources
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.Resources.Strings.resources
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.Resources.Employee.km.resources
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.Resources.Buttons.km.resources
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.Resources.Strings.km.resources
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.csproj.GenerateResource.cache
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\RdlCompile.cache
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\RdlCompile.compiled
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication\WebApplication\bin\ReportViewerForMvc.dll
+D:\7Tech\Asp_Project\WebApplication\WebApplication\obj\Debug\WebApplication.csprojAssemblyReference.cache
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.Resources.Employee.resources
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.Resources.Buttons.resources
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.Resources.Category.resources
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.Resources.Strings.resources
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.Resources.Employee.km.resources
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.Resources.Buttons.km.resources
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.Resources.Strings.km.resources
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.csproj.GenerateResource.cache
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\RdlCompile.cache
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\RdlCompile.compiled
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\SqlServerTypes\x64\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\SqlServerTypes\x86\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\WebApplication.dll.config
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\csc.exe
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\csc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\csc.rsp
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\csi.exe
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\csi.exe.config
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\csi.rsp
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.Managed.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.AppContext.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Console.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Globalization.Calendars.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.IO.Compression.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.IO.FileSystem.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Net.Sockets.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.ValueTuple.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Xml.XmlDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Xml.XPath.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\vbc.exe
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\vbc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\vbc.rsp
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\VBCSCompiler.exe
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.ReportViewer.Common.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.ReportViewer.Design.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.ReportViewer.WebDesign.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.ReportViewer.WebForms.DLL
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.ReportViewer.WinForms.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.SqlServer.Types.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ReportViewerForMvc.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\EnvDTE.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\stdole.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.VisualStudio.OLE.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\Microsoft.MSXML.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\de\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\es\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\it\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication - Res\WebApplication\obj\Debug\WebApplication.csprojAssemblyReference.cache
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.Resources.Employee.resources
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.Resources.Buttons.resources
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.Resources.Category.resources
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.Resources.Strings.resources
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.Resources.Employee.km.resources
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.Resources.Buttons.km.resources
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.Resources.Strings.km.resources
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.csproj.GenerateResource.cache
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\RdlCompile.cache
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\RdlCompile.compiled
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\SqlServerTypes\x64\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\SqlServerTypes\x86\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\WebApplication.dll.config
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\csc.exe
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\csc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\csc.rsp
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\csi.exe
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\csi.exe.config
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\csi.rsp
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.Managed.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.AppContext.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Console.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Globalization.Calendars.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.IO.Compression.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.IO.FileSystem.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Net.Sockets.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.ValueTuple.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Xml.XmlDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Xml.XPath.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\vbc.exe
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\vbc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\vbc.rsp
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\VBCSCompiler.exe
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.ReportViewer.Common.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.ReportViewer.Design.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.ReportViewer.WebDesign.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.ReportViewer.WebForms.DLL
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.ReportViewer.WinForms.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.SqlServer.Types.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ReportViewerForMvc.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\EnvDTE.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\stdole.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.VisualStudio.OLE.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\Microsoft.MSXML.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\de\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\es\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\it\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication - Hotel\WebApplication\obj\Debug\WebApplication.csproj.AssemblyReference.cache
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Category.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Home.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Menu.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Globle.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.PawnInterest.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Buttons.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Home.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Menu.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Globle.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Buttons.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.PawnInterest.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.csproj.GenerateResource.cache
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\RdlCompile.cache
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\RdlCompile.compiled
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\SqlServerTypes\x64\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\SqlServerTypes\x86\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\WebApplication.dll.config
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\csc.exe
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\csc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\csc.rsp
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\csi.exe
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\csi.exe.config
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\csi.rsp
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.Managed.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.AppContext.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Console.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Globalization.Calendars.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.IO.Compression.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.IO.FileSystem.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Net.Sockets.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.ValueTuple.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Xml.XmlDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Xml.XPath.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\vbc.exe
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\vbc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\vbc.rsp
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\VBCSCompiler.exe
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.ReportViewer.Common.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.ReportViewer.Design.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.ReportViewer.WebDesign.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.ReportViewer.WebForms.DLL
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.ReportViewer.WinForms.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.SqlServer.Types.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ReportViewerForMvc.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\EnvDTE.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\stdole.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.VisualStudio.OLE.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\Microsoft.MSXML.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\de\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\es\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\it\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Category.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Pawn.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Pawn.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.ExchangeRate.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.ExchangeRate.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.User.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.User.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.UserRole.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.UserRole.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Customer.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Customer.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Contract.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Contract.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Product.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.Product.km.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.csproj.AssemblyReference.cache
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.PawnDetail.resources
+D:\7Tech\Asp_Project\WebApplication - Pawn\WebApplication\obj\Debug\WebApplication.Resources.PawnDetail.km.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.UserRole.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.User.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.Home.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.Menu.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.Globle.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.Buttons.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.UserRole.km.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.Home.km.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.Menu.km.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.Globle.km.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.Resources.Buttons.km.resources
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.csproj.GenerateResource.cache
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\RdlCompile.cache
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\RdlCompile.compiled
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\SqlServerTypes\x64\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\SqlServerTypes\x86\msvcr120.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\WebApplication.dll.config
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\csc.exe
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\csc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\csc.rsp
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\csi.exe
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\csi.exe.config
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\csi.rsp
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.Managed.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.AppContext.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Console.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Globalization.Calendars.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.IO.Compression.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.IO.FileSystem.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Net.Sockets.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.ValueTuple.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Xml.XmlDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Xml.XPath.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\vbc.exe
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\vbc.exe.config
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\vbc.rsp
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\VBCSCompiler.exe
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.ReportViewer.Common.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.ReportViewer.Design.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.ReportViewer.WebDesign.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.ReportViewer.WebForms.DLL
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.ReportViewer.WinForms.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.SqlServer.Types.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ReportViewerForMvc.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\EnvDTE.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\stdole.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.VisualStudio.OLE.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\Microsoft.MSXML.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\de\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\es\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\it\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.dll
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.pdb
+D:\7Tech\Asp_Project\WebApplication - Payroll\WebApplication\obj\Debug\WebApplication.csproj.AssemblyReference.cache
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\SqlServerTypes\x64\msvcr120.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\SqlServerTypes\x86\msvcr120.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\WebApplication.dll.config
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\WebApplication.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\WebApplication.pdb
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\csc.exe
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\csc.exe.config
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\csc.rsp
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\csi.exe
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\csi.exe.config
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\csi.rsp
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.Managed.Core.targets
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.AppContext.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Console.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Globalization.Calendars.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.IO.Compression.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.IO.FileSystem.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Net.Sockets.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.ValueTuple.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Xml.XmlDocument.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Xml.XPath.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\vbc.exe
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\vbc.exe.config
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\vbc.rsp
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\VBCSCompiler.exe
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.ReportViewer.Common.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.ReportViewer.Design.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.ReportViewer.WebDesign.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.ReportViewer.WebForms.DLL
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.ReportViewer.WinForms.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.SqlServer.Types.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ReportViewerForMvc.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\EnvDTE.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\stdole.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.OLE.Interop.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.MSXML.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\de\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\es\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\it\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Alerts.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Bill.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Category.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Customer.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.BuyProduct.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Payment.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Sale.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.ProductPackage.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Supplier.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Product.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.UserRole.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.User.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Home.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Menu.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Globle.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Buttons.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Alerts.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Bill.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.User.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Category.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Customer.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.BuyProduct.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Payment.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Sale.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.ProductPackage.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Supplier.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Product.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.UserRole.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Home.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Menu.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Globle.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Buttons.km.resources
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.csproj.GenerateResource.cache
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\RdlCompile.cache
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\RdlCompile.compiled
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\km\WebApplication.resources.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.dll
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.pdb
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.csproj.AssemblyReference.cache

@@ -1,0 +1,105 @@
+﻿<!-- Modal Sale Item-->
+@model WebApplication.Models.Sale
+<div class="modal fade" id="modalSaleItem" tabindex="-1" role="dialog" aria-labelledby="modalSaleItemLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalSaleItemLabel">Item Sale</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        detail
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">ផលិតផលគិតជា</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.unitType, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">តំលៃលក់</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.unitType, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">ចំនួន</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.unitType, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">តំលៃលក់ជាក់ស្ដែង($)</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.unitType, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">តំលៃលក់ជាក់ស្ដែង(៛)</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.unitType, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">បញ្ចុះតំលៃ($)</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.unitType, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">បញ្ចុះតំលៃ(៛)</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.unitType, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">តំលៃសរុប</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.unitType, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-min btn-rounded" data-dismiss="modal">
+                    <div class="spinner">
+                        <span class="spinner-border spinner-border-sm d-none mr-2" role="status"></span>
+                        <i class="fa fa-times-circle mr-2"></i>Close
+                    </div>
+                </button>
+                <button type="button" class="btn btn-success btn-min btn-rounded">
+                    <div class="spinner">
+                        <span class="spinner-border spinner-border-sm d-none mr-2" role="status"></span>
+                        <i class="fa fa-check-circle mr-2"></i>Save
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    window.addEventListener("load", (event) => {
+        var modalSaleItem = $('#modalSaleItem');
+        var _this;
+        $(document).on('click', '.btnShowModalSaleItem', function () {
+            _this = $(this);
+            spinner(_this, 'loading');
+            setTimeout(function () {
+                modalSaleItem.modal('show');
+            }, 200);
+        });
+
+        //$(modalSaleItem).on('shown.bs.modal', function () {
+        //    spinner(_this, 'loading');
+        //});
+        $(modalSaleItem).on('hidden.bs.modal', function () {
+            spinner(_this, 'finished');
+        });
+    });
+</script>

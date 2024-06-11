@@ -1,0 +1,14 @@
+label {
+    display: inline-block;
+    margin-bottom: .2rem;
+}
+.form-group {
+    margin-bottom: .2rem;
+}
+
+.textbox-grid {
+    border: 0;
+    color: red;
+    /*    width:auto;
+    max-width:100px;*/
+}

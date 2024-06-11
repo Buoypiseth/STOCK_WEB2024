@@ -1,0 +1,201 @@
+﻿@model IEnumerable<WebApplication.Models.tbl_products>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PrdNameEng)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrdNameKh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalInStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.minimalStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellingPriceUSD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellingPriceKHR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellingPriceTHB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrdDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.barCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Delstatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isCutStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductIDRealStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumInOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsUnique)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxNote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Money_Sale_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area_Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOC_Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DMCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RPCode_Repaire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Larbor_Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_prdcategory.PrdCmpntID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_suppliers.CompanyName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrdNameEng)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrdNameKh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalInStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.minimalStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellingPriceUSD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellingPriceKHR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellingPriceTHB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Photo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrdDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.barCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Delstatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isCutStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductIDRealStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumInOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsUnique)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxNote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Money_Sale_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOC_Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DMCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RPCode_Repaire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Larbor_Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_prdcategory.PrdCmpntID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_suppliers.CompanyName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+        </td>
+    </tr>
+}
+
+</table>

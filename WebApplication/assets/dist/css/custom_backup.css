@@ -1,0 +1,43 @@
+label {
+    display: inline-block;
+    margin-bottom: .2rem;
+}
+.form-group {
+    margin-bottom: .2rem;
+}
+
+.textbox-grid {
+    border: 0;
+    color: red;
+    /*    width:auto;
+    max-width:100px;*/
+}
+
+/*.btn-app {
+    border-radius: 3px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #6c757d;
+    font-size: 12px;
+    height: 77px;
+    margin: 0 0 10px 10px;
+    min-width: 85px;
+    padding: 15px 5px;
+    position: relative;
+    text-align: center;
+}*/
+
+.item .product {
+    border-radius: 3px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #6c757d;
+    font-size: 12px;
+    height: 95px;
+    margin: 0 0 10px 10px;
+    min-width: 95px;
+    max-width: 95px;
+    padding: 15px 5px;
+    position: relative;
+    text-align: center;
+}

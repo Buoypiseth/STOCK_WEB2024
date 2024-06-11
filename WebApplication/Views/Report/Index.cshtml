@@ -1,0 +1,252 @@
+﻿@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    @*<link href="~/assets/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+        <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />*@
+    <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <style>
+        .stop-loading {
+            display: none !important;
+        }
+    </style>
+}
+<div class="card card-outline">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="fas fa-chart-line mr-1"></i>
+            Report
+        </h3>
+    </div>
+    <div class="card-body">
+        <ul class="nav nav-tabs" id="custom-content-below-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link @ViewBag.TabFromToDate" id="content-form-to-date-tab" data-toggle="pill" href="#content-form-to-date" role="tab" aria-controls="content-form-to-date" aria-selected="true">
+                    FROM_TO_DATE
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @ViewBag.TabDaily" id="content-daily-tab" data-toggle="pill" href="#content-daily" role="tab" aria-controls="content-daily" aria-selected="false">
+                    DAILY
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @ViewBag.TabMonthly" id="content-monthly-tab" data-toggle="pill" href="#content-monthly" role="tab" aria-controls="content-monthly" aria-selected="false">
+                    MONTHLY
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @ViewBag.TabYearly" id="content-yearly-tab" data-toggle="pill" href="#content-yearly" role="tab" aria-controls="content-yearly" aria-selected="false">
+                    YEARLY
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content" id="custom-content-below-tabContent">
+            <div class="tab-pane fade @ViewBag.TabFromToDate" id="content-form-to-date" role="tabpanel" aria-labelledby="content-form-to-date-tab">
+                <div class="overlay-wrapper">
+                    <div class="overlay stop-loading">
+                        <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                        <div class="text-bold pt-2">Loading...</div>
+                    </div>
+                    @Html.Partial("Partials/_FromToDate")
+                </div>
+            </div>
+            <div class="tab-pane fade @ViewBag.TabDaily" id="content-daily" role="tabpanel" aria-labelledby="content-daily-tab">
+                <div class="overlay-wrapper">
+                    <div class="overlay stop-loading">
+                        <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                        <div class="text-bold pt-2">Loading...</div>
+                    </div>
+                    @Html.Partial("Partials/_Daily")
+                </div>
+            </div>
+            <div class="tab-pane fade @ViewBag.TabMonthly" id="content-monthly" role="tabpanel" aria-labelledby="content-monthly-tab">
+                <div class="overlay-wrapper">
+                    <div class="overlay stop-loading">
+                        <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                        <div class="text-bold pt-2">Loading...</div>
+                    </div>
+                    @Html.Partial("Partials/_Monthly")
+                </div>
+            </div>
+            <div class="tab-pane fade @ViewBag.TabYearly" id="content-yearly" role="tabpanel" aria-labelledby="content-yearly-tab">
+                <div class="overlay-wrapper">
+                    <div class="overlay stop-loading">
+                        <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                        <div class="text-bold pt-2">Loading...</div>
+                    </div>
+                    @Html.Partial("Partials/_Yearly")
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card -->
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    @*<script src="~/assets/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="~/assets/plugins/toastr/toastr.min.js"></script>*@
+    <script src="~/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script type="text/javascript">
+        var pathName = $('#PathReportName');
+        var reportName = $('#ParaReportName');
+        var dateOnly = $('#txtDateOnly');
+        var overlay = $('.overlay');
+        $(function () {
+            isReportActive(reportName.val());
+            //const Toast = Swal.mixin({
+            //    toast: true,
+            //    position: 'top-end',
+            //    showConfirmButton: false,
+            //    timer: 3000
+            //});
+            //$('.select2').select2();
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+
+            $('.singledatepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    firstDay: 1,
+                }
+            });
+
+            $('.twodatepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: false,
+                showDropdowns: false,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    firstDay: 1,
+                }
+            });
+
+            $('.singledatetimepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                timePicker: true,
+                timePicker24Hour: true,
+                locale: {
+                    format: 'YYYY-MM-DD hh:mm',
+                    firstDay: 1
+                }
+            });
+
+            $('.monthlydatepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                locale: {
+                    format: 'YYYY-MM',
+                    firstDay: 1
+                }
+            });
+
+            $('.yearlydatepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                locale: {
+                    format: 'YYYY',
+                    firstDay: 1
+                }
+            });
+///-----block do sth-----2
+        $("form button[type=submit]").click(function () {
+            $("button[type=submit]", $(this).parents("form")).removeAttr("clicked");
+            $(this).attr("clicked", "true");
+        });
+        $('#formSearch').submit(function (e) {
+            e.preventDefault();
+            var button = $("button[type=submit][clicked=true]").val();
+            var link = '@Url.Action("Viewer", "Report")';
+            if (button == "pdf") {
+                link = '@Url.Action("PdfViewer", "Report")';
+            }
+            var start = 0;
+            var end = 0;
+            $('.txtSearch').each(function (index, value) {
+                if ($(this).val() == '') {
+                    start++;
+                }
+                end++;
+            });
+            //if (dateOnly.val() == 'False') {
+            //    if (end == start) {
+            //        alert('Please select value!');
+            //        return true;
+            //    }
+            //}
+            overlay.removeClass('stop-loading');
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: new FormData(this),
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (message) {
+                    if (message == 'True') {
+                        var src = link + '?dir=' + pathName.val() + '&slug=' + reportName.val();
+                        let params = 'scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=' + screen.availWidth + ',height=' + screen.availHeight;
+                        window.open(src, "newWin", params);
+                        overlay.addClass('stop-loading');
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: message
+                        })
+                    }
+                },
+                error: function (xhr, error, status) {
+                    console.log(error, status);
+                }
+            });
+        });
+///-----block do fuction-----3
+        function isReportActive(el) {
+            var _this;
+            $('.has-treeview ul li').each(function () {
+                _this = $(this);
+                if (_this.find('a').hasClass(el)) {
+                    _this.find('a').addClass('active');
+                }
+            });
+        }
+///-----end do fuction-----/3
+        });
+    </script>
+}
+

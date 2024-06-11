@@ -1,0 +1,44 @@
+﻿@using WebApplication.Extesions
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@Page.Title</title>
+    <!-- Google Font: Source Sans Pro -->
+    @*<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">*@
+    @Styles.Render("~/bundles/styles")
+    @RenderSection("styles", required: false)
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- /.Header -->
+        @Html.Partial("_Header")
+        <!-- /.Sidebar -->
+        @Html.Partial("_Sidebar")
+        <!-- /.Body -->
+        <div class="content-wrapper">
+            <!-- /.Breadcrumb -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    @Html.Raw(Html.BuildBreadcrumbNavigation())
+                </div>
+            </section>
+            <!-- /.Content -->
+            <section class="content">
+                <div class="container-fluid pt-3">
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
+        <!-- /.Footer -->
+        @Html.Partial("_Footer")
+    </div>
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
