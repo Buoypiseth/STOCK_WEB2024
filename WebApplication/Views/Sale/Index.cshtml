@@ -284,7 +284,6 @@
                 custId.attr('value', id);
                 customerOrderName.attr('value', custName);
                 modalListCustomer.modal('hide');
-
                 var arrAccountTypes = "";
                 $.ajax({
                     type: "GET",
@@ -292,13 +291,32 @@
                     dataType: "json",
                     data: { id: id },
                     success: function (data) {
-                        arrAccountTypes = "<option value='0' data-amount='0'>Select AccountType</option>";
+                        arrAccountTypes = "<option value='0' data-amount='0'>Select Account</option>";
                         $.each(data, function (index, item) {
                             arrAccountTypes += "<option value='" + item.CustomerAccountID + "' data-amount='" + item.Amount + "'>" + item.AccountType + "</option>";
                         });
                         $("#CustomerAccountID").html(arrAccountTypes);
                     }
                 });
+            });
+
+            $(document).on('change', '#custId', function () {
+                var _this = $(this);
+                //alert(_this.val());
+                 var arrAccountTypes = "";
+                 $.ajax({
+                     type: "GET",
+                     url: "@Url.Action("GetAccountTypeByCustomer", "Sale")",
+                     dataType: "json",
+                     data: { id: _this.val() },
+                     success: function (data) {
+                         arrAccountTypes = "<option value='0' data-amount='0'>Select Account</option>";
+                         $.each(data, function (index, item) {
+                             arrAccountTypes += "<option value='" + item.CustomerAccountID + "' data-amount='" + item.Amount + "'>" + item.AccountType + "</option>";
+                         });
+                         $("#CustomerAccountID").html(arrAccountTypes);
+                     }
+                 });
             });
             $(document).on('change', '#CustomerAccountID', function () {
                 var amount = $(this).find(':selected').attr('data-amount');
@@ -399,7 +417,7 @@
                                         addOrder(dataForm.get("prdID"), customerOrderId, cusId, dataForm.get("orderQty"), true);
                                     } else {
                                         dataTable.draw();
-                                        scanCode.focus();
+                                        //scanCode.focus();
                                     }
                                 }).catch(Swal.noop);
                             }
@@ -885,8 +903,8 @@
 
         //var heightList = ($(window).height()) - 250;
         //datatable list order
-    var dataTable = $('.dataTable')
-        .DataTable({
+        const dataTable = $('.dataTable')
+            .DataTable({
             sAjaxSource: '@Url.Action("GetData", "Sale")',
             fnServerParams: function (aoData)
             {
@@ -973,7 +991,7 @@
                             "sortable": false,
                             "render": function (data, type, full, meta)
                             {
-                                return '<button type="button" data-id="' + data + '" class="btn btn-primary btn-rounded btn-min-70 btnCategory"><div class="spinner"><span class="spinner-border spinner-border-sm d-none" role="status"></span><i class="fa fa-check-circle"></i></div></button>';
+                                return '<button type="button" data-id="' + data + '" class="btn btn-primary btn-min-70 btnCategory"><div class="spinner"><span class="spinner-border spinner-border-sm d-none" role="status"></span><i class="fa fa-check-circle"></i></div></button>';
                             }
                         }
                     ],
@@ -1026,8 +1044,8 @@
                         "searchable": false,
                         "sortable": false,
                         "render": function (data, type, full, meta) {
-                            //_btnOrder = '<button type="button" data-id="' + data + '" class="btn btn-primary btn-rounded btn-min-70 btnShowModalSaleItem mr-2"><div class="spinner"><span class="spinner-border spinner-border-sm d-none" role="status"></span><i class="fa fa-plus-circle"></i></div></button>';
-                            _btnOrder = '<button type="button" data-id="' + data + '" class="btn btn-success btn-rounded btn-min-70 btnAddOrder"><div class="spinner"><span class="spinner-border spinner-border-sm d-none" role="status"></span><i class="fa fa-check-circle"></i></div></button>';
+                            _btnOrder = '<button type="button" data-id="' + data + '" class="btn btn-primary btn-min-70 btnShowModalSaleItem mr-2"><div class="spinner"><span class="spinner-border spinner-border-sm d-none" role="status"></span><i class="fa fa-edit"></i></div></button>';
+                            _btnOrder += '<button type="button" data-id="' + data + '" class="btn btn-success btn-min-70 btnAddOrder"><div class="spinner"><span class="spinner-border spinner-border-sm d-none" role="status"></span><i class="fa fa-check-circle"></i></div></button>';
                             return _btnOrder;
                         }
                     },

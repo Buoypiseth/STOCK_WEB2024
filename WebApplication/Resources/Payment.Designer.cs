@@ -19,7 +19,7 @@ namespace Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Payment {
@@ -108,6 +108,15 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Customer.
         /// </summary>
+        public static string custId {
+            get {
+                return ResourceManager.GetString("custId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer.
+        /// </summary>
         public static string customerOrderID {
             get {
                 return ResourceManager.GetString("customerOrderID", resourceCulture);
@@ -120,6 +129,15 @@ namespace Resources {
         public static string DescripitonTerm {
             get {
                 return ResourceManager.GetString("DescripitonTerm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit InvoiceNo.
+        /// </summary>
+        public static string InvoiceNo {
+            get {
+                return ResourceManager.GetString("InvoiceNo", resourceCulture);
             }
         }
         

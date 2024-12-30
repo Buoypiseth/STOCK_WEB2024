@@ -132,11 +132,17 @@
   <data name="amtReturn" xml:space="preserve">
     <value>AmtReturn</value>
   </data>
+  <data name="custId" xml:space="preserve">
+    <value>Customer</value>
+  </data>
   <data name="customerOrderID" xml:space="preserve">
     <value>Customer</value>
   </data>
   <data name="DescripitonTerm" xml:space="preserve">
     <value>Description</value>
+  </data>
+  <data name="InvoiceNo" xml:space="preserve">
+    <value>Edit InvoiceNo</value>
   </data>
   <data name="netAmount" xml:space="preserve">
     <value>NetAmount</value>

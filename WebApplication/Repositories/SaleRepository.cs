@@ -384,6 +384,103 @@ namespace WebApplication.Repositories
             }
             return "True";
         }
+        public string StoreItemSale(Sale data)
+        {
+            try
+            {
+                tbl_orderdetails ordersDetail = new tbl_orderdetails();
+                var product = context.tbl_products.FirstOrDefault(x => x.ProductID == data.prdID);
+                ordersDetail.orderDetailsID = Helper.AutoID();
+                ordersDetail.customerOrderID = data.customerOrderID ?? "0";
+                ordersDetail.prdID = data.prdID;
+                ordersDetail.orderDate = DateTime.Now;
+                ordersDetail.unitType = product.UnitType;
+                ordersDetail.unitPrice = data.RealPriceUSD ?? 0;
+                ordersDetail.orderQty = data.orderQty ?? 0;
+                //if (data.custId == "0")
+                //{
+                //    ordersDetail.unitPrice = data.RealPriceUSD ?? product.SellingPriceUSD;
+                //}
+                //else
+                //{
+                //    float unitPrice = 0;
+                //    var priceByCust = context.tbl_products_Customers_Price.Where(x =>
+                //    x.memberID == data.custId
+                //    && x.ProductID == data.prdID).FirstOrDefault();
+                //    if (priceByCust != null)
+                //    {
+                //        unitPrice = (float)priceByCust.SellingPriceUSDForThisCus;
+                //    }
+                //    else
+                //    {
+                //        unitPrice = (float)data.RealPriceUSD;
+                //    }
+                //    ordersDetail.unitPrice = unitPrice;
+                //}
+                ordersDetail.PytStatus = ordersDetail.customerOrderID == "0" ? "Ordering" : "Paid";
+                ordersDetail.roomtableID = "0";
+                ordersDetail.ReservationID = "0";
+                ordersDetail.NumPrinted = 0;
+                ordersDetail.NumPrintedInv = 0;
+                ordersDetail.percDisc = data.percDisc ?? 0;
+                ordersDetail.AmtDisc = data.AmtDisc ?? 0;
+                ordersDetail.totalAmt = data.totalAmt ?? 0;
+                ordersDetail.orderTime = DateTime.Now;
+                ordersDetail.VoidDate = DateTime.Now;
+                ordersDetail.BuyingTotal = 0;
+                ordersDetail.userID = IUser.Id;
+                ordersDetail.TaxNote = product.TaxNote;
+                ordersDetail.OrderDetailDescription = data.OrderDetailDescription ?? product.PrdDesc;
+                ordersDetail.orderQtyReturn = 0;
+                ordersDetail.totalAmtReturn = 0;
+                ordersDetail.orderQtyReturnTemp = 0;
+                ordersDetail.totalAmtReturnTemp = 0;
+                ordersDetail.NumInCase = product.NumInOne;
+                context.tbl_orderdetails.Add(ordersDetail);
+                this.Save();
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+            return "True";
+        }
+
+        public string UpdateItemSale(Sale data)
+        {
+            try
+            {
+                //update sale new invoice
+                var ordersDetail = context.tbl_orderdetails.Where(x => x.prdID == data.prdID
+                        && x.userID == IUser.Id
+                        && x.PytStatus == "Ordering")
+                    .FirstOrDefault();
+                //update sale old invoice
+                if (data.customerOrderID != "0")
+                {
+                    ordersDetail = context.tbl_orderdetails.Where(x => x.prdID == data.prdID
+                            && x.userID == IUser.Id
+                            && x.customerOrderID == data.customerOrderID)
+                        .FirstOrDefault();
+                    ordersDetail.dateReturn = DateTime.Now;
+                }
+                ordersDetail.unitPrice = data.RealPriceUSD ?? 0;
+                ordersDetail.orderQty = data.orderQty ?? 0;
+                ordersDetail.percDisc = data.percDisc ?? 0;
+                ordersDetail.AmtDisc = data.AmtDisc ?? 0;
+                ordersDetail.totalAmt = data.totalAmt ?? 0;
+                //ordersDetail.orderTime = DateTime.Now;
+                //ordersDetail.VoidDate = DateTime.Now;
+                context.Entry(ordersDetail).State = EntityState.Modified;
+                this.Save();
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+            return "True";
+        }
+
         public string UpdateOrder(Sale data)
         {
             try

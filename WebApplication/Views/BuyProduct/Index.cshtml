@@ -33,7 +33,7 @@
                             <th>@Resources.BuyProduct.AmtPay</th>
                             <th>@Resources.BuyProduct.AmtLoan</th>
                             <th>@Resources.BuyProduct.Username</th>
-                            <th>@Resources.BuyProduct.Description</th>
+                            @*<th>@Resources.BuyProduct.Description</th>*@
                             <th></th>
                         </tr>
                     </thead>
@@ -51,7 +51,7 @@
     <script type="text/javascript">
         var sidebarCollapse = $('#sidebarCollapse');
         $(function () {
-            sidebarCollapse.addClass("sidebar-collapse");
+            //sidebarCollapse.addClass("sidebar-collapse");
             $(document).on('click', '.btnDetail', function () {
                 var id = $(this).data('id');
                 window.location.href = '@Url.Action("BuyDetail", "BuyProduct")?slug=' + id;
@@ -111,7 +111,7 @@
                         { data: "AmtPay", sortable: false, render: $.fn.dataTable.render.number(',', '.', 2, '$') },
                         { data: "AmtLoan", sortable: false, render: $.fn.dataTable.render.number(',', '.', 2, '$') },
                         { data: "Username", sortable: false },
-                        { data: "Description", sortable: false },
+                        //{ data: "Description", sortable: false },
                         {
                             data: "BuyID",
                             sortable: false,

@@ -15,12 +15,30 @@
                 {
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    if (ViewBag.IsReturn)
+                    {
+                        <div class="form-group row">
+                            <label for="InvoiceNo" class="col-sm-12 col-md-3 col-lg-2 col-form-label">@Resources.Payment.InvoiceNo</label>
+                            <div class="col-sm-6 col-md-5 col-lg-5">
+                                @Html.EditorFor(model => model.InvoiceNo, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.invoiceNo, placeholder = "InvoiceNo", @readonly = true } })
+                            </div>
+                        </div>
+                    }
                     <div class="form-group row">
-                        <label for="customerOrderName" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.customerOrderID</label>
+                        <label for="customerOrderName" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.custId</label>
                         <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @*@Html.HiddenFor(model => model.custId, new { @class = "form-control", @Value = ViewBag.custId })*@
+                            @*@Html.TextBox("customerOrderName", "", new { @class = "form-control", @readonly = "True", @Value = ViewBag.custName })*@
+                            @*<div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                                @Html.TextBox("customerOrderName", "", new { @class = "form-control", @readonly = "True", @Value = ViewBag.custName })
+                            </div>*@
                             @Html.HiddenFor(model => model.customerOrderID, new { @class = "form-control", @Value = ViewBag.customerOrderId })
-                            @Html.HiddenFor(model => model.custId, new { @class = "form-control", @Value = ViewBag.custId })
-                            @Html.TextBox("customerOrderName", "", new { @class = "form-control", @readonly = "True", @Value = ViewBag.custName })
+                            @Html.DropDownListFor(model => model.custId, ViewBag.Customers as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
                         </div>
                         <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
                             @Html.EditorFor(model => model.orderDate, new { htmlAttributes = new { @class = "form-control singledatetimepicker" } })
@@ -47,17 +65,17 @@
                         <div class="col-sm-4 col-md-4 col-lg-5 mb-2">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <button class="btn btn-warning" type="button">$</button>
+                                    <button class="btn btn-default" type="button">$</button>
                                 </div>
-                                @Html.EditorFor(model => model.amtDiscount, new { htmlAttributes = new { @class = "form-control is-warning", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
+                                @Html.EditorFor(model => model.amtDiscount, new { htmlAttributes = new { @class = "form-control is-default", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
                             </div>
                         </div>
                         <div class="col-sm-5 col-md-5 col-lg-5 mb-2">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <button class="btn btn-warning" type="button">%</button>
+                                    <button class="btn btn-default" type="button">%</button>
                                 </div>
-                                @Html.EditorFor(model => model.percentDiscount, new { htmlAttributes = new { @class = "form-control is-warning", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
+                                @Html.EditorFor(model => model.percentDiscount, new { htmlAttributes = new { @class = "form-control is-default", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
                             </div>
                         </div>
                     </div>
@@ -80,14 +98,6 @@
                             @Html.DropDownListFor(model => model.CustomerAccountID, ViewBag.AccountTypes as SelectList, "Select AccountType", new { @class = "form-control", @style = "width:100%" })
                             @Html.ValidationMessageFor(model => model.CustomerAccountID, "", new { @class = "text-danger" })
                         </div>
-                        @*<div class="col-sm-6 col-md-5 col-lg-5 mb-2">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-default" type="button">@Resources.Payment.Value</button>
-                                </div>
-                                @Html.EditorFor(model => model.CustomerAmount, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @Value = 0, @required = true } })
-                            </div>
-                        </div>*@
                     </div>
 
                     <div class="form-group row">

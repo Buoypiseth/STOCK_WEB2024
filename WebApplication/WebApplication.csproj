@@ -2858,7 +2858,6 @@
     <Content Include="obj\Debug\edmxResourcesToEmbed\Models\WebApplicationControl.csdl" />
     <Content Include="obj\Debug\edmxResourcesToEmbed\Models\WebApplicationControl.msl" />
     <Content Include="obj\Debug\edmxResourcesToEmbed\Models\WebApplicationControl.ssdl" />
-    <Content Include="obj\Debug\WebApplication.csproj.CopyComplete" />
     <Content Include="obj\Debug\WebApplication.csproj.CoreCompileInputs.cache" />
     <Content Include="assets\build\config\.eslintrc.json" />
     <Content Include="assets\build\npm\.eslintrc.json" />

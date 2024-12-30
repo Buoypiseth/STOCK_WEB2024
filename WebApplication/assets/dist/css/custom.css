@@ -62,6 +62,7 @@ body {
 
 .btn-rounded {
 	border-radius: 5rem;
+	/*border-radius: 2px;*/
 	/*background-color: #e9ecef;*/
 	border: 2px solid #e9ecef;
 }

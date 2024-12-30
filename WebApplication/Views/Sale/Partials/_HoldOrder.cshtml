@@ -4,7 +4,7 @@
         {
             foreach (var i in ViewBag.GetCustHold)
             {
-                <button type="button" class="btn btn-primary btn-block btn-rounded openHoldToOrdering" data-id=@i.roomtableID>
+                <button type="button" class="btn btn-default btn-block openHoldToOrdering" data-id=@i.roomtableID>
                     <div class="d-flex justify-content-between px-3">
                         <div>@i.CustomerName</div>
                         <div class="spinner">

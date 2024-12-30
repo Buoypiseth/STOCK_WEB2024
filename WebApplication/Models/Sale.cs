@@ -61,6 +61,7 @@ namespace WebApplication.Models
 
         //----------declare variable temp--------------
         public string InvoiceID { get; set; }
+        public string InvoiceNo { get; set; }
         public Nullable<double> Val { get; set; }
         public string Type { get; set; }
 
@@ -77,5 +78,10 @@ namespace WebApplication.Models
 
         public string CustomerAccountID { get; set; }
         public Nullable<double> CustomerAmount { get; set; }
+        public Nullable<double> RealPriceUSD { get; set; }
+        public Nullable<double> RealPriceKHR { get; set; }
+        public Nullable<double> usdTokhrSaleItem { get; set; }
+        public Nullable<double> usdToTHBSaleItem { get; set; }
+        public Nullable<double> usdToKhrChangeSaleItem { get; set; }
     }
 }

@@ -120,8 +120,11 @@
   <data name="All" xml:space="preserve">
     <value>ទាំងអស់</value>
   </data>
+  <data name="Bag" xml:space="preserve">
+    <value>Bag</value>
+  </data>
   <data name="Bill" xml:space="preserve">
-    <value>វិក្កយបត្រ</value>
+    <value>វិក្កយបត្រចាស់ៗ</value>
   </data>
   <data name="BuyProduct" xml:space="preserve">
     <value>ទិញចូល</value>

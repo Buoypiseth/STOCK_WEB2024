@@ -133,6 +133,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Buy In.
+        /// </summary>
+        public static string CreateBuyIn {
+            get {
+                return ResourceManager.GetString("CreateBuyIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string Date {

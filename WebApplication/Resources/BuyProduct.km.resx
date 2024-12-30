@@ -135,6 +135,9 @@
   <data name="BuyingCost" xml:space="preserve">
     <value>តម្លៃទិញ</value>
   </data>
+  <data name="CreateBuyIn" xml:space="preserve">
+    <value>បង្កើតការទិញចូល</value>
+  </data>
   <data name="Date" xml:space="preserve">
     <value>កាលបរិច្ឆេទ</value>
   </data>

@@ -64,6 +64,7 @@ namespace WebApplication.Controllers
         //GET:Index
         public ActionResult Index(string slug = "")
         {
+            this.GetCustomers();
             this.GetOptionInvoice();
             this.GetAccountTypes();
             ViewBag.Categories = context.tbl_prdcategory
@@ -100,6 +101,17 @@ namespace WebApplication.Controllers
                 //setSale.amtReceived = customerOrdered.amtReceived - customerOrdered.amtReturn;
             }
             return View();
+        }
+
+        public void GetCustomers()
+        {
+            var customers = context.tbl_customers.ToList();
+            ViewBag.Customers = new SelectList(from cust in customers
+                                               select new
+                                               {
+                                                   custId = cust.memberID,
+                                                   CustName =  cust.fullName,
+                                               }, "custId", "CustName");
         }
         //GET:Details
         public ActionResult Details(string slug = "")
@@ -534,6 +546,55 @@ namespace WebApplication.Controllers
         {
             var dataJson = context.tbl_customers_account.Where(x => x.memberID == id).ToList();
             return Json(dataJson, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public ActionResult GetSaleItemInfo(Sale data)
+        {
+            Sale objSale = new Sale();
+            var usdToKhr = Helper.ExchangeRate(0, "usdToKhr", "defaultRate");
+            var usdToThb = Helper.ExchangeRate(0, "usdToThb", "defaultRate");
+            var usdToKhrChange = Helper.ExchangeRate(0, "usdToKhrChange", "defaultRate");
+            var dataJson = context.tbl_products.FirstOrDefault(x => x.ProductID == data.prdID);
+            objSale.prdID = dataJson.ProductID;
+            objSale.PrdNameEng = dataJson.PrdNameEng;
+            objSale.unitType = dataJson.UnitType;
+            objSale.SellingPriceUSD = dataJson.SellingPriceUSD;
+            objSale.SellingPriceKHR = dataJson.SellingPriceKHR;
+            objSale.orderQty = 1;
+            objSale.AmtDisc = 0;
+            objSale.amtDiscount = 0;
+            objSale.totalAmt = dataJson.SellingPriceUSD;
+            objSale.usdTokhr = usdToKhr;
+            objSale.usdToTHB = usdToThb;
+            objSale.usdToKhrChange = usdToKhrChange;
+            return Json(objSale, JsonRequestBehavior.AllowGet);
+        }
+
+        // POST: Sale/StoreItemSale
+        [Route("Sale/StoreItemSale")]
+        [HttpPost]
+        public JsonResult StoreItemSale(Sale data)
+        {
+            if (appSettingRepository.IsSaleNoEnoughStock(data))
+            {
+                return Json(new { status = "No_Enough", message = Resources.Alerts.Is_Sale_No_Enough_Stock }, JsonRequestBehavior.AllowGet);
+            }
+            //update sale new invoice
+            bool ordersDetail = context.tbl_orderdetails.Any(x => x.prdID == data.prdID
+            && x.userID == IUser.Id
+            && x.PytStatus == "Ordering");
+            //update sale old invoice
+            if (data.customerOrderID != "0")
+            {
+                ordersDetail = context.tbl_orderdetails.Any(x => x.prdID == data.prdID
+                && x.userID == IUser.Id
+                && x.customerOrderID == data.customerOrderID);
+            }
+            if (ordersDetail)
+            {
+                return Json(new { status = saleRepository.UpdateItemSale(data), message = Resources.Alerts.Sale_Successfully_Order }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { status = saleRepository.StoreItemSale(data), message = Resources.Alerts.Sale_Successfully_Order }, JsonRequestBehavior.AllowGet);
         }
     }
 }

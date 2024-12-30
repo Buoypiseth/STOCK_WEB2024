@@ -141,6 +141,9 @@
   <data name="CompanyName" xml:space="preserve">
     <value>Supplier</value>
   </data>
+  <data name="CreateBuyIn" xml:space="preserve">
+    <value>Create Buy In</value>
+  </data>
   <data name="Date" xml:space="preserve">
     <value>Date</value>
   </data>

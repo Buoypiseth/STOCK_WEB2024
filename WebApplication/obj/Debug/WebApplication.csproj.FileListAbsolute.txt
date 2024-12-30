@@ -893,12 +893,7 @@ D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.ReportViewer.Win
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.SqlServer.Types.dll
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\ReportViewerForMvc.dll
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\EnvDTE.dll
-D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.dll
-D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\stdole.dll
-D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.OLE.Interop.dll
-D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.dll
-D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\Microsoft.MSXML.dll
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
@@ -973,11 +968,9 @@ D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resou
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Globle.km.resources
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.Resources.Buttons.km.resources
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.csproj.GenerateResource.cache
-D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\RdlCompile.cache
-D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\RdlCompile.compiled
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\km\WebApplication.resources.dll
-D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.dll
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.pdb
 D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebApplication.csproj.AssemblyReference.cache
+D:\7Tech\Asp_Project\STOCK_WEB2022\WebApplication\obj\Debug\WebAppli.11721D13.Up2Date
