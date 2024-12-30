@@ -1,0 +1,157 @@
+﻿@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+}
+@Html.Partial("Partials/_CreateOrUpdate")
+<div class="card">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <div class="title-list align-self-center">
+                @Resources.ProductPackage.Title
+            </div>
+            <div class="">
+                <button type="button" class="btn btn-min btn-primary" data-toggle="modal" data-target="#modal-form">
+                    <i class="fa fa-plus-circle"></i>
+                    @Resources.Globle.Create
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table class="table table-hover table-sm data-table dt-responsive nowrap" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>@Resources.Globle.No</th>
+                    <th>@Resources.ProductPackage.PrdNameEng</th>
+                    <th>@Resources.ProductPackage.Description</th>
+                    <th>@Resources.Globle.Option</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2@9-sweetaler2.min.js"></script>
+    <script src="~/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript">
+        var modalForm = $('#modal-form');
+        var modalTitle = $('#modal-title');
+        var btnSaveOrUpdate = $('#btnSaveOrUpdate');
+
+        var productPackageID = $('#Product_PackageID');
+        var productPackage = $('#Product_Package');
+        var Description = $('#Description');
+
+        $(function () {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            modalForm.on('hidden.bs.modal', function (e) {
+                modalTitle.text('').append('Create');
+                btnSaveOrUpdate.text('').append('<i class="far fa-check-circle"></i> Save');
+                productPackageID.val('');
+            });
+              $('form').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: new FormData(this),
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        if (res.status == 'True') {
+                            modalForm.modal('hide');
+                            dataTable.draw();
+                            Toast.fire({
+                                type: 'success',
+                                title: res.message,
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: res.message,
+                            })
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+            });
+            $(document).on('click', '.btnEdit', function () {
+                modalTitle.text('').append('Edit');
+                btnSaveOrUpdate.text('').append('<i class="far fa-check-circle"></i> Update');
+                modalForm.modal('show');
+                var data = {};
+                data.Product_PackageID = $(this).data('id');
+                $.ajax({
+                    url: '@Url.Action("Edit", "ProductPackage")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    success: function (res) {
+                        productPackageID.val(res.Product_PackageID);
+                        productPackage.val(res.Product_Package);
+                        Description.val(res.Description);
+                    }
+
+                });
+            });
+            var actions;
+            var dataTable = $('.data-table')
+                .DataTable({
+                    "sAjaxSource": "@Url.Action("GetData", "ProductPackage")",
+                    "bServerSide": true,
+                    "bProcessing": true,
+                    "bSearchable": true,
+                    "pageLength": 25,
+                    //"order": [[2, 'asc']],
+                    "columns": [
+                        {
+                            "data": null, "sortable": false,
+                            "render": function (data, type, row, meta) {
+                                return meta.row + meta.settings._iDisplayStart + 1;
+                            }
+                        },
+                        { "data": "Product_Package", "searchable": true },
+                        { "data": "Description", "searchable": false },
+                        {
+                            "data": "Product_PackageID", "sortable": false,
+                            "render": function (data, type, full, meta) {
+                                actions = '<button type="button" data-id="' + data + '" class="btn btn-primary btn-sm mx-1 btnEdit" ><i class="fa fa-edit"></i></button>';
+                                actions += '<a href="@Url.Action("Show", "ProductPackage")?id=' + data +'" class="btn btn-primary btn-sm mx-1" ><i class="fa fa-plus-circle"></i> @Resources.Buttons.AddItem</a>';
+                                return actions;
+                            }
+                        },
+                    ],
+                });
+            });
+    </script>
+}
+
+
+

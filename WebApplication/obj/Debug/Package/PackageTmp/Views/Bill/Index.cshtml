@@ -1,0 +1,207 @@
+﻿@model IEnumerable<WebApplication.Models.Product>
+@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+}
+<div class="card">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <div class="card-title align-self-center">
+                @Resources.Bill.Title
+            </div>
+            <a href="@Url.Action("Index", "Sale")" class="btn btn-outline-primary">
+                <i class="fas fa-shopping-cart mr-2"></i><span>Sale</span>
+            </a>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover table-sm data-table nowrap" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>@Resources.Globle.No</th>
+                            <th>@Resources.Bill.InvoiceNo</th>
+                            <th>@Resources.Bill.CustName</th>
+                            <th>@Resources.Bill.orderDate</th>
+                            <th>@Resources.Bill.totalAmount</th>
+                            <th>@Resources.Bill.amtDiscount</th>
+                            <th>@Resources.Bill.grandTotal</th>
+                            <th>@Resources.Bill.amtReceived</th>
+                            <th>@Resources.Bill.amtReturn</th>
+                            <th>@Resources.Bill.amtOwed</th>
+                            <th>@Resources.Bill.UserName</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    <script src="~/assets/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script type="text/javascript">
+        var sidebarCollapse = $('#sidebarCollapse');
+        $(function () {
+            //sidebarCollapse.addClass("sidebar-collapse");
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+            $('.singledatepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    firstDay: 1,
+                }
+            });
+            $('.singledatetimepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                timePicker: true,
+                timePicker24Hour: true,
+                locale: {
+                    format: 'YYYY-MM-DD hh:mm',
+                    firstDay: 1
+                }
+            });
+///-----block do sth-----2
+            dataTable();
+            $(document).on('click', '.btnVoid', function () {
+                var data = {}
+                data.customerOrderID = $(this).data('id');
+                data.userID = $(this).data('userid');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Void it!'
+                }).then((result) => {
+                    if (result.value) {
+                       $.ajax({
+                            url: '@Url.Action("CustomerVoid", "Sale")',
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            data: JSON.stringify(data),
+                            dataType: "json",
+                            processData: false,
+                            success: function (message) {
+                                if (message == 'True') {
+                                    _dataTable.draw();
+                                }
+                                else {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: message
+                                    })
+                                }
+                            },
+                            error: function (xhr, error, status) {
+                                console.log(error, status);
+                            }
+                        });
+                    }
+                }).catch(Swal.noop);
+            });
+///-----block do fuction-----3
+
+///-----end do fuction-----/3
+///-----block datatable-----4
+            var actions;
+            var _dataTable;
+            function dataTable(id = 0) {
+                _dataTable = $('.data-table')
+                .DataTable({
+                    sAjaxSource: '@Url.Action("GetData", "Bill")',
+                    bServerSide: true,
+                    pageLength: 25,
+                    bProcessing: true,
+                    lengthChange: true,
+                    searching: true,
+                    scrollX: true,
+                    order: [3, "desc"],
+                    columns: [
+                        {
+                            "data": null, "sortable": false,
+                            "render": function (data, type, row, meta) {
+                                return meta.row + meta.settings._iDisplayStart + 1;
+                            }
+                        },
+                        { data: "InvoiceNo", autoWidth: true, searchable: true, sortable: true},
+                        { data: "CustName", searchable: true, sortable: true},
+                        { data: "orderDate", searchable: false, sortable: true },
+                        { data: "totalAmount", render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                        { data: "amtDiscount", sortable: false , render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                        { data: "grandTotal", sortable: false , render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                        { data: "amtReceived", sortable: false , render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                        { data: "amtReturn", sortable: false , render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                        { data: "amtOwed", sortable: false , render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                        { data: "UserName", searchable: false, sortable: false },
+                        //{
+                        //    data: "voidStatus", searchable: false, sortable: true,
+                        //    render: function (data, type, full, meta) {
+                        //        if (data == 'Void') {
+                        //            return '<span class="badge badge-danger text-center">Void</span>';
+                        //        }
+                        //        return '<span class="badge badge-success text-center">Paid</span>';
+                        //    }
+                        //},
+                        {
+                            data: "customerOrderID", sortable: false,
+                            render: function (data, type, full, meta) {
+                                if (full.voidStatus == 'Void') {
+                                    return '-';
+                                }
+                                //actions = '<button type="button" data-id="' + data + '" data-userid="' + full.userID + '" class="btn btnVoid btn-sm btn-danger mx-1">Void</button>';
+                                actions = '<a href="@Url.Action("Index", "Sale")?slug=' + data + '" class="btn btn-sm btn-primary mx-1">Edit</a>';
+                                return actions;
+                            }
+                        }
+                    ],
+                    columnDefs: [
+                        {
+                            targets: [3],
+                            render: function (data, type, row, meta) {
+                                return moment(data).format('YYYY-MM-DD hh:mm a');
+                            }
+                        }
+                    ],
+                });
+            }
+///-----end datatable-----/4
+            });
+    </script>
+}
+
+

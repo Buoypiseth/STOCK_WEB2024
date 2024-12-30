@@ -1,0 +1,46 @@
+﻿<div class="row scroll-product">
+    @if (ViewBag.prdCount > 0)
+    {
+        float unitPrice = 0;
+        foreach (var i in ViewBag.Products)
+        {
+            unitPrice = (float)i.SellingPriceUSD;
+            <div class="col-md-6">
+                <div class="card p-2">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src=@i.Image class="card-img" alt="image">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body p-3">
+                                <h6 class="">@i.PrdNameEng</h6>
+                                <small class="text-muted">@i.PrdDesc</small>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            @using (Html.BeginForm("AddOrder", "Sale", FormMethod.Post, new { @class = "formOrder" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="hidden" name="prdID" id="prdID" class="form-control" value=@i.prdID>
+                                        <input type="number" name="orderQty" id="orderQty" step="0" class="form-control form-control-sm text-center" placeholder="0" value="1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="submit" class="btn btn-primary btn-block btn-sm">Add</button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-md-12 align-self-center">
+            <div class="text-center text-danger">No data available!</div>
+        </div>
+    }
+</div>

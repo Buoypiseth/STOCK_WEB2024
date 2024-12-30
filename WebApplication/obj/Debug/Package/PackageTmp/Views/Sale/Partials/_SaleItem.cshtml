@@ -1,0 +1,287 @@
+﻿<!-- Modal Sale Item-->
+@model WebApplication.Models.Sale
+<div class="modal fade" id="modalSaleItem" tabindex="-1" role="dialog" aria-labelledby="modalSaleItemLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalSaleItemLabel">Item Sale</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <p id="itemInfo"></p>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">ផលិតផលគិតជា</label>
+                            <div class="col-12 col-md-7">
+                                @Html.HiddenFor(model => model.usdTokhrSaleItem, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.usdToKhrChangeSaleItem, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.usdToTHBSaleItem, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.HiddenFor(model => model.prdID, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(model => model.unitType, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">តំលៃលក់</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.SellingPriceUSD, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">ចំនួន</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.orderQty, new { htmlAttributes = new { @class = "form-control", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">តំលៃលក់ជាក់ស្ដែង($)</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.RealPriceUSD, new { htmlAttributes = new { @class = "form-control", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">តំលៃលក់ជាក់ស្ដែង(៛)</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.RealPriceKHR, new { htmlAttributes = new { @class = "form-control", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">បញ្ចុះតំលៃ($)</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.AmtDisc, new { htmlAttributes = new { @class = "form-control", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">បញ្ចុះតំលៃ(%)</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.percDisc, new { htmlAttributes = new { @class = "form-control", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitType" class="col-12 col-md-5 col-form-label">តំលៃសរុប</label>
+                            <div class="col-12 col-md-7">
+                                @Html.EditorFor(model => model.totalAmt, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col text-right">
+                        <button type="button" id="btnCloseModalPay" class="btn btn-danger btn-min mr-2" data-dismiss="modal">
+                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                            @Resources.Buttons.Cancel
+                        </button>
+                        <button type="button" id="btnStoreItemSale" class="btn btn-success btn-min">
+                            <div class="spinner">
+                                <span class="spinner-border spinner-border-sm d-none mr-2" role="status"></span>
+                                <i class="fa fa-check-circle mr-2"></i>@Resources.Buttons.Save
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    window.addEventListener("load", (event) => {
+        var modalSaleItem = $('#modalSaleItem');
+        var btnCloseModalPay = $('#btnCloseModalPay');
+        var _this;
+        const itemInfo = $('#itemInfo');
+        const prdId = $('#prdID');
+        const PrdNameEng = $('#PrdNameEng');
+        const unitType = $('#unitType');
+        const SellingPriceUSD = $('#SellingPriceUSD');
+        //const SellingPriceKHR = $('#SellingPriceKHR');
+        const RealPriceUSD = $('#RealPriceUSD');
+        const RealPriceKHR = $('#RealPriceKHR');
+        const orderQty = $('#orderQty');
+        const AmtDisc = $('#AmtDisc');
+        const percDisc = $('#percDisc');
+        const totalAmt = $('#totalAmt');
+        const usdTokhrSaleItem = $('#usdTokhrSaleItem');
+        const usdToTHBSaleItem = $('#usdToTHBSaleItem');
+        const usdToKhrChangeSaleItem = $('#usdToKhrChangeSaleItem');
+
+        $(document).on('click', '.btnShowModalSaleItem', function () {
+            _this = $(this);
+            spinner(_this, 'loading');
+            var data = {};
+            data.prdID = _this.data('id');
+             $.ajax({
+                url: "@Url.Action("GetSaleItemInfo", "Sale")",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(data),
+                dataType: "json",
+                processData: false,
+                 success: function (res) {
+                     itemInfo.text(res.PrdNameEng);
+                     prdId.val(res.prdID);
+                     unitType.val(res.unitType);
+                     SellingPriceUSD.val(res.SellingPriceUSD);
+                     RealPriceUSD.val(res.SellingPriceUSD);
+                     RealPriceKHR.val(res.SellingPriceKHR);
+                     orderQty.val(res.orderQty);
+                     AmtDisc.val(res.AmtDisc);
+                     amtDiscount.val(res.amtDiscount);
+                     totalAmt.val(res.totalAmt);
+                     usdTokhrSaleItem.val(res.usdTokhr);
+                     usdToTHBSaleItem.val(res.usdToTHB);
+                     usdToKhrChangeSaleItem.val(res.usdToKhrChange);
+                        setTimeout(function () {
+                            modalSaleItem.modal('show');
+                        }, 200);
+                    },
+                 error: function (message) {
+                     console.log(message);
+                   }
+             });
+        });
+
+        //$(modalSaleItem).on('shown.bs.modal', function () {
+        //    spinner(_this, 'loading');
+        //});
+        $(modalSaleItem).on('hidden.bs.modal', function () {
+            btnCloseModalPay.prop('disabled', false);
+            spinner(_this, 'finished');
+        });
+
+        var saleQty = 0;
+        var salePriceUsd = 0;
+        var salePriceKhr = 0;
+        var discUsd = 0;
+        var discPerc = 0;
+        var totalPriceUsd = 0;
+
+        $(document).on('keyup', '#orderQty', function () {
+            saleQty = $(this).val() ?? 0;
+            salePriceUsd = RealPriceUSD.val() ?? 0;
+            totalPriceUsd = saleQty * salePriceUsd;
+            totalAmt.val(totalPriceUsd);
+            AmtDisc.val(0);
+            percDisc.val(0);
+        });
+
+        $(document).on('keyup', '#RealPriceUSD', function () {
+            salePriceUsd = $(this).val() ?? 0;
+            salePriceKhr = salePriceUsd * (usdTokhrSaleItem.val() ?? 0);
+            RealPriceKHR.val(salePriceKhr);
+            saleQty = orderQty.val() ?? 0;
+            totalPriceUsd = saleQty * salePriceUsd;
+            totalAmt.val(totalPriceUsd);
+            AmtDisc.val(0);
+            percDisc.val(0);
+        });
+
+        $(document).on('keyup', '#RealPriceKHR', function () {
+            salePriceKhr = $(this).val() ?? 0;
+            salePriceUsd = round(salePriceKhr / (usdTokhrSaleItem.val() ?? 0), 2);
+            RealPriceUSD.val(salePriceUsd);
+            saleQty = orderQty.val() ?? 0;
+            totalPriceUsd = saleQty * salePriceUsd;
+            totalAmt.val(totalPriceUsd);
+            AmtDisc.val(0);
+            percDisc.val(0);
+        });
+
+        $(document).on('keyup', '#AmtDisc', function () {
+            discUsd = $(this).val() ?? 0;
+            salePriceUsd = RealPriceUSD.val() ?? 0;
+            discPerc = round((discUsd / salePriceUsd) * 100, 2);
+            percDisc.val(discPerc);
+
+            saleQty = orderQty.val() ?? 0;
+            totalPriceUsd = round((salePriceUsd - discUsd) * saleQty, 2);
+            totalAmt.val(totalPriceUsd);
+
+            //if (discUsd == 0) {
+            //    $(this).val(0)
+            //}
+        });
+
+        $(document).on('keyup', '#percDisc', function () {
+            discPerc = $(this).val() ?? 0;
+            salePriceUsd = RealPriceUSD.val() ?? 0;
+            discUsd = round((salePriceUsd * discPerc) / 100, 2);
+            AmtDisc.val(discUsd);
+
+            saleQty = orderQty.val() ?? 0;
+            totalPriceUsd = round((salePriceUsd - discUsd) * saleQty, 2);
+            totalAmt.val(totalPriceUsd);
+
+            //if (discPerc == 0) {
+            //    $(this).val(0)
+            //}
+        });
+
+        $(document).on('click', '#btnStoreItemSale', function () {
+            var _el = $(this);
+            //customer info payment form
+            var customerOrderID = $('#customerOrderID');
+            var custId = $('#custId');
+
+            var data = {};
+            data.prdID = prdId.val();
+            data.customerOrderID = customerOrderID.val();
+            data.custId = custId.val();
+            data.orderQty = orderQty.val();
+            data.RealPriceUSD = RealPriceUSD.val();
+            data.RealPriceKHR = RealPriceKHR.val();
+            data.AmtDisc = AmtDisc.val();
+            data.percDisc = percDisc.val();
+            data.totalAmt = totalAmt.val();
+            data.usdTokhrSaleItem = usdTokhrSaleItem.val();
+            data.usdToTHBSaleItem = usdToTHBSaleItem.val();
+            data.usdToKhrChangeSaleItem = usdToKhrChangeSaleItem.val();
+            storeItemSale(data, false, _el);
+          });
+
+        function storeItemSale(data, status, _el) {
+            btnCloseModalPay.prop('disabled', true);
+            spinner(_el, 'loading');
+            data.status = status;
+            setTimeout(function () {
+                $.ajax({
+                    url: '@Url.Action("StoreItemSale", "Sale")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    processData: false,
+                    success: function (res) {
+                        if (res.status == 'True') {
+                            modalSaleItem.modal('hide');
+                        }
+                        else if (res.status == 'No_Enough') {
+                            Swal.fire({
+                                title: 'Are you sure?',
+                                text: res.message,
+                                type: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Yes, sale it!'
+                            }).then((result) => {
+                                if (result.value) {
+                                    storeItemSale(data, true, _el);
+                                }
+                            }).catch(Swal.noop);
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                        btnCloseModalPay.prop('disabled', false);
+                        spinner(_el, 'finished');
+                    }
+                });
+                spinner(_el, 'finished');
+            }, 300);
+        }
+    });
+</script>

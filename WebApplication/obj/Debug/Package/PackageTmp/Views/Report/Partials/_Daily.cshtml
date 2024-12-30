@@ -1,0 +1,27 @@
+﻿@{
+    if (ViewBag.TabDaily == "show active")
+    {
+        using (Html.BeginForm("Create", "Report", FormMethod.Post, new { id = "formSearch" }))
+        {
+            <div class="row">
+                @Html.Partial("Partials/_SearchOption")
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Date range:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="far fa-calendar-alt"></i>
+                                </span>
+                            </div>
+                            @Html.TextBox("DailyDate", "", new { @class = "form-control float-right singledatepicker" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    @Html.Partial("Partials/_Button")
+                </div>
+            </div>
+        }
+    }
+}

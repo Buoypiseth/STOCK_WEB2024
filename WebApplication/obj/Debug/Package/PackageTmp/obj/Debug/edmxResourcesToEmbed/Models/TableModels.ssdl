@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PAYROLL_HR_DB_BS_BAVETModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_APP_Setting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Value" Type="float" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsEdit" Type="bit" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_App_Setting_Options">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Value" Type="float" />
+    <Property Name="First" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrinterName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_BuyProducts">
+    <Key>
+      <PropertyRef Name="BuyID" />
+    </Key>
+    <Property Name="BuyID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="SupplierID" Type="varchar" MaxLength="50" />
+    <Property Name="Total" Type="float" />
+    <Property Name="PerDis" Type="float" />
+    <Property Name="AmtDis" Type="float" />
+    <Property Name="GrandTotal" Type="float" />
+    <Property Name="AmtPay" Type="float" />
+    <Property Name="AmtLoan" Type="float" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" />
+    <Property Name="usdtoKher" Type="float" />
+    <Property Name="usdtoTHB" Type="float" />
+    <Property Name="Status" Type="nvarchar" MaxLength="100" />
+    <Property Name="DateReturn" Type="datetime" />
+    <Property Name="StockID" Type="nvarchar" MaxLength="30" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="tbl_customerorder">
+    <Key>
+      <PropertyRef Name="customerOrderID" />
+    </Key>
+    <Property Name="customerOrderID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="orderDate" Type="datetime" />
+    <Property Name="Time" Type="datetime" />
+    <Property Name="customerID" Type="varchar" MaxLength="30" />
+    <Property Name="totalAmount" Type="float" />
+    <Property Name="percentDiscount" Type="float" />
+    <Property Name="amtDiscount" Type="float" />
+    <Property Name="amtOrderExpend" Type="float" />
+    <Property Name="netAmount" Type="float" />
+    <Property Name="voidAmt" Type="float" />
+    <Property Name="Rate_VAT" Type="float" />
+    <Property Name="TotalForVAT" Type="float" />
+    <Property Name="VAT" Type="float" />
+    <Property Name="OUR_VAT_NO" Type="nvarchar" MaxLength="100" />
+    <Property Name="grandTotal" Type="float" />
+    <Property Name="amtReceived" Type="float" />
+    <Property Name="amtReturn" Type="float" />
+    <Property Name="amtOwed" Type="float" />
+    <Property Name="userID" Type="varchar" MaxLength="100" />
+    <Property Name="usdTokhr" Type="float" />
+    <Property Name="usdToTHB" Type="float" />
+    <Property Name="RandTID" Type="varchar" MaxLength="30" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="voidStatus" Type="nvarchar" MaxLength="15" />
+    <Property Name="openingBalanceID" Type="varchar" MaxLength="100" />
+    <Property Name="ReturnDate" Type="datetime" />
+    <Property Name="usdTokhrChange" Type="float" />
+    <Property Name="OwnerReceive" Type="bit" />
+    <Property Name="SaleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalOwed" Type="float" />
+    <Property Name="DescripitonTerm" Type="nvarchar" MaxLength="100" />
+    <Property Name="Note" Type="nvarchar" MaxLength="200" />
+    <Property Name="PO" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShipDate" Type="datetime" />
+    <Property Name="ShipVia" Type="nvarchar" MaxLength="100" />
+    <Property Name="FOBPOINT" Type="nvarchar" MaxLength="100" />
+    <Property Name="ID_Ship" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardTypeID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardTypeAmount" Type="float" />
+    <Property Name="TransportationInfo_Pkl_No" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_No_Of_Pkg" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_CTNR_No" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_FDR" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_ETD_SIH" Type="datetime" />
+    <Property Name="TransportationInfo_Shipt" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_GW" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_8" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_9" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_10" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_11" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_12" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_13" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_14" Type="nvarchar" MaxLength="100" />
+    <Property Name="TransportationInfo_15" Type="nvarchar" MaxLength="100" />
+    <Property Name="RecieveUSD" Type="float" />
+    <Property Name="RecieveRiel" Type="float" />
+    <Property Name="OweUSD" Type="float" />
+    <Property Name="OweRiel" Type="float" />
+    <Property Name="ReturnUSD" Type="float" />
+    <Property Name="ReturnRiel" Type="float" />
+    <Property Name="AccountAMT" Type="float" />
+    <Property Name="AMT_Pay_By_MEMBER_Card" Type="float" />
+    <Property Name="ComputerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="amtReturnToPayOldOwed" Type="float" />
+    <Property Name="DeliveryNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="QuotationNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="netAmountReturn" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_customers">
+    <Key>
+      <PropertyRef Name="memberID" />
+    </Key>
+    <Property Name="memberID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="memberTitle" Type="nvarchar" MaxLength="20" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="100" />
+    <Property Name="fullName" Type="nvarchar" MaxLength="200" />
+    <Property Name="nickName" Type="nvarchar" MaxLength="100" />
+    <Property Name="idType" Type="nvarchar" MaxLength="100" />
+    <Property Name="icpassportNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="100" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Birthdate" Type="datetime" />
+    <Property Name="MaritalStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="POBox" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tel1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tel2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="100" />
+    <Property Name="eMail" Type="nvarchar" MaxLength="100" />
+    <Property Name="autono" Type="int" />
+    <Property Name="VAT_NO" Type="nvarchar" MaxLength="100" />
+    <Property Name="Water_MeterNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Water_Diameter" Type="float" />
+    <Property Name="Water_inactive" Type="bit" />
+    <Property Name="Water_Decription" Type="nvarchar" MaxLength="200" />
+    <Property Name="StreetNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="HouseNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="village" Type="nvarchar" MaxLength="100" />
+    <Property Name="communes" Type="nvarchar" MaxLength="100" />
+    <Property Name="district" Type="nvarchar" MaxLength="100" />
+    <Property Name="city_province" Type="nvarchar" MaxLength="100" />
+    <Property Name="Passport_Issue" Type="datetime" />
+    <Property Name="Passport_Expire" Type="datetime" />
+    <Property Name="Visa_Expire" Type="datetime" />
+    <Property Name="Group_Customers_ID" Type="bigint" />
+    <Property Name="CodeFP" Type="int" />
+    <Property Name="MemberCardNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sincroni_Info" Type="nvarchar" MaxLength="100" />
+    <Property Name="memberIDMain" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tbl_customers_account">
+    <Key>
+      <PropertyRef Name="CustomerAccountID" />
+      <PropertyRef Name="memberID" />
+      <PropertyRef Name="AccountType" />
+    </Key>
+    <Property Name="CustomerAccountID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="memberID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="AccountType" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="RealMoneyRemain" Type="float" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="DateExpire" Type="datetime" />
+    <Property Name="LimitePay1Day" Type="float" />
+    <Property Name="LimitePay1Time" Type="float" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="EditeNote" Type="nvarchar" MaxLength="500" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDefault" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_customers_account_Cards_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_customers_account_InOut_History">
+    <Key>
+      <PropertyRef Name="CustAccInOutHistoryID" />
+    </Key>
+    <Property Name="CustAccInOutHistoryID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CustomerAccountID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="RealMoney" Type="float" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="BeginAmount" Type="float" />
+    <Property Name="customerOrderID" Type="varchar" MaxLength="30" />
+    <Property Name="UserID" Type="varchar" MaxLength="30" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="EditeNote" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_exchangerates">
+    <Key>
+      <PropertyRef Name="exchID" />
+    </Key>
+    <Property Name="exchID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="currenciesFrm" Type="nvarchar" MaxLength="30" />
+    <Property Name="currenciesTo" Type="nvarchar" MaxLength="30" />
+    <Property Name="rates" Type="float" />
+    <Property Name="lastUpdate" Type="datetime" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="tbl_mainstock">
+    <Key>
+      <PropertyRef Name="MainStockID" />
+    </Key>
+    <Property Name="MainStockID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ProductID" Type="varchar" MaxLength="30" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="StockinDate" Type="datetime" />
+    <Property Name="caseRetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="unitType" Type="nvarchar" MaxLength="50" />
+    <Property Name="BuyingCost" Type="float" />
+    <Property Name="transCost" Type="float" />
+    <Property Name="tax" Type="float" />
+    <Property Name="otherExp" Type="float" />
+    <Property Name="Quantity" Type="float" />
+    <Property Name="TotalCost" Type="float" />
+    <Property Name="PytStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="CommentDetails" Type="nvarchar" MaxLength="100" />
+    <Property Name="stockInDateTime" Type="datetime" />
+    <Property Name="qtyInStock" Type="float" />
+    <Property Name="OrderNo" Type="int" />
+    <Property Name="prdStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="usdTokhr" Type="float" />
+    <Property Name="usdTothb" Type="float" />
+    <Property Name="SupplierID" Type="varchar" MaxLength="30" />
+    <Property Name="ExpireDate" Type="datetime" />
+    <Property Name="BuyID" Type="varchar" MaxLength="50" />
+    <Property Name="StockID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tbl_mainstock_ordering">
+    <Key>
+      <PropertyRef Name="MainStockID" />
+    </Key>
+    <Property Name="MainStockID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ProductID" Type="nvarchar" MaxLength="30" />
+    <Property Name="unitType" Type="nvarchar" MaxLength="50" />
+    <Property Name="BuyingCost" Type="float" />
+    <Property Name="transCost" Type="float" />
+    <Property Name="Quantity" Type="float" />
+    <Property Name="TotalCost" Type="float" />
+    <Property Name="ExpireDate" Type="datetime" />
+    <Property Name="PurchaseDate" Type="datetime" />
+    <Property Name="UserID" Type="varchar" MaxLength="30" />
+    <Property Name="SellingPriceUSD" Type="float" />
+    <Property Name="PrdNameEng" Type="nvarchar" MaxLength="200" />
+    <Property Name="barCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="OrderComment" Type="nvarchar" MaxLength="300" />
+    <Property Name="PrdCategory" Type="nvarchar" MaxLength="200" />
+    <Property Name="BuyID" Type="nvarchar" MaxLength="30" />
+    <Property Name="BuyStatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="BuyReturnDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_orderdetails">
+    <Key>
+      <PropertyRef Name="orderDetailsID" />
+    </Key>
+    <Property Name="orderDetailsID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="customerOrderID" Type="varchar" MaxLength="30" />
+    <Property Name="prdID" Type="varchar" MaxLength="30" />
+    <Property Name="orderDate" Type="datetime" />
+    <Property Name="unitType" Type="nvarchar" MaxLength="50" />
+    <Property Name="unitPrice" Type="float" />
+    <Property Name="orderQty" Type="float" />
+    <Property Name="totalAmt" Type="float" />
+    <Property Name="PytStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="roomtableID" Type="varchar" MaxLength="30" />
+    <Property Name="ReservationID" Type="varchar" MaxLength="30" />
+    <Property Name="NumPrinted" Type="int" />
+    <Property Name="NumPrintedInv" Type="int" />
+    <Property Name="percDisc" Type="float" />
+    <Property Name="AmtDisc" Type="float" />
+    <Property Name="orderTime" Type="datetime" />
+    <Property Name="VoidDate" Type="datetime" />
+    <Property Name="BuyingTotal" Type="float" />
+    <Property Name="userID" Type="varchar" MaxLength="100" />
+    <Property Name="TaxNote" Type="nvarchar" MaxLength="200" />
+    <Property Name="OrderDetailDescription" Type="nvarchar" MaxLength="300" />
+    <Property Name="Qty_for_Repaire" Type="float" />
+    <Property Name="Width" Type="float" />
+    <Property Name="Height" Type="float" />
+    <Property Name="Area_Size" Type="float" />
+    <Property Name="LOC_Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="DMCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="RPCode_Repaire" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumHours" Type="float" />
+    <Property Name="Larbor_Cost" Type="float" />
+    <Property Name="Material_Cost" Type="float" />
+    <Property Name="PARKING_CardORBarcode" Type="nvarchar" MaxLength="300" />
+    <Property Name="PARKING_DateIN" Type="datetime" />
+    <Property Name="PARKING_DateOUT" Type="datetime" />
+    <Property Name="PARKING_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Photo1" Type="image" />
+    <Property Name="Photo2" Type="image" />
+    <Property Name="Photo3" Type="image" />
+    <Property Name="Photo4" Type="image" />
+    <Property Name="orderQtyReturnTemp" Type="float" />
+    <Property Name="totalAmtReturnTemp" Type="float" />
+    <Property Name="orderQtyReturn" Type="float" />
+    <Property Name="totalAmtReturn" Type="float" />
+    <Property Name="statusReturn" Type="nvarchar" MaxLength="50" />
+    <Property Name="dateReturn" Type="datetime" />
+    <Property Name="dateExpire" Type="datetime" />
+    <Property Name="NumInCase" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_OTHER_OPTIONS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="para_ReportName" Type="nvarchar" MaxLength="100" />
+    <Property Name="para_Stored_Pro_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmployeeID" Type="bigint" />
+    <Property Name="RunID" Type="varchar" MaxLength="100" />
+    <Property Name="para_Calculate_Time" Type="int" />
+    <Property Name="paraEmployee_Set" Type="int" />
+    <Property Name="para01_cmdCalculate" Type="int" />
+    <Property Name="para02_cmdViewReportMS" Type="int" />
+    <Property Name="para03_cmdViewReportCR" Type="int" />
+    <Property Name="para04_cmdExport" Type="int" />
+    <Property Name="para05_cmdImport" Type="int" />
+    <Property Name="para06_cboGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="para07_cboName" Type="nvarchar" MaxLength="50" />
+    <Property Name="para08_0_TabMonthly" Type="int" />
+    <Property Name="para08_1_cboMonthly" Type="datetime" />
+    <Property Name="para08_2_Monthly_cboFrom" Type="datetime" />
+    <Property Name="para08_3_Monthly_cboTo" Type="datetime" />
+    <Property Name="para09_0_TabDate" Type="int" />
+    <Property Name="para09_1_Date" Type="datetime" />
+    <Property Name="para10_0_TabDate_From_To" Type="int" />
+    <Property Name="para10_1_Date_From_To_cboFrom" Type="datetime" />
+    <Property Name="para10_2_Date_From_To_cboTo" Type="datetime" />
+    <Property Name="para11_0_TabYearly" Type="int" />
+    <Property Name="para11_1_Yearly_cboYear" Type="datetime" />
+    <Property Name="para_12_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_13_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_14_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_15_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_16_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_17_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_18_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_19_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_20_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_21_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_22_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_23_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_24_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_25_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_26_IS_Customers" Type="int" />
+    <Property Name="para_27_IS_PrdCategory" Type="int" />
+    <Property Name="para_28_IS_products" Type="int" />
+    <Property Name="para_29_IS_Sale" Type="int" />
+    <Property Name="para_30_IS_StockType" Type="int" />
+    <Property Name="para_31_IS_Suppliers" Type="int" />
+    <Property Name="para_32_IS_Useraccount" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_OTHER_OPTIONS_Employee_Set">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="RunID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_OTHER_OPTIONS_FILTER">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="para_ReportName" Type="nvarchar" MaxLength="100" />
+    <Property Name="para_Stored_Pro_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmployeeID" Type="bigint" />
+    <Property Name="RunID" Type="varchar" MaxLength="100" />
+    <Property Name="para_Calculate_Time" Type="int" />
+    <Property Name="paraEmployee_Set" Type="int" />
+    <Property Name="para01_cmdCalculate" Type="int" />
+    <Property Name="para02_cmdViewReportMS" Type="int" />
+    <Property Name="para03_cmdViewReportCR" Type="int" />
+    <Property Name="para04_cmdExport" Type="int" />
+    <Property Name="para05_cmdImport" Type="int" />
+    <Property Name="para06_cboGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="para07_cboName" Type="nvarchar" MaxLength="50" />
+    <Property Name="para08_0_TabMonthly" Type="int" />
+    <Property Name="para08_1_cboMonthly" Type="datetime" />
+    <Property Name="para08_2_Monthly_cboFrom" Type="datetime" />
+    <Property Name="para08_3_Monthly_cboTo" Type="datetime" />
+    <Property Name="para09_0_TabDate" Type="int" />
+    <Property Name="para09_1_Date" Type="datetime" />
+    <Property Name="para10_0_TabDate_From_To" Type="int" />
+    <Property Name="para10_1_Date_From_To_cboFrom" Type="datetime" />
+    <Property Name="para10_2_Date_From_To_cboTo" Type="datetime" />
+    <Property Name="para11_0_TabYearly" Type="int" />
+    <Property Name="para11_1_Yearly_cboYear" Type="datetime" />
+    <Property Name="para_12_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_13_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_14_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_15_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_16_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_17_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_18_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_19_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_20_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_21_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_22_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_23_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_24_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_25_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="para_26_IS_Customers" Type="int" />
+    <Property Name="para_27_IS_PrdCategory" Type="int" />
+    <Property Name="para_28_IS_products" Type="int" />
+    <Property Name="para_29_IS_Sale" Type="int" />
+    <Property Name="para_30_IS_StockType" Type="int" />
+    <Property Name="para_31_IS_Suppliers" Type="int" />
+    <Property Name="para_32_IS_Useraccount" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_OTHER_OPTIONS_ID_Set">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="RunID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_OTHER_OPTIONS_SEARCH">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="para_ReportName" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="para_ReportName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SearchProduct" Type="bit" />
+    <Property Name="SearchCategory" Type="bit" />
+    <Property Name="SearchInvoice" Type="bit" />
+    <Property Name="SearchCustomer" Type="bit" />
+    <Property Name="SearchSupplier" Type="bit" />
+    <Property Name="SearchStock" Type="bit" />
+    <Property Name="SearchUser" Type="bit" />
+    <Property Name="SearchDateOnly" Type="bit" />
+    <Property Name="SearchAdvanceOnly" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_prdcategory">
+    <Key>
+      <PropertyRef Name="PrdCategID" />
+    </Key>
+    <Property Name="PrdCategID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PrdCmpntID" Type="varchar" MaxLength="30" />
+    <Property Name="PrdCategory" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrdCategoryKh" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrdCategIDMain" Type="varchar" MaxLength="30" />
+    <Property Name="CategoryOrder" Type="int" />
+    <Property Name="MiniMumInstock" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrdCategID" Type="varchar" MaxLength="50" />
+    <Property Name="SupplierID" Type="varchar" MaxLength="50" />
+    <Property Name="PrdNameEng" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrdNameKh" Type="nvarchar" MaxLength="200" />
+    <Property Name="UnitType" Type="nvarchar" MaxLength="50" />
+    <Property Name="totalInStock" Type="float" />
+    <Property Name="minimalStock" Type="float" />
+    <Property Name="SellingPriceUSD" Type="float" />
+    <Property Name="SellingPriceKHR" Type="float" />
+    <Property Name="SellingPriceTHB" Type="float" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="OrderComment" Type="nvarchar" MaxLength="300" />
+    <Property Name="PrdDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="barCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Delstatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="isCutStock" Type="bit" />
+    <Property Name="ProductIDRealStock" Type="varchar" MaxLength="30" />
+    <Property Name="NumInOne" Type="float" />
+    <Property Name="IsUnique" Type="bit" />
+    <Property Name="TaxNote" Type="nvarchar" MaxLength="200" />
+    <Property Name="Money_Sale_Type" Type="nvarchar" MaxLength="20" />
+    <Property Name="Width" Type="float" />
+    <Property Name="Height" Type="float" />
+    <Property Name="Area_Size" Type="float" />
+    <Property Name="LOC_Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="DMCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="RPCode_Repaire" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumHours" Type="float" />
+    <Property Name="Larbor_Cost" Type="float" />
+    <Property Name="BuyingCost" Type="float" />
+    <Property Name="amtPercDisc" Type="float" />
+    <Property Name="amtDisc" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tbl_products_Customers_Price">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="memberID" />
+    </Key>
+    <Property Name="ProductID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="memberID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="SellingPriceUSDForThisCus" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_products_Package">
+    <Key>
+      <PropertyRef Name="Product_PackageID" />
+    </Key>
+    <Property Name="Product_PackageID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_Package" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="tbl_products_Package_Detail">
+    <Key>
+      <PropertyRef Name="Product_PackageDetail_ID" />
+    </Key>
+    <Property Name="Product_PackageDetail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_PackageID" Type="bigint" />
+    <Property Name="ProductID" Type="varchar" MaxLength="30" />
+    <Property Name="Qty" Type="float" />
+    <Property Name="SellingPriceUSD" Type="float" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="tbl_suppliers">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContFirstName" Type="nvarchar" MaxLength="70" />
+    <Property Name="ContLastName" Type="nvarchar" MaxLength="70" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="70" />
+    <Property Name="BusPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="FaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="ZipPostalCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="Region" Type="nvarchar" MaxLength="70" />
+    <Property Name="supCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="supCountry" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompEmail" Type="nvarchar" MaxLength="70" />
+    <Property Name="WebPage" Type="nvarchar" MaxLength="70" />
+    <Property Name="Notes" Type="ntext" />
+    <Property Name="LastUpdate" Type="datetime" />
+    <Property Name="autoNo" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_useraccount">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="30" />
+    <Property Name="UserPwd" Type="varchar" MaxLength="20" />
+    <Property Name="UserLevel" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="isHome" Type="bit" />
+    <Property Name="isBackUp" Type="bit" />
+    <Property Name="isRestore" Type="bit" />
+    <Property Name="isFronDes" Type="bit" />
+    <Property Name="isStock" Type="bit" />
+    <Property Name="isSupplyer" Type="bit" />
+    <Property Name="isProduct" Type="bit" />
+    <Property Name="isExchange" Type="bit" />
+    <Property Name="isExpend" Type="bit" />
+    <Property Name="isUser" Type="bit" />
+    <Property Name="isReSalling" Type="bit" />
+    <Property Name="isReOldInvoice" Type="bit" />
+    <Property Name="isReTopSalling" Type="bit" />
+    <Property Name="isReVoidInvoice" Type="bit" />
+    <Property Name="isReStock" Type="bit" />
+    <Property Name="isReCustomer" Type="bit" />
+    <Property Name="isReSupplyer" Type="bit" />
+    <Property Name="isReUserActivity" Type="bit" />
+    <Property Name="isReMoney" Type="bit" />
+    <Property Name="isReCloseSalling" Type="bit" />
+    <Property Name="StockID" Type="nvarchar" MaxLength="30" />
+    <Property Name="LangCode" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblOrderDetailsTemp">
+    <Key>
+      <PropertyRef Name="roomtableID" />
+    </Key>
+    <Property Name="roomtableID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblStockType">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="StockName" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblStockTypeProducts">
+    <Key>
+      <PropertyRef Name="StockID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="StockID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ProductID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Qty" Type="float" />
+    <Property Name="TransferDate" Type="datetime" />
+    <Property Name="LastDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserRoleMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="30" />
+    <Property Name="RoleId" Type="bigint" />
+  </EntityType>
+  <Association Name="FK__UserRoleM__RoleI__7370E317">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoleMapping">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PAYROLL_HR_DB_BS_BAVETModelStoreContainer">
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_APP_Setting" EntityType="Self.tbl_APP_Setting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_App_Setting_Options" EntityType="Self.tbl_App_Setting_Options" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_BuyProducts" EntityType="Self.tbl_BuyProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_customerorder" EntityType="Self.tbl_customerorder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_customers" EntityType="Self.tbl_customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_customers_account" EntityType="Self.tbl_customers_account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_customers_account_Cards_Type" EntityType="Self.tbl_customers_account_Cards_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_customers_account_InOut_History" EntityType="Self.tbl_customers_account_InOut_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_exchangerates" EntityType="Self.tbl_exchangerates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_mainstock" EntityType="Self.tbl_mainstock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_mainstock_ordering" EntityType="Self.tbl_mainstock_ordering" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_orderdetails" EntityType="Self.tbl_orderdetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OTHER_OPTIONS" EntityType="Self.tbl_OTHER_OPTIONS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OTHER_OPTIONS_Employee_Set" EntityType="Self.tbl_OTHER_OPTIONS_Employee_Set" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OTHER_OPTIONS_FILTER" EntityType="Self.tbl_OTHER_OPTIONS_FILTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OTHER_OPTIONS_ID_Set" EntityType="Self.tbl_OTHER_OPTIONS_ID_Set" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_OTHER_OPTIONS_SEARCH" EntityType="Self.tbl_OTHER_OPTIONS_SEARCH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_prdcategory" EntityType="Self.tbl_prdcategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_products" EntityType="Self.tbl_products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_products_Customers_Price" EntityType="Self.tbl_products_Customers_Price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_products_Package" EntityType="Self.tbl_products_Package" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_products_Package_Detail" EntityType="Self.tbl_products_Package_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_suppliers" EntityType="Self.tbl_suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_useraccount" EntityType="Self.tbl_useraccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOrderDetailsTemp" EntityType="Self.tblOrderDetailsTemp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblStockType" EntityType="Self.tblStockType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblStockTypeProducts" EntityType="Self.tblStockTypeProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoleMapping" EntityType="Self.UserRoleMapping" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__UserRoleM__RoleI__7370E317" Association="Self.FK__UserRoleM__RoleI__7370E317">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoleMapping" EntitySet="UserRoleMapping" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

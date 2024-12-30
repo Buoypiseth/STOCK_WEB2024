@@ -1,0 +1,315 @@
+﻿@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+}
+@Html.Partial("Partials/_CreateOrUpdateChild")
+<div class="card">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <div class="card-title align-self-center">
+                @Resources.Product.ChildTitle
+            </div>
+            <div class="">
+                <button type="button" class="btn btn-min btn-primary" id="btnCreate">
+                    <i class="fa fa-plus-circle"></i>
+                    @Resources.Globle.Create
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table class="table table-hover table-sm data-table nowrap" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>@Resources.Globle.No</th>
+                    <th>@Resources.Product.PrdNameEng</th>
+                    <th>@Resources.Product.UnitType</th>
+                    <th>@Resources.Product.PrdCategory</th>
+                    <th>@Resources.Product.OrderComment</th>
+                    <th>@Resources.Product.barCode</th>
+                    @*<th>@Resources.Product.SellingPriceKHR</th>*@
+                    <th>@Resources.Product.SellingPriceUSD</th>
+                    <th>@Resources.Product.minimalStock</th>
+                    <th>@Resources.Product.totalInStock</th>
+                    <th>@Resources.Globle.Option</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/sweetalert2/sweetalert2@9-sweetaler2.min.js"></script>
+    <script src="~/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript">
+        var modalForm = $('#modal-form');
+        var modalTitle = $('#modal-title');
+        var btnSaveOrUpdate = $('#btnSaveOrUpdate');
+
+        var ProductID = $('#ProductID');
+        var PrdNameEng = $('#PrdNameEng');
+        var PrdCategID = $('#PrdCategID');
+        var OrderComment = $('#OrderComment');
+        var barCode = $('#barCode');
+        var UnitType = $('#UnitType');
+        var PrdDesc = $('#PrdDesc');
+        var BuyingCost = $('#BuyingCost');
+        var SellingPriceUSD = $('#SellingPriceUSD');
+        var SellingPriceUSDForThisCus = $('#SellingPriceUSDForThisCus');
+        var minimalStock = $('#minimalStock');
+        var TaxNote = $('#TaxNote');
+        var Money_Sale_Type = $('#Money_Sale_Type');
+        var IsUnique = $('#IsUnique');
+        var isCutStock = $('#isCutStock');
+        var Image = $('#Image');
+        var NumInOne = $('#NumInOne');
+
+        $(function () {
+            bsCustomFileInput.init();
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            $('.select2').select2();
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+            $('.singledatetimepicker').daterangepicker({
+                opens: 'right',
+                drops: 'down',
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2000,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                timePicker: true,
+                timePicker24Hour: true,
+                startDate: moment(),
+                locale: {
+                    format: 'YYYY-MM-DD hh:mm A',
+                    firstDay: 1
+                }
+            });
+            dataTable(@ViewBag.ParentID);
+            modalForm.on('hidden.bs.modal', function (e) {
+                ProductID.val('');
+                BuyingCost.prop("disabled", false);
+                $('form').trigger("reset");
+            });
+            $(document).on('click', '#btnCreate', function () {
+                modalTitle.text('').append('Create');
+                btnSaveOrUpdate.text('').append('<i class="far fa-check-circle"></i> Save');
+                getParent(@ViewBag.ParentID);
+                modalForm.modal('show');
+            });
+            $(OrderComment).keypress(function (e) {
+                if (e.which != '13') {
+                    return;
+                }
+                e.preventDefault();
+                if ($(this).length > 0) {
+                    barCode.focus();
+                }
+            });
+            $(barCode).keypress(function (e) {
+                if (e.which != '13') {
+                    return;
+                }
+                e.preventDefault();
+                if ($(this).length > 0) {
+                    UnitType.focus();
+                }
+            });
+            $('form').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: new FormData(this),
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        if (res.status == 'True') {
+                            //_dataTable.draw();
+                            modalForm.modal('hide');
+                            Toast.fire({
+                                icon: 'success',
+                                type: 'success',
+                                title: res.message
+                            })
+
+                            location.reload();
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: res.message,
+                            })
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+            });
+            $(document).on('click', '.btnEdit', function () {
+                modalTitle.text('').append('Edit');
+                btnSaveOrUpdate.text('').append('<i class="far fa-check-circle"></i> Update');
+                modalForm.modal('show');
+                var data = {};
+                data.ProductID = $(this).data('id');
+                $.ajax({
+                    url: '@Url.Action("Edit", "Product")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    success: function (res) {
+                        ProductID.val(res.ProductID);
+                        PrdNameEng.val(res.PrdNameEng);
+                        OrderComment.val(res.OrderComment);
+                        barCode.val(res.barCode);
+                        UnitType.val(res.UnitType);
+                        PrdDesc.val(res.PrdDesc);
+                        //BuyingCost.val(res.BuyingCost);
+
+                        BuyingCost.prop("disabled", true);
+                        SellingPriceUSD.val(res.SellingPriceUSD);
+                        SellingPriceUSDForThisCus.val(res.SellingPriceUSDForThisCus);
+                        minimalStock.val(res.minimalStock);
+                        Image.val(res.Image);
+
+                        if (PrdCategID.find("option[value='" + res.PrdCategID + "']").length) {
+                            PrdCategID.val(res.PrdCategID).trigger('change');
+                        }
+
+                        if (TaxNote.find("option[value='" + res.TaxNote + "']").length) {
+                            TaxNote.val(res.TaxNote).trigger('change');
+                        }
+
+                        if (Money_Sale_Type.find("option[value='" + res.Money_Sale_Type + "']").length) {
+                            Money_Sale_Type.val(res.Money_Sale_Type).trigger('change');
+                        }
+
+                        IsUnique.prop("checked", res.IsUnique);
+                        isCutStock.prop("checked", res.isCutStock);
+                        NumInOne.val(res.NumInOne);
+
+                        //else {
+                        //    // Create a DOM Option and pre-select by default
+                        //    var newOption = new Option(data.text, data.id, true, true);
+                        //    // Append it to the select
+                        //    PrdCategID.append(newOption).trigger('change');
+                        //}
+                    }
+                });
+            });
+        });
+        function getParent(id) {
+             var data = {};
+            data.ProductID = id;
+            $.ajax({
+                url: '@Url.Action("Edit", "Product")',
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(data),
+                dataType: "json",
+                success: function (res) {
+                    //ProductID.val(res.ProductID);
+                    PrdNameEng.val(res.PrdNameEng);
+                    //OrderComment.val(res.OrderComment);
+                    //barCode.val(res.barCode);
+                    //UnitType.val(res.UnitType);
+                    PrdDesc.val(res.PrdDesc);
+                    ////BuyingCost.val(res.BuyingCost);
+
+                    ////BuyingCost.prop("disabled", true);
+                    //SellingPriceUSD.val(res.SellingPriceUSD);
+                    //SellingPriceUSDForThisCus.val(res.SellingPriceUSDForThisCus);
+                    minimalStock.val(res.minimalStock);
+                    Image.val(res.Image);
+
+                    if (PrdCategID.find("option[value='" + res.PrdCategID + "']").length) {
+                        PrdCategID.val(res.PrdCategID).trigger('change');
+                    }
+
+                    if (TaxNote.find("option[value='" + res.TaxNote + "']").length) {
+                        TaxNote.val(res.TaxNote).trigger('change');
+                    }
+
+                    if (Money_Sale_Type.find("option[value='" + res.Money_Sale_Type + "']").length) {
+                        Money_Sale_Type.val(res.Money_Sale_Type).trigger('change');
+                    }
+
+                    IsUnique.prop("checked", res.IsUnique);
+                    isCutStock.prop("checked", res.isCutStock);
+
+                    //else {
+                    //    // Create a DOM Option and pre-select by default
+                    //    var newOption = new Option(data.text, data.id, true, true);
+                    //    // Append it to the select
+                    //    PrdCategID.append(newOption).trigger('change');
+                    //}
+                }
+            });
+        }
+        function dataTable(id) {
+            _dataTable = $('.data-table').DataTable({
+                "sAjaxSource": "@Url.Action("GetChildData", "Product")",
+                "fnServerParams": function (aoData) {
+                    aoData.push({ "name": "ProductID", "value": id });
+                },
+                "bRetrieve": true,
+                "bServerSide": true,
+                "bProcessing": true,
+                "bSearchable": true,
+                "pageLength": 25,
+                "scrollX": true,
+                "columns": [
+                    {
+                        "data": null, "sortable": false,
+                        "render": function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    { "data": "PrdNameEng", "searchable": true },
+                    { "data": "UnitType", "searchable": true },
+                    { "data": "PrdCategory", "searchable": true },
+                    { "data": "OrderComment", "searchable": false },
+                    { "data": "barCode", "searchable": false },
+                    //{ "data": "SellingPriceKHR", "searchable": false },
+                    { "data": "SellingPriceUSD", "searchable": false, render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                    { "data": "minimalStock", "searchable": false },
+                    { "data": "totalInStock", "searchable": false },
+                    {
+                        "data": "ProductID", "sortable": false,
+                        "render": function (data, type, full, meta) {
+                            return '<button type="button" data-id="' + data + '" class="btn btn-primary btn-sm mx-1 btnEdit"><i class="fa fa-edit"></i></button>';
+                        }
+                    },
+                ],
+            });
+        }
+    </script>
+}
+
+
+

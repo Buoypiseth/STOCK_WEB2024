@@ -1,0 +1,36 @@
+﻿    @if (@ViewBag.Error == true)
+    {
+        <p class="login-box-msg text-danger">Something went wrong! No data.</p>
+    }
+    <div class="row row-cols-6">
+        @*<div class="col-12 col-sm-6 col-md-6 col-lg-4 mt-1">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="ស្កេនវិក័យប័ត្រ...">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+            </div>
+        </div>*@
+        <div class="col-12 col-md-5 mt-2">
+            <div class="form-group row no-gutters">
+                <label for="customerOrderID" class="col-sm-2 col-form-label">@Resources.Sale.Invoice :</label>
+                <div class="col-sm-10">
+                    @Html.DropDownList("customerOrderID", ViewData["InvoiceList"] as SelectList, @Resources.Sale.Select, new { @class = "form-control select2bs4", @style = "width:100%" })
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-auto mt-2">
+            <button type="button" id="btnCheckOk" class="btn btn-outline-success mr-5">
+                <i class="far fa-check-circle"></i>
+            </button>
+            <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#modal-form">
+                <i class="fab fa-paypal"></i> Pay
+            </button>
+            @*<div class="float-right">
+                <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal-form">
+                    <i class="far fa-check-circle"></i> Return
+                </a>
+            </div>*@
+        </div>
+    </div>
+@*<hr />*@

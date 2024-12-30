@@ -1,0 +1,48 @@
+﻿@using WebApplication.Extesions
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@Page.Title</title>
+    <link rel="icon" type="image/x-icon" href="~/assets/img/logo-app.png">
+    @Styles.Render("~/bundles/styles")
+    @RenderSection("styles", required: false)
+</head>
+<body class="sidebar-mini layout-fixed layout-navbar-fixed" id="sidebarCollapse">
+    <div class="wrapper">
+        @Html.Partial("_Header")
+        @Html.Partial("_Sidebar")
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="container-fluid">
+                    @Html.Raw(Html.BuildBreadcrumbNavigation())
+                </div>
+            </section>
+            <section class="content">
+                <div class="container-fluid pt-3">
+                    @{
+                        Html.RenderPartial("Partials/_FlashMessage");
+                    }
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
+        @Html.Partial("_Footer")
+    </div>
+</body>
+</html>
+@Scripts.Render("~/bundles/scripts")
+@RenderSection("scripts", required: false)
+<script type="text/javascript">
+    $(function () {
+        var _this;
+        $('.has-treeview ul li').each(function () {
+            _this = $(this);
+            if (_this.find('a').hasClass('active')) {
+                _this = _this.parent();
+                _this.parent().addClass('menu-open');
+            }
+        });
+    });
+</script>

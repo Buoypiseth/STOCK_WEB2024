@@ -1,0 +1,134 @@
+﻿@using WebApplication.Helpers
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="@Url.Action("Index", "Home")" class="brand-link">
+        <img src="~/assets/img/logo-app.png" alt="logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Stock</span>
+    </a>
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Home")" class="@Html.IsActive("Home", "Index")">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>@Resources.Menu.Home</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-layer-group" aria-hidden="true"></i>
+                        <p>@Resources.Menu.Product <i class="right fas fa-angle-left"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Category")" class="@Html.IsActive("Category", "Index")">
+                                <i class="nav-icon fas fa-list-alt"></i>
+                                <p>@Resources.Menu.Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Product")" class="@Html.IsActive("Product", "Index")">
+                                <i class="nav-icon fas fa-layer-group"></i>
+                                <p>@Resources.Menu.Product</p>
+                            </a>
+                        </li>
+                        @*<li class="nav-item">
+                                <a href="@Url.Action("Index", "ProductPackage")" class="@Html.IsActive("ProductPackage", "Index")">
+                                    <i class="nav-icon fas fa-list"></i>
+                                    <p>@Resources.Menu.ProductPackage</p>
+                                </a>
+                            </li>*@
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "BuyProduct")" class="@Html.IsActive("BuyProduct", "Index")">
+                        <i class="nav-icon fas fa-database"></i>
+                        <p>@Resources.Menu.BuyProduct</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Sale")" class="@Html.IsActive("Sale", "Index")">
+                        <i class="nav-icon fas fa-shopping-cart"></i>
+                        <p>@Resources.Menu.Sale</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Supplier")" class="@Html.IsActive("Supplier", "Index")">
+                        <i class="nav-icon fas fa-user-circle"></i>
+                        <p>@Resources.Menu.Supplier</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Customer")" class="@Html.IsActive("Customer", "Index")">
+                        <i class="nav-icon fas fa-user-check"></i>
+                        <p>@Resources.Menu.Customer</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Index", "Bill")" class="@Html.IsActive("Bill", "Index")">
+                        <i class="nav-icon fas fa-receipt"></i>
+                        <p>@Resources.Menu.Bill</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-cog" aria-hidden="true"></i>
+                        <p>@Resources.Menu.Setting <i class="right fas fa-angle-left"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "User")" class="@Html.IsActive("User", "Index")">
+                                <i class="nav-icon fas fa-user-circle"></i>
+                                <p>@Resources.Menu.User</p>
+                            </a>
+                        </li>
+                        @*<li class="nav-item">
+                                <a href="@Url.Action("ChangePassword", "User")" class="@Html.IsActive("User", "ChangePassword")">
+                                    <i class="nav-icon fas fa-key"></i>
+                                    <p>@Resources.Menu.ChangePassword</p>
+                                </a>
+                            </li>*@
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Role")" class="@Html.IsActive("Role", "Index")">
+                                <i class="nav-icon fas fa-user-cog"></i>
+                                <p>@Resources.Menu.Role</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header py-0" style="font-size: 1.04rem;">
+                    <i class="nav-icon fas fa-chart-line mr-1"></i>
+                    <span>@Resources.Menu.Report</span>
+                </li>
+                @if (1 > 0)
+                {
+                    string rptName;
+                    string MyPath = Request.PhysicalApplicationPath + "Reports";
+                    foreach (var dir in new DirectoryInfo(@MyPath).GetDirectories())
+                    {
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-folder-minus" aria-hidden="true"></i>
+                                <p>
+                                    @dir.Name
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                @foreach (var file in dir.GetFiles())
+                                {
+                                    rptName = @file.Name.Substring(0, file.Name.Length - 5);
+                                    <li class="nav-item">
+                                        <a href="@Url.Action("Index", "Report", new { dir = @dir.Name, slug = rptName})" class="nav-link @rptName">
+                                            @*<i class="nav-icon fa fa-file" aria-hidden="true"></i>*@
+                                            <p>@file.Name.Substring(0, file.Name.Length - 5)</p>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                }
+            </ul>
+        </nav>
+    </div>
+</aside>

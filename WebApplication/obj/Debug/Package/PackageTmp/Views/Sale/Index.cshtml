@@ -1,0 +1,1116 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutFrontend.cshtml";
+}
+@section Styles {
+    <link href="~/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="~/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="~/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
+    <style>
+        #tableProduct_filter, .dataTables_info {
+            display: none;
+        }
+
+        #tableProduct.table td:first-child {
+            position: relative;
+        }
+
+        .td-absolute {
+            position: absolute;
+            /*right: 0;
+            top: 0;
+            bottom: 0;*/
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+}
+<div class="row wrap-sale">
+    <div class="col-auto col-md-7">
+        <div class="row pt-2">
+            <div class="col-md-4">
+                <button id="btnShowModalCategory" class="btn btn-block btn-rounded font-weight-bold" type="button">
+                    <div class="spinner">
+                        <span class="spinner-border spinner-border-sm d-none mr-2" role="status"></span>
+                        <i class="fa fa-th-list mr-2"></i>Categories
+                    </div>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <input type="text" id="btnSearch" class="form-control form-rounded" placeholder="@Resources.Menu.Search">
+                </div>
+            </div>
+        </div>
+        <div id="wrap-product-table">
+            <table id="tableProduct" class="table nowrap" style="width:100%; font-size:14px;">
+                <thead>
+                    <tr>
+                        <th class="border-0">@Resources.Sale.Title</th>
+                        <th class="border-0">@Resources.Sale.unitPrice</th>
+                        <th class="border-0"></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="col-auto col-md-5 wrap-list bg-right-block">
+        <div class="wrap-list-order">
+            <div id="head-list-order"></div>
+            <table class="table dataTable nowrap" style="width:100%; font-size:14px;">
+                <thead>
+                    <tr>
+                        <th class="border-0">@Resources.Sale.Title</th>
+                        <th class="border-0">@Resources.Sale.Items</th>
+                        <th class="border-0">@Resources.Sale.Total</th>
+                        <th class="border-0"></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div id="option-menu">
+            <div id="box-total-pay" class="border-bottom px-2">
+                <div class="px-2 d-flex justify-content-between font-weight-bold">
+                    <div>@Resources.Sale.TotalRiel</div>
+                    <div id="totalRiel">0៛</div>
+                </div>
+                <div class="px-2 d-flex justify-content-between">
+                    <div>@Resources.Sale.TotalDollar</div>
+                    <div id="totalDolar">$0.00</div>
+                </div>
+            </div>
+            <div class="row no-gutters px-2 py-3">
+                <div class="col-md-6 px-2">
+                    @*<button type="button" class="btn btn-warning btn-lg btn-block btn-rounded" data-toggle="modal" data-target="#modalHold">
+                            <i class="fa fa-pause-circle mr-2"></i>Hold
+                        </button>*@
+                    <button type="button" id="btnShowModalHoldOrder" class="btn btn-warning btn-block btn-rounded">
+                        <div class="spinner">
+                            <span class="spinner-border spinner-border-sm d-none mr-2" role="status"></span>
+                            <i class="fa fa-pause-circle mr-2"></i>Hold
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 px-2">
+                    <button type="button" id="btnShowModalPayment" class="btn btn-primary btn-block btn-rounded" data-id=@ViewBag.customerOrderId>
+                        <div class="spinner">
+                            <span class="spinner-border spinner-border-sm d-none mr-2" role="status"></span>
+                            <i class="fab fa-paypal mr-2"></i>Payment
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*Include Partial*@
+@Html.Partial("Partials/_Category")
+@Html.Partial("Partials/_SaleItem")
+@*@Html.Partial("Partials/_Hold")*@
+@Html.Partial("Partials/_Payment")
+<!-- Modal Hold Order -->
+<div class="modal fade" id="modalHoldOrder" tabindex="-1" role="dialog" aria-labelledby="modalHoldOrderLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalSaleItemLabel">Hold</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="bodyHoldOrder" class="modal-body">
+                @*body modal*@
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal List Customer -->
+<div class="modal fade" id="modalListCustomer" tabindex="-1" aria-labelledby="modalListCustomer" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Customer list
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("Partials/_Customer")
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/assets/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="~/assets/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+    <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
+    <script src="~/assets/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="~/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/plugins/moment/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="~/assets/plugins/popper/umd/popper.min.js"></script>
+    <script type="text/javascript">
+        var modalPayment = $('#modalPayment');
+        var modalHold = $('#modalHold');
+        var btnCloseModalPay = $('#btnCloseModalPay');
+        var scanCode = $("#ScanCode");
+        var btnSubmit = $('button[type="submit"]');
+        var modalListCustomer = $('#modalListCustomer');
+        var modalHoldOrder = $('#modalHoldOrder');
+        //customer info navbar
+        var customerId = $('#customerId');
+        var customerName = $('#customerName');
+        //customer info payment form
+        var customerOrderID = $('#customerOrderID');
+        var custId = $('#custId');
+        var customerOrderName = $('#customerOrderName');
+        var roomtableID = $('#roomtableID');
+
+        var usdTokhr = $('#usdTokhr');
+        var usdToKhrChange = $('#usdToKhrChange');
+        var usdToTHB = $('#usdToTHB');
+
+        var totalAmount = $('#totalAmount');
+        var totalAmountRiel = $('#totalAmountRiel');
+
+        var amtDiscount = $('#amtDiscount');
+        var percentDiscount = $('#percentDiscount');
+
+        var netAmount = $('#netAmount');
+        var netAmountRiel = $('#netAmountRiel');
+
+        var amtReceived = $('#amtReceived');
+        var amtReceivedRiel = $('#amtReceivedRiel');
+        var amtGTotalReceived = $('#amtGTotalReceived');
+
+        var amtReturn = $('#amtReturn');
+        var amtReturnRiel = $('#amtReturnRiel');
+
+        var amtOwed = $('#amtOwed');
+        var amtOwedRiel = $('#amtOwedRiel');
+
+        var returnDate = $('#ReturnDate');
+        var descripitonTerm = $('#DescripitonTerm');
+
+        var Product_PackageID = $('#Product_PackageID');
+        var Qty = $('#Qty');
+        var Description = $('#Description');
+
+        ///-----declare variable-----/
+        var _grandTotal = 0;
+        var _amtLoan = 0;
+        var _amtPay = 0;
+
+        var _totalAmount = 0;
+        var _totalAmountRiel = 0;
+
+        var _amtDiscount = 0;
+        var _percentDiscount = 0;
+
+        var _netAmount = 0;
+        var _netAmountRiel = 0;
+
+        var _amtReceived = 0;
+        var _amtReceivedRiel = 0;
+
+        var _amtReturn = 0
+        var _amtReturnRiel = 0
+
+        var _amtOwed = 0;
+        var _amtOwedRiel = 0;
+        $(function () {
+            scanCode.focus();
+            $('.select2bs4').select2({
+                theme: 'bootstrap4',
+            });
+            $('body').on('shown.bs.modal', modalPayment, function () {
+                $('#amtReceived', this).focus().select();
+                $('.singledatepicker').daterangepicker({
+                    opens: 'right',
+                    drops: 'down',
+                    singleDatePicker: true,
+                    showDropdowns: true,
+                    minYear: 2000,
+                    maxYear: parseInt(moment().format('YYYY'), 10),
+                    locale: {
+                        format: 'YYYY-MM-DD',
+                        firstDay: 1
+                    }
+                });
+                var _formatDate = 'YYYY-MM-DD hh:mm a';
+                $('.singledatetimepicker').daterangepicker({
+                    timePicker: true,
+                    singleDatePicker: true,
+                    showDropdowns: true,
+                    minYear: 2000,
+                    maxYear: parseInt(moment().format('YYYY'), 10),
+                    startDate: moment(),
+                    locale: {
+                        format: _formatDate,
+                        firstDay: 1
+                    }
+                }).on('apply.daterangepicker', function (ev, picker) {
+                    $(this).val(picker.startDate.format(_formatDate));
+                });
+            });
+            $('body').on('hidden.bs.modal', modalPayment, function () {
+                $('#formPayment').trigger("reset");
+                scanCode.focus();
+                dataTable.draw();
+            });
+            $("#ScanCode").change(function () {
+                var barCode = $(this).val();
+                scanBarcode(barCode,'0', custId.val());
+            });
+            $("body").on('keypress', function (e) {
+                if (e.which == 13 && scanCode.val() == '') {
+                    modalPayment.modal('show');
+                }
+            });
+            $(document).on('click', '.btnSelect', function () {
+                var _this = $(this);
+                var id = _this.data('id');
+                var custName = _this.data('name');
+                customerName.text(custName);
+                custId.attr('value', id);
+                customerOrderName.attr('value', custName);
+                modalListCustomer.modal('hide');
+                var arrAccountTypes = "";
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("GetAccountTypeByCustomer", "Sale")",
+                    dataType: "json",
+                    data: { id: id },
+                    success: function (data) {
+                        arrAccountTypes = "<option value='0' data-amount='0'>Select Account</option>";
+                        $.each(data, function (index, item) {
+                            arrAccountTypes += "<option value='" + item.CustomerAccountID + "' data-amount='" + item.Amount + "'>" + item.AccountType + "</option>";
+                        });
+                        $("#CustomerAccountID").html(arrAccountTypes);
+                    }
+                });
+            });
+
+            $(document).on('change', '#custId', function () {
+                var _this = $(this);
+                //alert(_this.val());
+                 var arrAccountTypes = "";
+                 $.ajax({
+                     type: "GET",
+                     url: "@Url.Action("GetAccountTypeByCustomer", "Sale")",
+                     dataType: "json",
+                     data: { id: _this.val() },
+                     success: function (data) {
+                         arrAccountTypes = "<option value='0' data-amount='0'>Select Account</option>";
+                         $.each(data, function (index, item) {
+                             arrAccountTypes += "<option value='" + item.CustomerAccountID + "' data-amount='" + item.Amount + "'>" + item.AccountType + "</option>";
+                         });
+                         $("#CustomerAccountID").html(arrAccountTypes);
+                     }
+                 });
+            });
+            $(document).on('change', '#CustomerAccountID', function () {
+                var amount = $(this).find(':selected').attr('data-amount');
+                $('#CustomerAmount').val(amount);
+            });
+            @*$(document).on('submit', '.formOrder', function (e) {
+                e.preventDefault();
+                var customerOrderId = customerOrderID.val();
+                var cusId = custId.val();
+                var dataForm = new FormData(this);
+                var data = {};
+                data.prdID = dataForm.get("prdID");
+                data.customerOrderID = customerOrderId; // id return
+                data.custId = cusId; // id ordering
+                data.orderQty = dataForm.get("orderQty");
+                data.status = false;
+                $.ajax({
+                    url: '@Url.Action("AddOrder", "Sale")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    processData: false,
+                    success: function (res) {
+                        if (res.status == 'True') {
+                            dataTable.draw();
+                            scanCode.focus();
+                        }
+                        else if (res.status == 'No_Enough') {
+                            Swal.fire({
+                                title: 'Are you sure?',
+                                text: res.message,
+                                type: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Yes, sale it!'
+                            }).then((result) => {
+                                if (result.value) {
+                                    addOrder(dataForm.get("prdID"), customerOrderId, cusId, dataForm.get("orderQty"), true);
+                                } else {
+                                    dataTable.draw();
+                                    scanCode.focus();
+                                }
+                            }).catch(Swal.noop);
+                        }
+                        else if (res.status == 'Warning') {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Oops...',
+                                text: res.message
+                            });
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+            });*@
+
+             $(document).on('click', '.btnAddOrder', function (e) {
+                 var _this = $(this);
+                 spinner(_this, 'loading');
+                var customerOrderId = customerOrderID.val();
+                var cusId = custId.val();
+
+                //var dataForm = new FormData(this);
+                var data = {};
+                data.prdID = _this.data('id');
+                data.customerOrderID = customerOrderId; // id return
+                data.custId = cusId; // id ordering
+                data.orderQty =1;
+                 data.status = false;
+                 setTimeout(function () {
+                     $.ajax({
+                        url: '@Url.Action("AddOrder", "Sale")',
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(data),
+                        dataType: "json",
+                        processData: false,
+                        success: function (res) {
+                            if (res.status == 'True') {
+                                dataTable.draw();
+                                //scanCode.focus();
+                            }
+                            else if (res.status == 'No_Enough') {
+                                Swal.fire({
+                                    title: 'Are you sure?',
+                                    text: res.message,
+                                    type: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Yes, sale it!'
+                                }).then((result) => {
+                                    if (result.value) {
+                                        addOrder(dataForm.get("prdID"), customerOrderId, cusId, dataForm.get("orderQty"), true);
+                                    } else {
+                                        dataTable.draw();
+                                        //scanCode.focus();
+                                    }
+                                }).catch(Swal.noop);
+                            }
+                            else if (res.status == 'Warning') {
+                                Swal.fire({
+                                    icon: 'warning',
+                                    title: 'Oops...',
+                                    text: res.message
+                                });
+                            }
+                            spinner(_this, 'finished');
+                        },
+                        error: function (xhr, error, status) {
+                            console.log(error, status);
+                        }
+                    });
+                 }, 200);
+            });
+             //#script modal payment.
+            var _thisBtnShowModalPayment;
+            $('#btnShowModalPayment').on('click', function () {
+                _thisBtnShowModalPayment = $(this);
+                spinner(_thisBtnShowModalPayment, 'loading');
+                var data = {};
+                data.customerOrderID = _thisBtnShowModalPayment.data('id');
+                $.ajax({
+                    url: "@Url.Action("GetPayment", "Sale")",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    processData: false,
+                    success: function (res) {
+                        usdTokhr.val(res.usdTokhr);
+                        usdToTHB.val(res.usdToTHB);
+                        usdToKhrChange.val(res.usdToKhrChange);
+                        totalAmount.val(res.totalAmount.toFixed(2));
+                        totalAmountRiel.val(res.totalAmountRiel);
+                        netAmount.val(res.netAmount.toFixed(2));
+                        netAmountRiel.val(res.netAmountRiel);
+                        amtOwed.val(res.amtOwed.toFixed(2));
+                        amtOwedRiel.val(res.amtOwedRiel);
+                        modalPayment.modal('show');
+                    },
+                    error: function (message) {
+                        spinner(_thisBtnShowModalPayment, 'finished');
+                    }
+                });
+            });
+            $(modalPayment).on('hidden.bs.modal', function () {
+                spinner(_thisBtnShowModalPayment, 'finished');
+            });
+            //#end script modal payment.
+            $('#amtDiscount').on('keyup', function () {
+                var totalDisc;
+                var totalPerDisc;
+                var totalAmt;
+                totalDisc = $(this).val();
+                if (isNaN(totalDisc) || totalDisc == '') {
+                    var totalDisc = 0;
+                }
+                totalAmt = totalDisc;
+                totalDisc = totalDisc / parseFloat(totalAmount.val());
+                totalPerDisc = totalDisc * 100.0;
+                percentDiscount.val(round(totalPerDisc, 2));
+
+                //calc amount after discount and set to texbox netAmount
+                totalAmt = parseFloat(totalAmount.val()) - totalAmt;
+                netAmount.val(totalAmt.toFixed(2));
+                netAmountRiel.val(round(totalAmt * usdTokhr.val(), -2));
+                calcPayment();
+            });
+            $('#percentDiscount').on('keyup', function () {
+                var totalDisc;
+                var totalPerDisc;
+                var totalAmt;
+                var totalPerDisc = $(this).val();
+                if (isNaN(totalPerDisc) || totalPerDisc == '') {
+                    var totalPerDisc = 0;
+                }
+
+                var totalDisc = parseFloat(totalAmount.val()) * totalPerDisc;
+                totalDisc = totalDisc / 100.0;
+                amtDiscount.val(round(totalDisc, 2));
+
+                //calc amount after discount and set to texbox netAmount
+                totalAmt = parseFloat(totalAmount.val()) - totalDisc;
+                netAmount.val(totalAmt.toFixed(2));
+                netAmountRiel.val(round(totalAmt * usdTokhr.val(), -2));
+                calcPayment();
+            });
+
+            $('#amtReceived').on('keyup', function () {
+                calcPayment('dolar');
+            });
+            $('#amtReceivedRiel').on('keyup', function () {
+                calcPayment('riel');
+            });
+
+            function calcPayment(moneyType = 'dolar') {
+                if (moneyType == 'dolar') {
+                    _amtReceivedRiel = parseFloat(amtReceivedRiel.val());
+                    _netAmountRiel = parseFloat(netAmountRiel.val());
+                    //if (_amtReceivedRiel >= _netAmountRiel) {
+                    //    amtReceived.val(0);
+                    //}
+                    calcReturnOrOwed();
+                    return true;
+                }
+                _amtReceived = parseFloat(amtReceived.val());
+                _netAmount = parseFloat(netAmount.val());
+                //if (_amtReceived >= _netAmount) {
+                //    amtReceivedRiel.val(0);
+                //}
+                calcReturnOrOwed();
+            }
+
+            function calcReturnOrOwed() {
+                _amtReceivedRiel = amtReceivedRiel.val();
+                //if (_amtReceivedRiel == '') {
+                //    _amtReceivedRiel = 0;
+                //    amtReceivedRiel.val(0);
+                //}
+                _amtReceivedRiel = parseFloat(_amtReceivedRiel) / usdTokhr.val();
+                _amtReceived = amtReceived.val();
+                //if (_amtReceived == '') {
+                //    _amtReceived = 0;
+                //    amtReceived.val(0);
+                //}
+                _amtReceived = parseFloat(_amtReceived) + _amtReceivedRiel;
+                amtGTotalReceived.val(_amtReceived);
+                _netAmount = parseFloat(netAmount.val());
+                _amtReturn = _amtReceived - _netAmount;
+                //set return money
+                if (_amtReturn > 0) {
+                    amtReturn.val(_amtReturn.toFixed(2));
+                    _amtReturnRiel = _amtReturn * usdToKhrChange.val();
+                    amtReturnRiel.val(round(_amtReturnRiel, -2));
+
+                    amtOwed.val(0);
+                    amtOwedRiel.val(0);
+                    return true;
+                }
+                //set owed money
+                _amtOwed = _netAmount - _amtReceived;
+                _amtOwedRiel = _amtOwed * usdTokhr.val();
+                amtOwed.val(_amtOwed.toFixed(2));
+                amtOwedRiel.val(round(_amtOwedRiel, -2));
+
+                amtReturn.val(0);
+                amtReturnRiel.val(0);
+            }
+            $('#formPayment').submit(function (e) {
+                e.preventDefault();
+                var _this = $(this).find(":submit");
+                btnCloseModalPay.prop('disabled', true);
+                _this.prop('disabled', true);
+                _this.find('div:nth-child(2)').addClass('d-none');
+                _this.find('div:nth-child(1)').removeClass('d-none');
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: new FormData(this),
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        btnCloseModalPay.prop('disabled', false);
+                        _this.prop('disabled', false);
+                        _this.find('div:nth-child(2)').removeClass('d-none');
+                        _this.find('div:nth-child(1)').addClass('d-none');
+                        if (res.status == 'True') {
+                            //modalPayment.modal('hide');
+                            //dataTable.draw();
+                            //scanCode.focus();
+                            //location.reload();
+                             window.location.href = '@Url.Action("Index", "Sale")';
+                        }
+                        else if (res.status == 'Preview') {
+                            //modalPayment.modal('hide');
+                            //dataTable.draw();
+                            var src = '@Url.Action("Receipt", "Sale")?slug=' + res.id;
+                            let params = 'scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=' + screen.availWidth + ',height=' + screen.availHeight;
+                            var w = window.open(src, "newWin", params);
+                            //w.onunload = function () {
+                            //    if (!window.closed) {
+                            //        scanCode.focus();
+                            //    }
+                            //}
+                             window.location.href = '@Url.Action("Index", "Sale")';
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Oops...',
+                                text: res.status
+                            })
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+            });
+            //#script modal hold order.
+            var _thisBtnShowModalHoldOrder;
+            $("#btnShowModalHoldOrder").on("click", function () {
+                _thisBtnShowModalHoldOrder = $(this);
+                spinner(_thisBtnShowModalHoldOrder, 'loading');
+                $.ajax({
+                    url: "@Url.Action("GetHoldOrder", "Sale")",
+                    contentType: "application/html; charset=utf-8",
+                    type: "GET",
+                    data: { id: 1 },
+                    datatype: "html",
+                    success: function (data) {
+                        $("#bodyHoldOrder").html(data);
+                        modalHoldOrder.modal('show');
+                    },
+                    error: function () {
+                        spinner(_thisBtnShowModalHoldOrder, 'finished');
+                    }
+                })
+            });
+            $(modalHoldOrder).on('hidden.bs.modal', function () {
+                spinner(_thisBtnShowModalHoldOrder, 'finished');
+            });
+             $(document).on('click', '.openHoldToOrdering', function () {
+                var _this = $(this);
+                var data = {};
+                data.roomtableID = $(this).data('id');
+                spinner(_this, 'loading');
+                setTimeout(function () {
+                     $.ajax({
+                        url: '@Url.Action("OpenHoldToOrdering", "Sale")',
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(data),
+                        dataType: "json",
+                        processData: false,
+                        success: function (res) {
+                            if (res == 'True') {
+                                dataTable.draw();
+                                //scanCode.focus();
+                                spinner(_this, 'finished');
+                                modalHoldOrder.modal('hide');
+                            }
+                        },
+                         error: function (xhr, error, status) {
+                             Swal.fire({
+                                 icon: 'warning',
+                                 title: 'Oops...',
+                                 text: res
+                             });
+                             spinner(_this, 'finished');
+                        }
+                    });
+                }, 300);
+            });
+            $(document).on('click','#btnSaveHold', function () {
+               var _this = $(this);
+                var data = {};
+                var custName = $('#CustName').val();
+                data.custName = custName;
+                spinner(_this, 'loading');
+                if (custName == '') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Oops...',
+                        text: 'The customer name is required!'
+                    })
+                    return true;
+                }
+                setTimeout(function () {
+                     $.ajax({
+                         url: '@Url.Action("CreateHold", "Sale")',
+                         type: "POST",
+                         contentType: "application/json; charset=utf-8",
+                         data: JSON.stringify(data),
+                         dataType: "json",
+                         processData: false,
+                         success: function (res) {
+                             if (res == 'True') {
+                                 dataTable.draw();
+                                 spinner(_this, 'finished');
+                                 modalHoldOrder.modal('hide');
+                            }
+                        },
+                        error: function (xhr, error, status) {
+                            spinner(_this, 'finished');
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Oops...',
+                                text: error
+                            })
+                        }
+                    });
+                }, 300);
+            });
+            //#end script modal hold order.
+            $(document).on('click', '#cartPlus', function () {
+                $.ajax({
+                    url: "@Url.Action("GetListHold", "Sale")",
+                    contentType: "application/html; charset=utf-8",
+                    type: "GET",
+                    datatype: "html",
+                    success: function (data) {
+                        $("#listHold").html(data)
+                    },
+                    error: function () {
+                        $("#listHold").html("Data Not Found.")
+                    }
+                })
+            });
+            $(document).on('click', '.btnDelete', function () {
+                var data = {};
+                data.orderDetailsID = $(this).data('id');
+                $.ajax({
+                    url: '@Url.Action("Delete", "Sale")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    success: function (res) {
+                        if (res == 'True') {
+                            dataTable.draw();
+                            scanCode.focus();
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: res
+                            })
+                        }
+                    },
+                    error: function (res) {
+                        if (message == 405) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'You do not have access to do that.'
+                            })
+                        }
+                    }
+                });
+            });
+            function scanBarcode(barCode, customerOrderId, custId, qty = 1, status = false) {
+                var data = {};
+                data.barCode = barCode;
+                data.customerOrderID = customerOrderId;
+                data.custId = custId;
+                data.orderQty = qty;
+                data.status = status;
+                $.ajax({
+                    url: '@Url.Action("ScanBarcode", "Sale")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    processData: false,
+                    success: function (res) {
+                        if (res.status == 'True')
+                        {
+                            dataTable.draw();
+                            scanCode.val('').focus();
+                        }
+                        else if (res.status == 'No_Enough')
+                        {
+                            Swal.fire({
+                                title: 'Are you sure?',
+                                text: res.message,
+                                type: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Yes, sale it!'
+                            }).then((result) => {
+                                if (result.value) {
+                                    scanBarcode(barCode, customerId, qty, true)
+                                } else {
+                                    scanCode.val('').focus();
+                                }
+                            }).catch(Swal.noop);
+                        }
+                        else if (res.status == 'Warning')
+                        {
+                            scanCode.val('').focus();
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Barcode',
+                                text: res.message
+                            })
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+            }
+            function addOrder(productId, customerOrderId, custId, qty = 1, status = false) {
+                var data = {};
+                data.prdID = productId;
+                data.customerOrderID = customerOrderId;
+                data.custId = custId;
+                data.orderQty = qty;
+                data.status = status;
+                $.ajax({
+                    url: '@Url.Action("AddOrder", "Sale")',
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    processData: false,
+                    success: function (res) {
+                        if (res.status == 'True')
+                        {
+                            dataTable.draw();
+                            scanCode.focus();
+                        }
+                        else if (res.status == 'No_Enough')
+                        {
+                            Swal.fire({
+                                title: 'Are you sure?',
+                                text: res.message,
+                                type: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Yes, sale it!'
+                            }).then((result) => {
+                                if (result.value) {
+                                    addOrder(productId, customerOrderId, custId, qty, true);
+                                } else {
+                                    dataTable.draw();
+                                    scanCode.focus();
+                                }
+                            }).catch(Swal.noop);
+                        }
+                        else if (res.status == 'Warning')
+                        {
+                            scanCode.val('').focus();
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Barcode',
+                                text: res.message
+                            })
+                        }
+                    },
+                    error: function (xhr, error, status) {
+                        console.log(error, status);
+                    }
+                });
+            }
+            //$(document).on('keyup', '#btnSearch', function () {
+            //    getSearch($(this).val());
+            //});
+            function getSearch(data) {
+                $.ajax({
+                    url: "@Url.Action("GetSearch", "Sale")",
+                    contentType: "application/html; charset=utf-8",
+                    type: "GET",
+                    data: { data: data },
+                    datatype: "html",
+                    success: function (data) {
+                        $("#productByCategory").html(data)
+                    },
+                    error: function () {
+                        $("#productByCategory").html("Data Not Found.")
+                    }
+                })
+            }
+            var prdCatId = 'All';
+            $(document).on('click', '.btnCategory', function () {
+                var _this = $(this);
+                spinner(_this, 'loading');
+                setTimeout(function () {
+                    prdCatId = _this.data('id');
+                    _tableProduct.draw();
+                    spinner(_this, 'finished');
+                }, 200);
+            });
+
+        //var heightList = ($(window).height()) - 250;
+        //datatable list order
+        const dataTable = $('.dataTable')
+            .DataTable({
+            sAjaxSource: '@Url.Action("GetData", "Sale")',
+            fnServerParams: function (aoData)
+            {
+                aoData.push({ "name": "customerOrderId", "value": @ViewBag.customerOrderId });
+            },
+            bServerSide: true,
+            pageLength: 100,
+            bProcessing: true,
+            lengthChange: false,
+            scrollY: '65vh',
+            searching: false,
+            sAutoWidth: false,
+            bDestroy: true,
+            sDom: 'ft',
+            columns: [
+                {
+                    data: "PrdNameEng",
+                    autoWidth: true,
+                    searchable: false,
+                    sortable: false,
+                    render: function (data, type, full, meta) {
+                        //return data + '<br><small class="text-muted">' + full.PrdDesc +'</small>';
+                        return data;
+                    }
+                },
+                {
+                    data: "orderQty",
+                    sortable: false
+                },
+                { data: "totalAmt", sortable: false, render: $.fn.dataTable.render.number(',', '.', 2, '') },
+                {
+                    data: "orderDetailsID",
+                    sortable: false,
+                    render: function (data, type, full, meta) {
+                        return '<i data-id="' + data + '" class="fa fa-times-circle btn-pointer rounded-circle text-danger btnDelete"></i>';
+                    }
+                }
+            ],
+            footerCallback: function (row, data, start, end, display) {
+                var api = this.api(), data;
+                // Remove the formatting to get integer data for summation
+                var intVal = function (i) {
+                    return typeof i === 'string' ?
+                        i.replace(/[\$,]/g, '') * 1 :
+                        typeof i === 'number' ?
+                            i : 0;
+                };
+                totalAmt = api
+                    .column(2)
+                    .data()
+                    .reduce(function (a, b) {
+                        return intVal(a) + intVal(b);
+                    }, 0);
+
+                $(api.column(2).footer()).html(
+                    totalAmt = totalAmt.toFixed(2),
+                    // Set show total amount payment
+                    $('#totalDolar').text('$' + totalAmt),
+                    $('#totalRiel').text('៛' + round((totalAmt * 4000), -2)),
+                );
+            }
+        });
+            //table category.
+            var _tableCategory = $('#tableCategory')
+                .DataTable({
+                    "sAjaxSource": "@Url.Action("GetData", "Category")",
+                    "bServerSide": true,
+                    "pageLength": 25,
+                    "bProcessing": true,
+                    "bSearchable": true,
+                    "scrollX": true,
+                    //"order": [[1, 'asc']],
+                    "columns": [
+                        {
+                            "data": "PrdCategory",
+                            "autoWidth": false,
+                            "searchable": true,
+                            "width": "70%",
+                        },
+                        {
+                            "data": "PrdCategID",
+                            "autoWidth": false,
+                            "searchable": false,
+                            "sortable": false,
+                            "render": function (data, type, full, meta)
+                            {
+                                return '<button type="button" data-id="' + data + '" class="btn btn-primary btn-min-70 btnCategory"><div class="spinner"><span class="spinner-border spinner-border-sm d-none" role="status"></span><i class="fa fa-check-circle"></i></div></button>';
+                            }
+                        }
+                    ],
+                    columnDefs: [
+                        {
+                            targets: [1],
+                            className: 'd-flex justify-content-end'
+                        }
+                    ]
+                });
+
+        //tabletable list product
+            var _btnOrder;
+        var _tableProduct = $('#tableProduct')
+            .DataTable({
+                sAjaxSource: '@Url.Action("GetForSale", "Product")',
+                fnServerParams: function (aoData)
+                {
+                    aoData.push({ "name": "prdCatId", "value": prdCatId });
+                },
+                bServerSide: true,
+                pageLength: 200,
+                bProcessing: true,
+                scrollY: '76.5vh',
+                searching: true,
+                sAutoWidth: false,
+                bDestroy: true,
+                sDom: 'ft',
+                columns: [
+                    {
+                        data: "PrdNameEng",
+                        //autoWidth: true,
+                        searchable: true,
+                        sortable: true,
+                        width: "60%",
+                        render: function (data, type, full, meta) {
+                           // return data + '<br><small class="text-muted">' + full.PrdDesc + '</small>';
+                           // return '<a href="@Url.Action("Details", "Sale")?slug=' + full.ProductID + '" class="td-absolute">' + data + '</a>' + '<br><small class="text-muted">' + full.PrdDesc + '</small>';
+                            return '<a href="@Url.Action("Details", "Sale")?slug=' + full.ProductID + '" class="td-absolute text-body">' + data + '</a>';
+                        }
+                    },
+                    {
+                        data: "SellingPriceUSD",
+                        searchable: false,
+                        sortable: false,
+                        render: $.fn.dataTable.render.number(',', '.', 2, '$')
+                    },
+                    {
+                        "data": "ProductID",
+                        "searchable": false,
+                        "sortable": false,
+                        "render": function (data, type, full, meta) {
+                            _btnOrder = '<button type="button" data-id="' + data + '" class="btn btn-primary btn-min-70 btnShowModalSaleItem mr-2"><div class="spinner"><span class="spinner-border spinner-border-sm d-none" role="status"></span><i class="fa fa-edit"></i></div></button>';
+                            _btnOrder += '<button type="button" data-id="' + data + '" class="btn btn-success btn-min-70 btnAddOrder"><div class="spinner"><span class="spinner-border spinner-border-sm d-none" role="status"></span><i class="fa fa-check-circle"></i></div></button>';
+                            return _btnOrder;
+                        }
+                    },
+                ],
+                columnDefs: [
+                    {
+                        targets: [2],
+                        className: 'd-flex justify-content-end'
+                    }
+                ]
+            });
+            $('#btnSearch').keyup(function () {
+                _tableProduct.search($(this).val()).draw();
+            });
+        //datatable list customer
+        var dataCust = $('.dataCust')
+        .DataTable({
+            "sAjaxSource": '@Url.Action("GetData", "Customer")',
+            "bServerSide": true,
+            "pageLength": 25,
+            "bProcessing": true,
+            "bSearchable": true,
+            "scrollX": true,
+            "columns": [
+                {
+                    "data": null, "sortable": false,
+                    "render": function (data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1;
+                    }
+                },
+                {
+                    "data": "memberID",
+                    sortable: false,
+                    "render": function (data, type, full, meta) {
+                        return '<button type="button" data-id="' + data + '" data-name="' + full.fullName + '" class="btn btnSelect btn-sm btn-primary mx-1" ><i class="fa fa-check-circle"></i></a >';
+                    }
+                },
+                { "data": "fullName" },
+                { "data": "Gender", "sortable": false },
+                { "data": "Nationality", "sortable": false },
+                { "data": "Mobile", "sortable": false },
+                { "data": "icpassportNo" },
+                { "data": "idType", "sortable": false },
+                {
+                    "data": "Passport_Issue",
+                    "sortable": false,
+                    "render": function (value) {
+                        if (value === null) return "";
+                        return moment(value).format("YYYY-MM-DD");
+                    }
+                },
+                {
+                    "data": "Passport_Expire",
+                    "sortable": false,
+                    "render": function (value) {
+                        if (value === null) return "";
+                        return moment(value).format("YYYY-MM-DD");
+                    }
+                },
+                { "data": "Address", "sortable": false, }
+            ]
+        });
+    });
+    </script>
+}
+
+
+

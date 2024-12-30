@@ -1,0 +1,52 @@
+﻿<div class="row row-cols-6">
+    <div class="col-12 col-md-2 mt-2">
+        <div class="input-group">
+            @Html.DropDownList("memberID", ViewData["CustomerList"] as SelectList, new { @class = "form-control select2bs4" })
+            <div class="input-group-append">
+                <span class="btn input-group-text text-primary"><i class="fa fa-plus-circle"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-3 mt-2">
+        <div class="input-group">
+            @Html.DropDownList("PrdCategID", ViewBag.Categories as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4", @style = "width:100%" })
+        </div>
+    </div>
+    <div class="col-12 col-md-4 mt-2">
+        <div class="input-group">
+            @Html.DropDownList("ProductFilter", ViewBag.Products as IEnumerable<SelectListItem>, new { @class = "form-control select2bs4" })
+            <div class="input-group-append" data-toggle="modal" data-target="#modal-package">
+                <span class="btn input-group-text font-weight-bold">@Resources.ProductPackage.Package</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-3 mt-2">
+        <button type="button" id="btnPlus" class="btn btn-outline-primary mr-2">
+            <i class="fa fa-plus-circle"></i>
+            <span class="badge badge-danger" id="badge-count">0</span>
+        </button>
+        <button type="button" id="btnPlusOk" class="btn btn-outline-success mr-5">
+            <i class="far fa-check-circle"></i>
+        </button>
+        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#modal-form">
+            <i class="fab fa-paypal"></i> Pay
+        </button>
+        @*<div class="float-right">
+                <a href="#" class="btn btn-outline-danger mr-2" data-toggle="modal" data-target="#modal-keep">
+                    <i class="far fa-check-circle"></i> Keep In
+                </a>
+                <a href="#" class="btn btn-outline-success" data-toggle="modal" data-target="#modal-form">
+                    <i class="fab fa-paypal"></i> Pay
+                </a>
+            </div>*@
+    </div>
+    <div class="col-12 col-md-2 mt-2">
+        <div class="input-group">
+            <input type="text" id="ScanCode" class="form-control" placeholder="@Resources.Sale.ScanCode">
+            <div class="input-group-append">
+                <span class="btn input-group-text"><i class="fas fa-search"></i></span>
+            </div>
+        </div>
+    </div>
+</div>
+@*<hr />*@

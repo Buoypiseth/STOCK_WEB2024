@@ -1,0 +1,200 @@
+﻿@model WebApplication.Models.Sale
+<div class="modal fade form-payment" id="modalPayment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-title" class="modal-title">
+                    Payment
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Payment", "Sale", FormMethod.Post, new { @id = "formPayment" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    if (ViewBag.IsReturn)
+                    {
+                        <div class="form-group row">
+                            <label for="InvoiceNo" class="col-sm-12 col-md-3 col-lg-2 col-form-label">@Resources.Payment.InvoiceNo</label>
+                            <div class="col-sm-6 col-md-5 col-lg-5">
+                                @Html.EditorFor(model => model.InvoiceNo, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.invoiceNo, placeholder = "InvoiceNo", @readonly = true } })
+                            </div>
+                        </div>
+                    }
+                    <div class="form-group row">
+                        <label for="customerOrderName" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.custId</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-1">
+                            @*@Html.HiddenFor(model => model.custId, new { @class = "form-control", @Value = ViewBag.custId })*@
+                            @*@Html.TextBox("customerOrderName", "", new { @class = "form-control", @readonly = "True", @Value = ViewBag.custName })*@
+                            @*<div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                                @Html.TextBox("customerOrderName", "", new { @class = "form-control", @readonly = "True", @Value = ViewBag.custName })
+                            </div>*@
+                            @Html.HiddenFor(model => model.customerOrderID, new { @class = "form-control", @Value = ViewBag.customerOrderId })
+                            @Html.DropDownListFor(model => model.custId, ViewBag.Customers as SelectList, new { @class = "form-control select2bs4", @style = "width:100%" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-1">
+                            @Html.EditorFor(model => model.orderDate, new { htmlAttributes = new { @class = "form-control singledatetimepicker" } })
+                            @Html.ValidationMessageFor(model => model.orderDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="totalAmount" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.totalAmount</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-2">
+                            @Html.HiddenFor(model => model.usdTokhr, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.HiddenFor(model => model.usdToKhrChange, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.HiddenFor(model => model.usdToTHB, new { htmlAttributes = new { @class = "form-control" } })
+
+                            @Html.EditorFor(model => model.totalAmount, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                            @Html.ValidationMessageFor(model => model.totalAmount, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-2">
+                            @Html.EditorFor(model => model.totalAmountRiel, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" } })
+                            @Html.ValidationMessageFor(model => model.totalAmountRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="AmtDisc" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.AmtDisc</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-2">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-default" type="button">$</button>
+                                </div>
+                                @Html.EditorFor(model => model.amtDiscount, new { htmlAttributes = new { @class = "form-control is-default", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-2">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-default" type="button">%</button>
+                                </div>
+                                @Html.EditorFor(model => model.percentDiscount, new { htmlAttributes = new { @class = "form-control is-default", @Value = 0, @step = "0.01", @type = "Number", @required = true } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="netAmount" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.PayableAmt</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-2">
+                            @Html.EditorFor(model => model.netAmount, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                            @Html.ValidationMessageFor(model => model.netAmount, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-2">
+                            @Html.EditorFor(model => model.netAmountRiel, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" } })
+                            @Html.ValidationMessageFor(model => model.netAmountRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="CustomerAccountID" class="col-12 col-md-3 col-lg-2 col-form-label">@Resources.Payment.AccountType</label>
+                        <div class="col-12 col-md-9 col-lg-10 mb-2">
+                            @Html.DropDownListFor(model => model.CustomerAccountID, ViewBag.AccountTypes as SelectList, "Select AccountType", new { @class = "form-control", @style = "width:100%" })
+                            @Html.ValidationMessageFor(model => model.CustomerAccountID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="amtReceived" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.amtReceived</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-2">
+                            @Html.HiddenFor(model => model.amtGTotalReceived, new { htmlAttributes = new { @class = "form-control", @Value = 0 } })
+                            @Html.EditorFor(model => model.amtReceived, new { htmlAttributes = new { @class = "form-control is-valid", @Value = 0, @step = "0.01", @type = "Number", @placeholder = "0.00", @required = true } })
+                            @Html.ValidationMessageFor(model => model.amtReceived, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-2">
+                            @Html.EditorFor(model => model.amtReceivedRiel, new { htmlAttributes = new { @class = "form-control is-valid", @Value = 0, @step = "0.01", @type = "Number", @placeholder = "0", @required = true } })
+                            @Html.ValidationMessageFor(model => model.amtReceivedRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="amtReturn" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.amtReturn</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-2">
+                            @Html.EditorFor(model => model.amtReturn, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                            @Html.ValidationMessageFor(model => model.amtReturn, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-2">
+                            @Html.EditorFor(model => model.amtReturnRiel, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" } })
+                            @Html.ValidationMessageFor(model => model.amtReturnRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="amtOwed" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.amtOwed</label>
+                        <div class="col-sm-4 col-md-4 col-lg-5 mb-2">
+                            @Html.EditorFor(model => model.amtOwed, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0.00" } })
+                            @Html.ValidationMessageFor(model => model.amtOwed, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 mb-2">
+                            @Html.EditorFor(model => model.amtOwedRiel, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @readonly = "True", @placeholder = "0" } })
+                            @Html.ValidationMessageFor(model => model.amtOwedRiel, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="ReturnDate" class="col-sm-3 col-md-3 col-lg-2 col-form-label">@Resources.Payment.ReturnDate</label>
+                        <div class="col-12 col-md-9 col-lg-10 mb-2">
+                            @Html.EditorFor(model => model.ReturnDate, new { htmlAttributes = new { @class = "form-control singledatepicker" } })
+                            @Html.ValidationMessageFor(model => model.ReturnDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ReturnDate" class="col-sm-3 col-md-3 col-lg-2 col-form-label"></label>
+                        <div class="col-12 col-md-9 col-lg-10 mb-2">
+                            @Html.TextAreaFor(model => model.DescripitonTerm, new { @class = "form-control", @rows = 3, @placeholder = Resources.Payment.DescripitonTerm })
+                            @Html.ValidationMessageFor(model => model.DescripitonTerm, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="NumPrint" class="col-sm-3 col-md-3 col-lg-2 col-form-label"></label>
+                        <div class="col-12 col-md-2 mb-2">
+                            @Html.EditorFor(model => model.NumPrint, new { htmlAttributes = new { @class = "form-control", @Value = 1, @min = 1 } })
+                            @Html.ValidationMessageFor(model => model.NumPrint, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-12 col-md-3 mb-2">
+                            @Html.DropDownListFor(model => model.PaperSize, ViewBag.PaperSizes as SelectList, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PaperSize, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-12 col-md-3 mb-2">
+                            @Html.DropDownListFor(model => model.IsType, ViewBag.InvoiceTypes as SelectList, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IsType, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-12 col-md-2 mb-2">
+                            <div class="form-group clearfix pb-2">
+                                <div class="icheck-primary d-inline">
+                                    @Html.CheckBox("IsPrint", new { @id = "IsPrint", @checked = true })
+                                    <label for="IsPrint">
+                                        Print
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-right">
+                            <button type="button" id="btnCloseModalPay" class="btn btn-danger btn-min mr-2" data-dismiss="modal">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                @Resources.Buttons.Cancel
+                            </button>
+                            <button type="submit" class="btn btn-success btn-min">
+                                <div class="d-none">
+                                    <span class="spinner-border spinner-border-sm spinnerLoadingSave" role="status" aria-hidden="true"></span>
+                                    <span class="">Loading...</span>
+                                </div>
+                                <div>
+                                    <i class="far fa-check-circle"></i> @Resources.Buttons.Save
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

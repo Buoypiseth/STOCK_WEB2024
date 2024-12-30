@@ -1,0 +1,45 @@
+﻿<div class="row">
+    <div class="col-12 col-md-6">
+        @if (ViewBag.holdCount > 0)
+        {
+            foreach (var i in ViewBag.GetCustHold)
+            {
+                <button type="button" class="btn btn-default btn-block openHoldToOrdering" data-id=@i.roomtableID>
+                    <div class="d-flex justify-content-between px-3">
+                        <div>@i.CustomerName</div>
+                        <div class="spinner">
+                            <span class="spinner-border spinner-border-sm d-none mr-2" role="status"></span>
+                            <i class="fa fa-check-circle mr-2"></i>
+                        </div>
+                    </div>
+                </button>
+            }
+        }
+        else
+        {
+            <div class="align-self-center">
+                <div class="p-2 text-center text-muted">No data available!</div>
+            </div>
+        }
+    </div>
+    <div class="col-12 col-md-6">
+        @using (Html.BeginForm("CreateHold", "Sale", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.TextBox("CustName", "", new { @class = "form-control", @placeholder = Resources.Sale.CustName })
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <button type="button" id="btnSaveHold" class="btn btn-success btn-block btn-rounded">
+                        <div class="spinner">
+                            <span class="spinner-border spinner-border-sm d-none mr-2" role="status"></span>
+                            <i class="fa fa-check-circle mr-2"></i>@Resources.Buttons.Save
+                        </div>
+                    </button>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿@model WebApplication.Models.tbl_suppliers
+@using (Html.BeginForm("Create", "Supplier", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="modal fade" id="modal-form">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal-title" class="modal-title">
+                        @Resources.Buttons.Create
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="row row-cols-2">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(Resources.Supplier.ContLastName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.ContLastName, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Supplier.ContLastName } })
+                                @Html.ValidationMessageFor(model => model.ContLastName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.Label(Resources.Supplier.JobTitle, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.JobTitle, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Supplier.JobTitle } })
+                                @Html.ValidationMessageFor(model => model.JobTitle, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(Resources.Supplier.ContFirstName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.ContFirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Supplier.ContFirstName } })
+                                @Html.ValidationMessageFor(model => model.ContFirstName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.Label(Resources.Supplier.MobilePhone, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.MobilePhone, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Supplier.MobilePhone } })
+                                @Html.ValidationMessageFor(model => model.MobilePhone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-2">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.HiddenFor(model => model.SupplierID, new { @class = "form-control" })
+                                @Html.Label(Resources.Supplier.CompanyName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = Resources.Supplier.CompanyName } })
+                                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.Label(Resources.Supplier.BusPhone, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.BusPhone, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Supplier.BusPhone } })
+                                @Html.ValidationMessageFor(model => model.BusPhone, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label(Resources.Supplier.Address, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.Address, new { @class = "form-control", @rows = 2, @placeholder = Resources.Supplier.Address })
+                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label(Resources.Supplier.WebPage, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.WebPage, new { htmlAttributes = new { @class = "form-control", @placeholder = Resources.Supplier.WebPage } })
+                                @Html.ValidationMessageFor(model => model.WebPage, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.Label(Resources.Supplier.CompEmail, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.CompEmail, new { htmlAttributes = new { @class = "form-control", @type = "email", @placeholder = Resources.Supplier.CompEmail } })
+                                @Html.ValidationMessageFor(model => model.CompEmail, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.Label(Resources.Supplier.Notes, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextAreaFor(model => model.Notes, new { @class = "form-control", @rows = 2, @placeholder = Resources.Supplier.Notes })
+                                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col text-right">
+                            <button type="button" class="btn btn-danger btn-min mr-2" data-dismiss="modal">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                @Resources.Buttons.Cancel
+                            </button>
+                            <button type="submit" id="btnSaveOrUpdate" class="btn btn-success btn-min">
+                                <i class="far fa-check-circle"></i>
+                                @Resources.Buttons.Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+}
