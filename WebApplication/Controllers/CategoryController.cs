@@ -93,7 +93,7 @@ namespace WebApplication.Controllers
         //------------------------///------------------------//
         public JsonResult GetTreeData()
         {
-            var categories = context.tbl_prdcategory.ToList();
+            var categories = context.tbl_prdcategory.OrderBy(x => x.CategoryOrder).ToList();
             var treeData = new List<TreeNode>
             {
                 //new TreeNode { Id = 1, ParentId = 0, Name = "Root 1" },

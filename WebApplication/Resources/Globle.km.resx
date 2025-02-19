@@ -120,6 +120,9 @@
   <data name="Action" xml:space="preserve">
     <value>Action</value>
   </data>
+  <data name="Actions" xml:space="preserve">
+    <value>សកម្មភាព</value>
+  </data>
   <data name="BuyIn" xml:space="preserve">
     <value>ទិញចូលស្តុក</value>
   </data>
@@ -154,7 +157,7 @@
     <value>ល.រ</value>
   </data>
   <data name="Option" xml:space="preserve">
-    <value />
+    <value>សកម្មភាព</value>
   </data>
   <data name="Paid" xml:space="preserve">
     <value>បង់</value>

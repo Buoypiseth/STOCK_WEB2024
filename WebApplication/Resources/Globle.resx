@@ -121,7 +121,7 @@
     <value>Action</value>
   </data>
   <data name="Actions" xml:space="preserve">
-    <value />
+    <value>Actions</value>
   </data>
   <data name="BuyIn" xml:space="preserve">
     <value>Buy In</value>
@@ -157,7 +157,7 @@
     <value>No</value>
   </data>
   <data name="Option" xml:space="preserve">
-    <value />
+    <value>Actions</value>
   </data>
   <data name="Paid" xml:space="preserve">
     <value>Paid</value>
