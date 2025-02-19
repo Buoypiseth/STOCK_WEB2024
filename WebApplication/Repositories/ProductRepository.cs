@@ -48,9 +48,10 @@ namespace WebApplication.Repositories
                                p.minimalStock,
                                p.totalInStock,
                                p.Image,
-                               p.PrdCategID
+                               p.PrdCategID,
                                //tblPurchase.Quantity,
                                //tblPurchase.TotalCost
+                               p.BuyingCost
                            }).ToList();
             foreach (var i in results)
             {
@@ -69,6 +70,7 @@ namespace WebApplication.Repositories
                 p.PrdCategID = i.PrdCategID;
                 //p.Quantity = i.Quantity;
                 //p.TotalCost = i.TotalCost;
+                p.BuyingCost = i.BuyingCost;
                 lst.Add(p);
             }
             return lst;
@@ -177,24 +179,26 @@ namespace WebApplication.Repositories
                 {
                     case "0":
                         // Setting.  
-                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderByDescending(p => p.PrdNameEng).ToList()
-                                                                                                 : data.OrderBy(p => p.PrdNameEng).ToList();
+                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderByDescending(p => p.ProductID).ToList()
+                                                                                                 : data.OrderBy(p => p.ProductID).ToList();
                         break;
 
                     case "1":
                         // Setting.  
-                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderByDescending(p => p.PrdCategory).ToList()
-                                                                                                 : data.OrderBy(p => p.PrdCategory).ToList();
+                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderByDescending(p => p.PrdNameEng).ToList()
+                                                                                                 : data.OrderBy(p => p.PrdNameEng).ToList();
                         break;
                     case "2":
                         // Setting.  
-                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderByDescending(p => p.OrderComment).ToList()
-                                                                                                 : data.OrderBy(p => p.OrderComment).ToList();
+                        //lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderByDescending(p => p.OrderComment).ToList()
+                        //: data.OrderBy(p => p.OrderComment).ToList();
+                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderByDescending(p => p.UnitType).ToList()
+                        : data.OrderBy(p => p.UnitType).ToList();
                         break;
                     case "3":
                         // Setting.  
-                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderByDescending(p => p.barCode).ToList()
-                                                                                                 : data.OrderBy(p => p.barCode).ToList();
+                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderByDescending(p => p.PrdCategory).ToList()
+                                                                                                 : data.OrderBy(p => p.PrdCategory).ToList();
                         break;
                     default:
 
@@ -358,6 +362,46 @@ namespace WebApplication.Repositories
                 return ex.ToString();
             }
             return "True";
+        }
+
+        public (string status, string message) UpdateProductPrice(Product data, string ImgName)
+        {
+            try
+            {
+                tbl_products t = context.tbl_products.Find(data.ProductID);
+                //t.PrdCategID = data.PrdCategID;
+                ////t.SupplierID = "0";
+                //t.PrdNameEng = data.PrdNameEng;
+                //t.PrdNameKh = data.PrdNameEng;
+                t.UnitType = data.UnitType;
+                ////t.totalInStock = 0;
+                t.totalInStock = data.totalInStock ?? 0;
+                t.BuyingCost = data.BuyingCost ?? 0;
+                //t.minimalStock = data.minimalStock == null ? 0 : data.minimalStock;
+                t.SellingPriceUSD = data.SellingPriceUSD ?? 0;
+                t.SellingPriceKHR = Helper.ExchangeRate((float)t.SellingPriceUSD, "usdToKhr");
+                t.SellingPriceTHB = Helper.ExchangeRate((float)t.SellingPriceUSD, "usdToThb");
+                ////byte[] bytes = null;
+                ////t.Photo = bytes;
+                //t.OrderComment = data.OrderComment == null ? "" : data.OrderComment;
+                //t.PrdDesc = data.PrdDesc == null ? "" : data.PrdDesc;
+                //t.barCode = data.barCode == null ? "" : data.barCode;
+                ////t.Delstatus = "";
+                //t.isCutStock = data.isCutStock;
+                ////t.ProductIDRealStock = data.ProductID;
+                //t.NumInOne = data.NumInOne == null ? 1 : data.NumInOne;
+                //t.IsUnique = data.IsUnique;
+                //t.TaxNote = data.TaxNote;
+                //t.Money_Sale_Type = data.Money_Sale_Type;
+                //t.Image = ImgName;
+                context.Entry(t).State = EntityState.Modified;
+                this.Save();
+            }
+            catch (Exception ex)
+            {
+                return (Resources.Alerts.Error, ex.ToString());
+            }
+            return ("True", Resources.Alerts.Product_Updated);
         }
 
         public string BuyProduct(tbl_BuyProducts data, Product product,string ProductID)

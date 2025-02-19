@@ -13,17 +13,19 @@ namespace WebApplication.Repositories
     {
         private DataContext context;
         private DBConnect dBConnect;
+        private long _userID = 0;
         public ReportRepository()
         {
             this.context = new DataContext();
             this.dBConnect = new DBConnect();
         }
-        long UserID = long.Parse(IUser.Id);
+        //long UserID = long.Parse(IUser.Id);
         public string DeleteOtherOptionEmployeeSet()
         {
             try
             {
-                var Items = context.tbl_OTHER_OPTIONS_Employee_Set.Where(x => x.UserID.Equals(UserID)).ToList();
+                this._userID = IUser.userId();
+                var Items = context.tbl_OTHER_OPTIONS_Employee_Set.Where(x => x.UserID.Equals(this._userID)).ToList();
                 if (Items != null)
                 {
                     Items.ForEach(x => context.tbl_OTHER_OPTIONS_Employee_Set.Remove(x));
@@ -53,6 +55,7 @@ namespace WebApplication.Repositories
         {
             try
             {
+                this._userID = IUser.userId();
                 var dt = context.tbl_OTHER_OPTIONS.FirstOrDefault(x => x.para_ReportName == data.para_ReportName);
                 if (dt != null)
                 {
@@ -60,7 +63,7 @@ namespace WebApplication.Repositories
                     otherOption.ID = dt.ID;
                     otherOption.EmployeeID = -1;
                     otherOption.RunID = "-1";
-                    otherOption.UserID = UserID;
+                    otherOption.UserID = this._userID;
                     otherOption.para07_cboName = data.para07_cboName;
                     otherOption.para06_cboGroup = "-1";
                     otherOption.para08_0_TabMonthly = dt.para08_0_TabMonthly;

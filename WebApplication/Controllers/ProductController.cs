@@ -36,7 +36,11 @@ namespace WebApplication.Controllers
             if (!string.IsNullOrEmpty(param.sSearch) &&
                 !string.IsNullOrWhiteSpace(param.sSearch))
             {
-                data = data.Where(x => x.PrdNameEng.ToLower().Contains(param.sSearch.ToLower())).ToList();
+                data = data.Where(x => 
+                x.PrdNameEng.ToLower().Contains(param.sSearch.ToLower())
+                || x.UnitType.ToLower().Contains(param.sSearch.ToLower())
+                || x.OrderComment.ToLower().Contains(param.sSearch.ToLower())
+                || x.barCode.ToLower().Contains(param.sSearch.ToLower())).ToList();
             }
             var sortColumnIndex = HttpContext.Request.QueryString["iSortCol_0"];
             var sortDirection = HttpContext.Request.QueryString["sSortDir_0"];

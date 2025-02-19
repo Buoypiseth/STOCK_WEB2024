@@ -7,20 +7,25 @@
     <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
     <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
     <link href="~/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <style>
+        .btnModalPreview {
+            cursor: pointer;
+        }
+    </style>
 }
 @Html.Partial("Partials/_CreateOrUpdate")
 <div class="card">
     <div class="card-header">
         <div class="d-flex justify-content-between">
             <div class="card-title align-self-center">
-                @Resources.Product.Title
+                @Resources.Product.ProductPrice
             </div>
-            <div class="">
+            @*<div class="">
                 <button type="button" class="btn btn-min btn-primary" id="btnCreate">
                     <i class="fa fa-plus-circle"></i>
                     @Resources.Globle.Create
                 </button>
-            </div>
+            </div>*@
         </div>
     </div>
     <!-- /.card-header -->
@@ -30,21 +35,39 @@
                 <tr>
                     <th>@Resources.Globle.No</th>
                     <th>@Resources.Product.PrdNameEng</th>
-                    <th>@Resources.Product.UnitType</th>
-                    <th>@Resources.Product.PrdCategory</th>
-                    <th>@Resources.Product.OrderComment</th>
-                    <th>@Resources.Product.barCode</th>
+                    <th>@Resources.Product.Type</th>
+                    @*<th>@Resources.Product.PrdCategory</th>*@
+                    <th>@Resources.Product.Code</th>
+                    @*<th>@Resources.Product.barCode</th>*@
+                    <th>@Resources.Product.Qty</th>
+                    <th>@Resources.Product.BuyingCost</th>
                     <th>@Resources.Product.SellingPriceUSD</th>
                     @*<th>@Resources.Product.SellingPriceKHR</th>*@
-                    <th>@Resources.Product.minimalStock</th>
-                    <th>@Resources.Product.totalInStock</th>
-                    @*<th>@Resources.Product.ImgUpload</th>*@
-                    <th>@Resources.Globle.Option</th>
+                    @*<th>@Resources.Product.minimalStock</th>*@
+
+                    <th>@Resources.Product.ImgUpload</th>
+                    <th>@Resources.Product.Actions</th>
                 </tr>
             </thead>
         </table>
     </div>
     <!-- /.card-body -->
+    <!-- Creates the bootstrap modal where the image will appear -->
+    <div class="modal fade" id="modal-preview">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h6 class="modal-title">Preview</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="imgPreview" style="width: 100%; height: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @section Scripts {
     <script src="~/assets/plugins/select2/js/select2.full.min.js"></script>
@@ -106,6 +129,12 @@
                     firstDay: 1
                 }
             });
+            bsCustomFileInput.init();
+            $(document).on('click', '.btnModalPreview', function () {
+                var url = $(this).data('url');
+                $('#imgPreview').attr('src', url);
+                $('#modal-preview').modal('show');
+            });
             modalForm.on('hidden.bs.modal', function (e) {
                 ProductID.val('');
                 BuyingCost.prop("disabled", false);
@@ -145,15 +174,14 @@
                     processData: false,
                     success: function (res) {
                         if (res.status == 'True') {
-                            modalForm.modal('hide');
-                            //dataTable.draw();
                             Toast.fire({
                                 icon: 'success',
                                 type: 'success',
                                 title: res.message
                             })
-
-                            location.reload();
+                            dataTable.draw();
+                            modalForm.modal('hide');
+                            //location.reload();
                         }
                         else {
                             Swal.fire({
@@ -175,7 +203,7 @@
                 var data = {};
                 data.ProductID = $(this).data('id');
                 $.ajax({
-                    url: '@Url.Action("Edit", "Product")',
+                    url: '@Url.Action("Edit", "ProductList")',
                     type: "POST",
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(data),
@@ -183,13 +211,13 @@
                     success: function (res) {
                         ProductID.val(res.ProductID);
                         PrdNameEng.val(res.PrdNameEng);
+                        PrdNameEng.prop("disabled", true);
                         OrderComment.val(res.OrderComment);
                         barCode.val(res.barCode);
                         UnitType.val(res.UnitType);
                         PrdDesc.val(res.PrdDesc);
-                        //BuyingCost.val(res.BuyingCost);
-
-                        BuyingCost.prop("disabled", true);
+                        BuyingCost.val(res.BuyingCost);
+                        //BuyingCost.prop("disabled", true);
                         SellingPriceUSD.val(res.SellingPriceUSD);
                         SellingPriceUSDForThisCus.val(res.SellingPriceUSDForThisCus);
                         minimalStock.val(res.minimalStock);
@@ -222,12 +250,12 @@
             var actions;
             var dataTable = $('.data-table')
                 .DataTable({
-                    "sAjaxSource": "@Url.Action("GetData", "Product")",
+                    "sAjaxSource": "@Url.Action("GetData", "ProductList")",
                     "bServerSide": true,
                     "bProcessing": true,
                     "bSearchable": true,
                     "pageLength": 25,
-                    "order": [[2, 'asc']],
+                    "order": [[1, 'asc']],
                     "scrollX": true,
                     "columns": [
                         {
@@ -238,23 +266,32 @@
                             }
                         },
                         { "data": "PrdNameEng", "searchable": true },
-                        { "data": "UnitType", "searchable": true, sortable: true },
-                        {
-                            "data": "PrdCategory",
-                            "searchable": true,
-                            "sortable": false,
-                            "createdCell": function (td, cellData, rowData, row, col) {
-                                // Add a custom attribute (e.g., 'data-group') based on the value of PrdCategory
-                                $(td).attr('data-group', cellData);
-                            }
-                        },
+                        { "data": "UnitType", "searchable": false, sortable: true },
+                        //{
+                        //    "data": "PrdCategory",
+                        //    "searchable": true,
+                        //    "sortable": false,
+                        //    "createdCell": function (td, cellData, rowData, row, col) {
+                        //        // Add a custom attribute (e.g., 'data-group') based on the value of PrdCategory
+                        //        $(td).attr('data-group', cellData);
+                        //    }
+                        //},
                         { "data": "OrderComment", "searchable": true, sortable: false },
-                        { "data": "barCode", "searchable": true, sortable: false },
+                        //{ "data": "barCode", "searchable": false, sortable: false },
+                        { "data": "totalInStock", "searchable": false, sortable: false },
+                        { "data": "BuyingCost", sortable: false, render: $.fn.dataTable.render.number(',', '.', 2, '$') },
                         { "data": "SellingPriceUSD", sortable: false, render: $.fn.dataTable.render.number(',', '.', 2, '$') },
                         //{ "data": "SellingPriceKHR", "searchable": false, sortable: false },
-                        { "data": "minimalStock", "searchable": false, sortable: false },
-                        { "data": "totalInStock", "searchable": false, sortable: false },
+                        //{ "data": "minimalStock", "searchable": false, sortable: false },
+                      
                         //{ "data": "Image", "searchable": false, sortable: false },
+                        {
+                            "data": "Image", "sortable": false,
+                            "render": function (data, type, row, meta) {
+
+                                return '<img src="' + data + '" data-url="' + data + '" class="btnModalPreview" alt="Image" width="100" heigh="100">';
+                            }
+                        },
                         {
                             "data": "ProductID", "sortable": false,
                             "render": function (data, type, full, meta) {
@@ -264,23 +301,23 @@
                             }
                         },
                     ],
-                    "drawCallback": function (settings) {
-                        // Optionally, you could re-group after the table has been drawn
-                        var rows = $('.data-table tbody tr');
-                        var lastGroup = null;
+                    //"drawCallback": function (settings) {
+                    //    // Optionally, you could re-group after the table has been drawn
+                    //    var rows = $('.data-table tbody tr');
+                    //    var lastGroup = null;
 
-                        rows.each(function () {
-                            var row = $(this);
-                            var group = row.find('td').eq(3).data('group');  // 3 corresponds to the PrdCategory column (index 3)
+                    //    rows.each(function () {
+                    //        var row = $(this);
+                    //        var group = row.find('td').eq(2).data('group');  // 3 corresponds to the PrdCategory column (index 3)
 
-                            if (group !== lastGroup) {
-                                // Insert a group header row (could be a row span, or something else)
-                                var groupHeader = $('<tr><td colspan="10" class="group-header">' + group + '</td></tr>');
-                                row.before(groupHeader);
-                                lastGroup = group;
-                            }
-                        });
-                    }
+                    //        if (group !== lastGroup) {
+                    //            // Insert a group header row (could be a row span, or something else)
+                    //            var groupHeader = $('<tr><td colspan="10" class="group-header">' + group + '</td></tr>');
+                    //            row.before(groupHeader);
+                    //            lastGroup = group;
+                    //        }
+                    //    });
+                    //}
                 });
             });
     </script>

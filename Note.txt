@@ -1,0 +1,4 @@
+------------Start 2023-09-12-----------
++add column table tbl_customers_account
+IsDefault	bit	Checked
+-----------End----------

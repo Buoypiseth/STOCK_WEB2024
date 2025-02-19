@@ -10,7 +10,7 @@
     <style>
         ul {
             list-style-type: none;
-            padding-left: 0px;
+            padding-left: 20px;
         }
 
         li {
@@ -18,21 +18,22 @@
             cursor: pointer;
         }
 
-        li > ul {
-            padding-left: 20px;
-        }
-
         .expand-collapse {
             margin-right: 5px;
             font-weight: bold;
+            cursor: pointer;
         }
 
         .collapsed > ul {
             display: none;
         }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
     </style>
 }
-<div class="card" style="width: 100%">
+<div class="card">
     <div class="card-header">
         <div class="d-flex justify-content-between">
             <div class="card-title align-self-center">
@@ -48,8 +49,11 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        @Html.Partial("Partials/_CreateOrUpdate")
-        <div id="treeview"></div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="treeview"></div>
+            </div>
+        </div>
     </div>
     <!-- /.card-body -->
 </div>
@@ -70,11 +74,19 @@
         var btnSaveOrUpdate = $('#btnSaveOrUpdate');
         var PrdCategID = $('#PrdCategID');
         var PrdCategory = $('#PrdCategory');
-        var PrdCategIDMain = $('#PrdCategIDMain');
+/*        var prdCategIDMain = $('#PrdCategIDMain');*/
         var CategoryOrder = $('#CategoryOrder');
         $(function () {
-             // Load tree data from the controller
+            var treeData = [];
+                        // Load tree data from the controller
+            @*$.getJSON('@Url.Action("GetTreeData", "Category")', function (data) {
+                var treeHtml = buildTree(data);
+                $('#treeview').html(treeHtml);
+            });*@
+
+           // Load tree data from the controller
             $.getJSON('@Url.Action("GetTreeData", "Category")', function (data) {
+                treeData = data;
                 var treeHtml = buildTree(data);
                 $('#treeview').html(treeHtml);
             });
@@ -83,30 +95,27 @@
             function buildTree(nodes) {
                 var html = '<ul>';
                 $.each(nodes, function (index, node) {
-                    html += '<li class="node handleCategoryClick" data-id="' + node.Id + '">';
+                    html += '<li class="node' + (node.Children && node.Children.length ? ' collapsed' : '') + '">';
+
                     // Check if the node has children and show a toggle button (expand/collapse)
                     if (node.Children && node.Children.length > 0) {
-                        html += '<span class="expand-collapse">[-]</span>'; // Add toggle symbol
+                        html += '<span class="expand-collapse">[+]</span>'; // Add toggle symbol
                     }
+
+                    // Add a checkbox for each node
+                    html += '<input type="checkbox" class="node-checkbox" data-id="' + node.Id + '" /> ';
                     html += node.Name;
+
                     // Recursively add children if any
                     if (node.Children && node.Children.length > 0) {
                         html += buildTree(node.Children);
                     }
+
                     html += '</li>';
                 });
                 html += '</ul>';
                 return html;
             }
-
-            //$(document).on('click', '.handleCategoryClick', function () {
-            $(document).off('click', '.handleCategoryClick').on('click', '.handleCategoryClick', function (event) {
-                event.stopPropagation();
-                var categoryId = $(this).data('id');
-                //alert(categoryId);
-                //console.log(categoryId);
-                getEdit(categoryId);
-            });
 
             // Toggle the display of child nodes when the user clicks a parent node
             $(document).on('click', '.expand-collapse', function (event) {
@@ -126,6 +135,98 @@
                 event.stopPropagation();
             });
 
+            // Event listener for when a checkbox is clicked
+            $(document).on('change', '.node-checkbox', function () {
+                var checkbox = $(this);
+                var isChecked = checkbox.prop('checked');
+                var nodeId = checkbox.data('id');
+
+                // Find all child nodes of the current node
+                var children = findChildren(nodeId);
+                // Check/uncheck all child nodes
+                children.forEach(function (child) {
+                    $('input[data-id="' + child.Id + '"]').prop('checked', isChecked);
+                });
+
+                // Find the parent node of the current node
+                var parentNode = findParent(nodeId);
+                if (parentNode) {
+                    updateParentCheckbox(parentNode);
+                }
+            });
+
+            // Function to find all children of a node
+            function findChildren(parentId) {
+                var children = [];
+                function traverse(nodes) {
+                    nodes.forEach(function (node) {
+                        if (node.ParentId === parentId) {
+                            children.push(node);
+                            traverse(node.Children);
+                        }
+                    });
+                }
+                traverse(treeData); // Use the global treeData array
+                return children;
+            }
+
+            // Function to find the parent of a node
+            function findParent(childId) {
+                var parent = null;
+                function traverse(nodes) {
+                    nodes.forEach(function (node) {
+                        if (node.Children) {
+                            node.Children.forEach(function (child) {
+                                if (child.Id === childId) {
+                                    parent = node;
+                                }
+                            });
+                            traverse(node.Children);
+                        }
+                    });
+                }
+                traverse(treeData); // Use the global treeData array
+                return parent;
+            }
+
+            // Function to update the parent checkbox based on the state of its children
+            function updateParentCheckbox(parentNode) {
+                var parentCheckbox = $('input[data-id="' + parentNode.Id + '"]');
+                var allChecked = true;
+                var allUnchecked = true;
+
+                // Check the state of all child nodes
+                parentNode.Children.forEach(function (child) {
+                    var childCheckbox = $('input[data-id="' + child.Id + '"]');
+                    if (childCheckbox.prop('checked')) {
+                        allUnchecked = false;
+                    } else {
+                        allChecked = false;
+                    }
+                });
+
+                // If all child nodes are checked, check the parent
+                if (allChecked) {
+                    parentCheckbox.prop('checked', true);
+                }
+                // If any child node is unchecked, uncheck the parent
+                else if (allUnchecked) {
+                    parentCheckbox.prop('checked', false);
+                }
+                else {
+                    // If some are checked and some are unchecked, set the parent to indeterminate
+                    parentCheckbox.prop('checked', false);
+                    parentCheckbox.prop('indeterminate', true);
+                }
+
+                // Recursively update the parent nodes
+                if (parentNode.ParentId > 0) {
+                    var parent = findParent(parentNode.ParentId);
+                    if (parent) {
+                        updateParentCheckbox(parent);
+                    }
+                }
+            }
             //-----------------------------//-------------------------
             const Toast = Swal.mixin({
                 toast: true,
@@ -154,7 +255,6 @@
                     processData: false,
                     success: function (res) {
                         if (res.status == 'True') {
-                            location.reload();
                             modalForm.modal('hide');
                             Toast.fire({
                                 type: 'success',
@@ -191,38 +291,9 @@
                         PrdCategID.val(res.PrdCategID);
                         PrdCategory.val(res.PrdCategory);
                         CategoryOrder.val(res.CategoryOrder);
-                        if (PrdCategIDMain.find("option[value='" + res.PrdCategIDMain + "']").length) {
-                            PrdCategIDMain.val(res.PrdCategIDMain).trigger('change');
-                        }
                     }
                 });
             });
-
-            function getEdit(cateId) {
-                modalTitle.text('').append('Edit');
-                btnSaveOrUpdate.text('').append('<i class="far fa-check-circle"></i> Update');
-                modalForm.modal('show');
-                var data = {};
-                data.PrdCategID = cateId;
-                $.ajax({
-                    url: '@Url.Action("Edit", "Category")',
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(data),
-                    dataType: "json",
-                    success: function (res) {
-                        PrdCategID.val(res.PrdCategID);
-                        PrdCategory.val(res.PrdCategory);
-                        CategoryOrder.val(res.CategoryOrder);
-                        if (PrdCategIDMain.find("option[value='" + res.PrdCategIDMain + "']").length) {
-                            PrdCategIDMain.val(res.PrdCategIDMain).trigger('change');
-                        }
-                        else {
-                            PrdCategIDMain.val("0").trigger('change');
-                        }
-                    }
-                });
-            }
             $(document).on('click', '.btnDelete', function () {
                 var data = {};
                 data.PrdCategID = $(this).data('id');

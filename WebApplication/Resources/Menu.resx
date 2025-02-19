@@ -180,6 +180,9 @@
   <data name="ProductPackage" xml:space="preserve">
     <value>Product Package</value>
   </data>
+  <data name="ProductPrice" xml:space="preserve">
+    <value>Product Price</value>
+  </data>
   <data name="Report" xml:space="preserve">
     <value>Report</value>
   </data>

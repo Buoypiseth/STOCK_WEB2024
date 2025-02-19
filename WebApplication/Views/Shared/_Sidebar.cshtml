@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="@Url.Action("Index", "Home")" class="brand-link">
         <img src="~/assets/img/logo-app.png" alt="logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Stock</span>
+        <span class="brand-text font-weight-light">STOCK</span>
     </a>
     <div class="sidebar">
         <nav class="mt-2">
@@ -31,43 +31,65 @@
                                 <p>@Resources.Menu.Product</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "ProductList")" class="@Html.IsActive("ProductList", "Index")">
+                                <i class="nav-icon fas fa-list"></i>
+                                <p>@Resources.Menu.ProductPrice</p>
+                            </a>
+                        </li>
                         @*<li class="nav-item">
-                                <a href="@Url.Action("Index", "ProductPackage")" class="@Html.IsActive("ProductPackage", "Index")">
-                                    <i class="nav-icon fas fa-list"></i>
-                                    <p>@Resources.Menu.ProductPackage</p>
-                                </a>
-                            </li>*@
+                            <a href="@Url.Action("Index", "ProductPackage")" class="@Html.IsActive("ProductPackage", "Index")">
+                                <i class="nav-icon fas fa-list"></i>
+                                <p>@Resources.Menu.ProductPackage</p>
+                            </a>
+                        </li>*@
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "BuyProduct")" class="@Html.IsActive("BuyProduct", "Index")">
-                        <i class="nav-icon fas fa-database"></i>
-                        <p>@Resources.Menu.BuyProduct</p>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-layer-group" aria-hidden="true"></i>
+                        <p>@Resources.Menu.BuyProduct <i class="right fas fa-angle-left"></i></p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Supplier")" class="@Html.IsActive("Supplier", "Index")">
+                                <i class="nav-icon fas fa-user-circle"></i>
+                                <p>@Resources.Menu.Supplier</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "BuyProduct")" class="@Html.IsActive("BuyProduct", "Index")">
+                                <i class="nav-icon fas fa-database"></i>
+                                <p>@Resources.Menu.BuyProduct</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Sale")" class="@Html.IsActive("Sale", "Index")">
-                        <i class="nav-icon fas fa-shopping-cart"></i>
-                        <p>@Resources.Menu.Sale</p>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-layer-group" aria-hidden="true"></i>
+                        <p>@Resources.Menu.Sale <i class="right fas fa-angle-left"></i></p>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Supplier")" class="@Html.IsActive("Supplier", "Index")">
-                        <i class="nav-icon fas fa-user-circle"></i>
-                        <p>@Resources.Menu.Supplier</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Customer")" class="@Html.IsActive("Customer", "Index")">
-                        <i class="nav-icon fas fa-user-check"></i>
-                        <p>@Resources.Menu.Customer</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="@Url.Action("Index", "Bill")" class="@Html.IsActive("Bill", "Index")">
-                        <i class="nav-icon fas fa-receipt"></i>
-                        <p>@Resources.Menu.Bill</p>
-                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Customer")" class="@Html.IsActive("Customer", "Index")">
+                                <i class="nav-icon fas fa-user-check"></i>
+                                <p>@Resources.Menu.Customer</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Sale")" class="@Html.IsActive("Sale", "Index")">
+                                <i class="nav-icon fas fa-shopping-cart"></i>
+                                <p>@Resources.Menu.Sale</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Bill")" class="@Html.IsActive("Bill", "Index")">
+                                <i class="nav-icon fas fa-receipt"></i>
+                                <p>@Resources.Menu.Bill</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -82,11 +104,11 @@
                             </a>
                         </li>
                         @*<li class="nav-item">
-                                <a href="@Url.Action("ChangePassword", "User")" class="@Html.IsActive("User", "ChangePassword")">
-                                    <i class="nav-icon fas fa-key"></i>
-                                    <p>@Resources.Menu.ChangePassword</p>
-                                </a>
-                            </li>*@
+                    <a href="@Url.Action("ChangePassword", "User")" class="@Html.IsActive("User", "ChangePassword")">
+                        <i class="nav-icon fas fa-key"></i>
+                        <p>@Resources.Menu.ChangePassword</p>
+                    </a>
+                </li>*@
                         <li class="nav-item">
                             <a href="@Url.Action("Index", "Role")" class="@Html.IsActive("Role", "Index")">
                                 <i class="nav-icon fas fa-user-cog"></i>
@@ -129,6 +151,6 @@
                     }
                 }
             </ul>
-        </nav>
+</nav>
     </div>
 </aside>

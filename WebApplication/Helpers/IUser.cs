@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using WebApplication.Models;
 
@@ -56,6 +57,20 @@ namespace WebApplication.Helpers
                 return context.tbl_useraccount.Where(x => x.UserName == IValue)
                     .Select(x => x.StockID)
                     .FirstOrDefault();
+            }
+        }
+
+        public static long userId()
+        {
+           using(var _context = new DataContext())
+            {
+                var userId = _context.tbl_useraccount.Where(x => x.UserName == IValue)
+                .Select(x => x.UserID)
+                .FirstOrDefault();
+                if (userId == null || userId == "0")
+                    return 0;
+
+                return long.Parse(userId);
             }
         }
     }

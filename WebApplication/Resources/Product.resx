@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
   <data name="barCode" xml:space="preserve">
     <value>Barcode</value>
   </data>
@@ -125,6 +128,12 @@
   </data>
   <data name="ChildTitle" xml:space="preserve">
     <value>SubProduct</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
   </data>
   <data name="ImgUpload" xml:space="preserve">
     <value>Image</value>
@@ -156,6 +165,12 @@
   <data name="PrdNameEng" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="ProductPrice" xml:space="preserve">
+    <value>Product Prices</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>Qty</value>
+  </data>
   <data name="SellingPriceKHR" xml:space="preserve">
     <value>SalePrice(Riel)</value>
   </data>
@@ -173,6 +188,9 @@
   </data>
   <data name="totalInStock" xml:space="preserve">
     <value>InStock</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
   </data>
   <data name="UnitType" xml:space="preserve">
     <value>UnitType</value>

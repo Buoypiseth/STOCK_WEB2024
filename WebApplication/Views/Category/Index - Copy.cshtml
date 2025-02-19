@@ -7,32 +7,8 @@
     <link href="~/assets/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
     <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
     <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
-    <style>
-        ul {
-            list-style-type: none;
-            padding-left: 0px;
-        }
-
-        li {
-            margin: 5px;
-            cursor: pointer;
-        }
-
-        li > ul {
-            padding-left: 20px;
-        }
-
-        .expand-collapse {
-            margin-right: 5px;
-            font-weight: bold;
-        }
-
-        .collapsed > ul {
-            display: none;
-        }
-    </style>
 }
-<div class="card" style="width: 100%">
+<div class="card">
     <div class="card-header">
         <div class="d-flex justify-content-between">
             <div class="card-title align-self-center">
@@ -49,7 +25,20 @@
     <!-- /.card-header -->
     <div class="card-body">
         @Html.Partial("Partials/_CreateOrUpdate")
-        <div id="treeview"></div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover table-sm data-table dt-responsive nowrap" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>@Resources.Globle.No</th>
+                            <th>@Resources.Category.CategoryName</th>
+                            <th>@Resources.Category.CategoryOrder</th>
+                            <th>@Resources.Globle.Option</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
     </div>
     <!-- /.card-body -->
 </div>
@@ -70,63 +59,9 @@
         var btnSaveOrUpdate = $('#btnSaveOrUpdate');
         var PrdCategID = $('#PrdCategID');
         var PrdCategory = $('#PrdCategory');
-        var PrdCategIDMain = $('#PrdCategIDMain');
+/*        var prdCategIDMain = $('#PrdCategIDMain');*/
         var CategoryOrder = $('#CategoryOrder');
         $(function () {
-             // Load tree data from the controller
-            $.getJSON('@Url.Action("GetTreeData", "Category")', function (data) {
-                var treeHtml = buildTree(data);
-                $('#treeview').html(treeHtml);
-            });
-
-            // Recursive function to generate HTML for tree nodes
-            function buildTree(nodes) {
-                var html = '<ul>';
-                $.each(nodes, function (index, node) {
-                    html += '<li class="node handleCategoryClick" data-id="' + node.Id + '">';
-                    // Check if the node has children and show a toggle button (expand/collapse)
-                    if (node.Children && node.Children.length > 0) {
-                        html += '<span class="expand-collapse">[-]</span>'; // Add toggle symbol
-                    }
-                    html += node.Name;
-                    // Recursively add children if any
-                    if (node.Children && node.Children.length > 0) {
-                        html += buildTree(node.Children);
-                    }
-                    html += '</li>';
-                });
-                html += '</ul>';
-                return html;
-            }
-
-            //$(document).on('click', '.handleCategoryClick', function () {
-            $(document).off('click', '.handleCategoryClick').on('click', '.handleCategoryClick', function (event) {
-                event.stopPropagation();
-                var categoryId = $(this).data('id');
-                //alert(categoryId);
-                //console.log(categoryId);
-                getEdit(categoryId);
-            });
-
-            // Toggle the display of child nodes when the user clicks a parent node
-            $(document).on('click', '.expand-collapse', function (event) {
-                var liNode = $(this).closest('li');
-                var subTree = liNode.children('ul');
-
-                // Toggle the visibility of the child tree
-                if (subTree.is(':visible')) {
-                    subTree.slideUp(); // Slide up to hide
-                    $(this).text('[+]'); // Change to expand symbol
-                } else {
-                    subTree.slideDown(); // Slide down to show
-                    $(this).text('[-]'); // Change to collapse symbol
-                }
-
-                // Prevent event propagation to avoid triggering parent click event
-                event.stopPropagation();
-            });
-
-            //-----------------------------//-------------------------
             const Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -154,7 +89,6 @@
                     processData: false,
                     success: function (res) {
                         if (res.status == 'True') {
-                            location.reload();
                             modalForm.modal('hide');
                             Toast.fire({
                                 type: 'success',
@@ -191,38 +125,9 @@
                         PrdCategID.val(res.PrdCategID);
                         PrdCategory.val(res.PrdCategory);
                         CategoryOrder.val(res.CategoryOrder);
-                        if (PrdCategIDMain.find("option[value='" + res.PrdCategIDMain + "']").length) {
-                            PrdCategIDMain.val(res.PrdCategIDMain).trigger('change');
-                        }
                     }
                 });
             });
-
-            function getEdit(cateId) {
-                modalTitle.text('').append('Edit');
-                btnSaveOrUpdate.text('').append('<i class="far fa-check-circle"></i> Update');
-                modalForm.modal('show');
-                var data = {};
-                data.PrdCategID = cateId;
-                $.ajax({
-                    url: '@Url.Action("Edit", "Category")',
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(data),
-                    dataType: "json",
-                    success: function (res) {
-                        PrdCategID.val(res.PrdCategID);
-                        PrdCategory.val(res.PrdCategory);
-                        CategoryOrder.val(res.CategoryOrder);
-                        if (PrdCategIDMain.find("option[value='" + res.PrdCategIDMain + "']").length) {
-                            PrdCategIDMain.val(res.PrdCategIDMain).trigger('change');
-                        }
-                        else {
-                            PrdCategIDMain.val("0").trigger('change');
-                        }
-                    }
-                });
-            }
             $(document).on('click', '.btnDelete', function () {
                 var data = {};
                 data.PrdCategID = $(this).data('id');

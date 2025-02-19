@@ -1,0 +1,61 @@
+﻿@model WebApplication.Models.Product
+<div class="modal fade" id="modal-form">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-title" class="modal-title">
+                    @Resources.Buttons.Create
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Create", "ProductList", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                @Html.HiddenFor(model => model.ProductID, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.Label(@Resources.Product.PrdNameEng, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.PrdNameEng, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = @Resources.Product.PrdNameEng } })
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                @Html.Label(@Resources.Product.Qty, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.totalInStock, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                @Html.Label(@Resources.Product.BuyingCost, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.BuyingCost, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                @Html.Label(@Resources.Product.SellingPriceUSD, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.SellingPriceUSD, new { htmlAttributes = new { @class = "form-control", @step = "0.01", @type = "Number", @placeholder = "0.00" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col text-right">
+                            <button type="button" class="btn btn-danger btn-min mr-2" data-dismiss="modal">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                @Resources.Buttons.Cancel
+                            </button>
+                            <button type="submit" id="btnSaveOrUpdate" class="btn btn-success btn-min">
+                                <i class="far fa-check-circle"></i>
+                                @Resources.Buttons.Save
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

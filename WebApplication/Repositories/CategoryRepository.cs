@@ -67,7 +67,8 @@ namespace WebApplication.Repositories
             {
                 model.PrdCategID = Helper.AutoID();
                 model.PrdCmpntID = "0";
-                model.PrdCategIDMain = "0";
+                //model.PrdCategIDMain = "0";
+                model.PrdCategIDMain = data.PrdCategIDMain ?? "";
                 model.PrdCategory = data.PrdCategory;
                 model.PrdCategoryKh = data.PrdCategory;
                 model.CategoryOrder = data.CategoryOrder;
@@ -88,6 +89,7 @@ namespace WebApplication.Repositories
                 model = context.tbl_prdcategory.FirstOrDefault(x => x.PrdCategID == data.PrdCategID);
                 model.PrdCategory = data.PrdCategory;
                 model.PrdCategoryKh = data.PrdCategory;
+                model.PrdCategIDMain = data.PrdCategIDMain ?? "";
                 model.CategoryOrder = data.CategoryOrder;
                 context.Entry(model).State = EntityState.Modified;
                 this.Save();

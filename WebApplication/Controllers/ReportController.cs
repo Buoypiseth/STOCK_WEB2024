@@ -11,18 +11,20 @@ using Microsoft.Reporting.WebForms;
 namespace WebApplication.Controllers
 {
     [Authorize]
+    //[Authorize(Roles = "Report")]
     public class ReportController : Controller
     {
         private DataContext context;
         private ReportRepository reportRepository;
         private SaleRepository salesRepository;
+        private long _userID = 0;
         public ReportController()
         {
             this.context = new DataContext();
             this.reportRepository = new ReportRepository();
             this.salesRepository = new SaleRepository();
         }
-        long UserID = long.Parse(IUser.Id);
+        //long UserID = IUser.Id == "" ? 0 : long.Parse(IUser.Id);
         string PathReportName;
         string ParaReportName;
         string[] Items;
@@ -88,6 +90,7 @@ namespace WebApplication.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection data)
         {
+            this._userID = IUser.userId();
             PathReportName = data["PathReportName"];
             ParaReportName = data["ParaReportName"];
             reportRepository.DeleteOtherOptionEmployeeSet();
@@ -100,7 +103,7 @@ namespace WebApplication.Controllers
             {
                 tbl_OTHER_OPTIONS_Employee_Set dt = new tbl_OTHER_OPTIONS_Employee_Set();
                 dt.EmployeeID = 0;
-                dt.UserID = UserID;
+                dt.UserID = this._userID;
                 dt.RunID = "0";
                 reportRepository.InsertOtherOptionEmployeeSet(dt);
             }
@@ -139,6 +142,7 @@ namespace WebApplication.Controllers
         }
         public void CheckSearch(FormCollection data)
         {
+            this._userID = IUser.userId();
             if (data["PrdCategID"] != null)
             {
                 if (data["PrdCategID"] == "All")//filter all item
@@ -220,7 +224,7 @@ namespace WebApplication.Controllers
             {
                 tbl_OTHER_OPTIONS_Employee_Set dt = new tbl_OTHER_OPTIONS_Employee_Set();
                 dt.EmployeeID = long.Parse(item);
-                dt.UserID = UserID;
+                dt.UserID = this._userID;
                 dt.RunID = "0";
                 reportRepository.InsertOtherOptionEmployeeSet(dt);
             }
@@ -294,6 +298,7 @@ namespace WebApplication.Controllers
         [HttpGet]
         public ActionResult Viewer(string dir, string slug)
         {
+            this._userID = IUser.userId();
             var row = context.tbl_OTHER_OPTIONS.FirstOrDefault(x => x.para_ReportName == slug);
             ReportViewer reportViewer = new ReportViewer();
             reportViewer.SizeToReportContent = true;
@@ -302,7 +307,7 @@ namespace WebApplication.Controllers
             reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"Reports\" + dir + "\\" + row.para_ReportName + ".rdlc";
             tbl_OTHER_OPTIONS_FILTER data = new tbl_OTHER_OPTIONS_FILTER();
             data.ID = row.ID;
-            data.UserID = UserID;
+            data.UserID = this._userID;
             data.EmployeeID = -1;
             data.RunID = "-1";
             data.para_Stored_Pro_Name = row.para_Stored_Pro_Name;
@@ -315,6 +320,7 @@ namespace WebApplication.Controllers
         [HttpGet]
         public ActionResult PdfViewer(string dir, string slug)
         {
+            this._userID = IUser.userId();
             //var dataReader = context.tbl_customerorder.Where(x => x.openingBalanceID == "20210601020007");
             //ReportViewer reportViewer = new ReportViewer();
             //reportViewer.ProcessingMode = ProcessingMode.Local;
@@ -330,7 +336,7 @@ namespace WebApplication.Controllers
             reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"Reports\" + dir + "\\" + row.para_ReportName + ".rdlc";
             tbl_OTHER_OPTIONS_FILTER data = new tbl_OTHER_OPTIONS_FILTER();
             data.ID = row.ID;
-            data.UserID = UserID;
+            data.UserID = this._userID;
             data.EmployeeID = -1;
             data.RunID = "-1";
             data.para_Stored_Pro_Name = row.para_Stored_Pro_Name;

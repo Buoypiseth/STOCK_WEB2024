@@ -321,6 +321,7 @@
     <Compile Include="Controllers\LangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductListController.cs" />
     <Compile Include="Controllers\ProductPackageController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -448,6 +449,7 @@
     <Compile Include="Models\tbl_useraccount.cs">
       <DependentUpon>TableModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TreeNode.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\UserRoleMapping.cs">
@@ -3242,6 +3244,10 @@
     <Content Include="Views\Sale\Partials\_SaleItem.cshtml" />
     <Content Include="Views\Sale\Partials\_Category.cshtml" />
     <Content Include="Views\Sale\Partials\_HoldOrder.cshtml" />
+    <Content Include="Views\Category\Index - Copy.cshtml" />
+    <Content Include="Views\Category\Index - Copy %282%29.cshtml" />
+    <Content Include="Views\ProductList\Index.cshtml" />
+    <Content Include="Views\ProductList\Partials\_CreateOrUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

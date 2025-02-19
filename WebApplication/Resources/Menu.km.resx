@@ -180,6 +180,9 @@
   <data name="ProductPackage" xml:space="preserve">
     <value>ផលិតផលកញ្ចប់</value>
   </data>
+  <data name="ProductPrice" xml:space="preserve">
+    <value>តម្លៃផលិតផល</value>
+  </data>
   <data name="Report" xml:space="preserve">
     <value>របាយការណ៍</value>
   </data>

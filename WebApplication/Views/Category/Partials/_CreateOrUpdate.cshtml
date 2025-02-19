@@ -25,11 +25,12 @@
                             @Html.EditorFor(model => model.PrdCategory, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = Resources.Category.CategoryName } })
                             @Html.ValidationMessageFor(model => model.PrdCategory, "", new { @class = "text-danger" })
                         </div>
-                        @*<div class="form-group">
+                        <div class="form-group">
                             @Html.Label(@Resources.Category.GroupMain, htmlAttributes: new { @class = "control-label" })
-                            @Html.DropDownList("PrdCategIDMain", null, "--Main--", htmlAttributes: new { @class = "form-control select2bs4" })
+                            @*@Html.DropDownList("PrdCategIDMain", null, "--Main--", htmlAttributes: new { @class = "form-control select2bs4" })*@
+                            @Html.DropDownListFor(model => model.PrdCategIDMain, ViewBag.PrdCategIDMains as SelectList, "--Main Categories--", new { @class = "form-control", @style = "width:100%" })
                             @Html.ValidationMessageFor(model => model.PrdCategIDMain, "", new { @class = "text-danger" })
-                        </div>*@
+                        </div>
                         <div class="form-group">
                             @Html.Label(@Resources.Category.CategoryOrder, htmlAttributes: new { @class = "control-label" })
                             @Html.EditorFor(model => model.CategoryOrder, new { htmlAttributes = new { @class = "form-control", @min = 0, @placeholder = Resources.Category.CategoryOrder } })
